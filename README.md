@@ -1,7 +1,7 @@
 # Shuang (Chris) Chen
 
-#### Technical Skills: Python, SQL, AWS, Snowflake, MATLAB
-
+#### Technical Skills: Python, MATLAB, Android Studio
+<!--
 ## Education
 - Ph.D., Computer Science | Durham University							       		
 - M.Sc., Computer Vision, Machine Learning and Robotics	| The University of Surrey			        		
@@ -61,7 +61,7 @@ Used **Matlab** to train over 100 machine learning models which estimated partic
 
 
 
-
+-->
 
 
 
