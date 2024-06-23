@@ -1,5 +1,6 @@
 # Shuang (Chris) Chen
-
+I am currently a final-year (2021-now) Ph.D. student in the Department of Computer Science, at the Durham University, under the supervision of <a href="https://hubertshum.com/">Dr. Hubert P. H. Shum</a> and <a href="http://www.atapour.co.uk/">Dr. Amir Atapour Abarghouei</a>. Prior to that, I received my Master degrees from the University of Surrey (UK) and my Bachelor degree from Shandong University of Techonology (China)
+  My research interests lie primarily in computer vision and machine learning. I have done some works about image inpainting, vedio inpainting, denoising, deblurring.
 #### Technical Skills: Python, MATLAB, Android Studio
 <!--
 ## Education
@@ -8,10 +9,18 @@
 - B.S., Enginnering | Shandong University of Technology
 
 ## Research Interests
-- Image Processing						       		
-- M.Sc., Computer Vision, Machine Learning and Robotics	| The University of Surrey			        		
-- B.S., Enginnering | Shandong University of Technology
+- Computer Vison and Machine Learning
+- Image Processing
+- Image Inpainting, Denoising, Drblurring, Vedio Inpainting
 
+
+Last Update: 22/06/2024
+
+## News
+- 
+
+
+<!--
 ## Work Experience
 **Data Scientist @ Toyota Financial Services (_June 2022 - Present_)**
 - Uncovered and corrected missing step in production data pipeline which impacted over 70% of active accounts
