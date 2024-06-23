@@ -6,9 +6,8 @@ My research interests lie primarily in computer vision and machine learning. I h
 <!--#### Technical Skills: Python, MATLAB, Android Studio-->
 
 ## Education
-- Ph.D., Computer Science --|-- Durham University							       		
-- M.Sc., Computer Vision, Machine Learning | The University of Surrey
-  and Robotics				        		
+- Ph.D., Computer Science | Durham University							       		
+- M.Sc., Computer Vision, Machine Learning and Robotics | The University of Surrey	        		
 - B.S., Enginnering | Shandong University of Technology
 
 ## Research Interests
