@@ -39,13 +39,13 @@ Last Update: 22/06/2024
 	<tr>
 		<td><center><img width="250" src="./pic/papers/sdm.jpg"></center></td>
 		<td>
-			<font size="2">Image Inpainting via Iteratively Decoupled Probabilistic Modeling
+			<font size="2Endoscopic Depth-Aware Video Inpainting 
 			<br>
-			<i><b>Wenbo Li</b>, Xin Yu, Kun Zhou, Yibing Song, Zhe Lin, Jiaya Jia</i>
+			<i><a href="https://francisxzhang.github.io/">Francis Xiatian Zhange</a>, <b>Shuang Chen</b>, <a href="https://www.swansea.ac.uk/staff/x.xie/">Xianghua Xie</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
 			<br>
-            		International Conference on Learning Representations (<b>ICLR</b>) 2024 (<b>Spotlight</b>)
+            		International Conference on Medical Image Computing and Computer Assisted Intervention (<b>MICCAI</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
-			[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">
+			<--![<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
 		</td>
 	</tr>
 
