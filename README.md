@@ -20,7 +20,12 @@ My research interests lie primarily in computer vision and machine learning. I h
 Last Update: 22/06/2024
 
 ## News
-- 
+- [06/2024] One paper is accepted by MICCAI 2024.
+- [06/2024] One paper is accepted by IEEE Transactions on Instrumentation and Measurement (TIM), 2024.
+- [05/2024] One of our work on Conversational Agents for Older Adults (CA4OA) has been accepted by Workshop on Engineering
+Interactive Systems Embedding AI Technologies (EISEAIT) 2024.
+- [03/2024] I become a reviewer for IEEE Transactions on Multimedia (TMM).
+- [02/2024] One paper is accpeted by IEEE Transactions on Multimedia (TMM), 2024.
 
 
 <!--
