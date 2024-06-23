@@ -20,17 +20,17 @@ My research interests lie primarily in computer vision and machine learning. I h
 Last Update: 22/06/2024
 
 ## News
-- [<em><a style="color: #d68d58">06/2024</a></em>] One paper is accepted by MICCAI 2024.
+- [<em><a style="color: #B23AF4">06/2024</a></em>] One paper is accepted by MICCAI 2024.
   
-- [06/2024] One paper is accepted by IEEE Transactions on Instrumentation and Measurement (TIM), 2024.
+- [<em><a style="color: #B23AF4">06/2024</a></em>] One paper is accepted by IEEE Transactions on Instrumentation and Measurement (TIM), 2024.
   
-- [05/2024] One of our work on Conversational Agents for Older Adults (CA4OA) has been accepted by Workshop on Engineering Interactive Systems Embedding AI Technologies (EISEAIT) 2024.
+- [<em><a style="color: #B23AF4">05/2024</a></em>] One of our work on Conversational Agents for Older Adults (CA4OA) has been accepted by Workshop on Engineering Interactive Systems Embedding AI Technologies (EISEAIT) 2024.
 
-- [03/2024] I become a reviewer for IEEE Transactions on Multimedia (TMM).
+- [<em><a style="color: #B23AF4">03/2024</a></em>] I become a reviewer for IEEE Transactions on Multimedia (TMM).
   
-- [02/2024] One paper is accpeted by IEEE Transactions on Multimedia (TMM), 2024.
+- [<em><a style="color: #B23AF4">02/2024</a></em>] One paper is accpeted by IEEE Transactions on Multimedia (TMM), 2024.
   
-- [02/2024] I am involved in Conversational Agents for Older Adults (CA4OA) as a program developer.
+- [<em><a style="color: #B23AF4">02/2024</a></em>] I am involved in Conversational Agents for Older Adults (CA4OA) as a program developer.
 
 
 <!--
