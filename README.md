@@ -37,7 +37,7 @@ Last Update: 22/06/2024
 	<tbody>
 
 	<tr>
-		<td><center><img width="250" src="./pic/papers/sdm.jpg"></center></td>
+		<td><center><img width="250" src="./imgs/ComingSoon.png"></center></td>
 		<td>
 			<font size="2Endoscopic Depth-Aware Video Inpainting 
 			<br>
