@@ -3,7 +3,7 @@ I am currently a final-year (2021-now) Ph.D. student in the Department of Comput
 
 
 My research interests lie primarily in computer vision and machine learning. I have done some works about image inpainting, vedio inpainting, denoising, deblurring.
-#### Technical Skills: Python, MATLAB, Android Studio
+<!--#### Technical Skills: Python, MATLAB, Android Studio-->
 
 ## Education
 - Ph.D., Computer Science | Durham University							       		
