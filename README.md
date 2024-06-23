@@ -39,7 +39,7 @@ Last Update: 22/06/2024
 	<tr>
 		<td><center><img width="250" src="./imgs/ComingSoon.png"></center></td>
 		<td>
-			<font size="2Endoscopic Depth-Aware Video Inpainting 
+			<font size="2">Endoscopic Depth-Aware Video Inpainting 
 			<br>
 			<i><a href="https://francisxzhang.github.io/">Francis Xiatian Zhange</a>, <b>Shuang Chen</b>, <a href="https://www.swansea.ac.uk/staff/x.xie/">Xianghua Xie</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
 			<br>
