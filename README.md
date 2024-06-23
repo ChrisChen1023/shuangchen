@@ -33,7 +33,21 @@ Last Update: 22/06/2024
 
 
 ## Publications [<a href="https://scholar.google.com/citations?hl=en&user=tRLJ2X4AAAAJ">Google Scholar</a>]
+<table id="tbPublications" width="100%" style="border-collapse:separate; border-spacing:0px 10px;">
+	<tbody>
 
+	<tr>
+		<td><center><img width="250" src="./pic/papers/sdm.jpg"></center></td>
+		<td>
+			<font size="2">Image Inpainting via Iteratively Decoupled Probabilistic Modeling
+			<br>
+			<i><b>Wenbo Li</b>, Xin Yu, Kun Zhou, Yibing Song, Zhe Lin, Jiaya Jia</i>
+			<br>
+            		International Conference on Learning Representations (<b>ICLR</b>) 2024 (<b>Spotlight</b>)
+			<br>
+			[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">
+		</td>
+	</tr>
 
 
 <!--
