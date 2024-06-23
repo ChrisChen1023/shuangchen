@@ -60,8 +60,8 @@ Last Update: 22/06/2024
             		IEEE Transactions on Multimedia (<b>TMM</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
 			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
-		</td>
-	</tr>
+		<!--</td>-->
+	<!--</tr>-->
 
 
 <!--
