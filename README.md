@@ -7,8 +7,8 @@ My research interests lie primarily in computer vision and machine learning. I h
 
 ## Education
 - Ph.D., Computer Science | Durham University							       		
-- M.Sc., Computer Vision, Machine Learning
-- and Robotics	| The University of Surrey			        		
+- M.Sc., Computer Vision, Machine Learning | The University of Surrey
+  and Robotics				        		
 - B.S., Enginnering | Shandong University of Technology
 
 ## Research Interests
