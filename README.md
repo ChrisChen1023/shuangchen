@@ -46,7 +46,7 @@ Last Update: 01/07/2024
 	- 2nd Year Module: Data science (Probability, Image Processing and Computer Graphics)
    
 ## Experience
-- Research Assistant at <a href="https://www.durham.ac.uk//">Durham University</a>
+- <b>Research Assistant</b> at <a href="https://www.durham.ac.uk/">Durham University</a>
 
 	02/2024 - 05/2024
 
@@ -54,6 +54,11 @@ Last Update: 01/07/2024
  
 	PI: <a href="https://www.durham.ac.uk/staff/lai-chong-law/">Effie Lai-Chong Law</a>
 
+- <b>Student Helper</b> at <a href="https://www.durham.ac.uk//">Durham University</a>
+
+  	09/2022
+
+   	Help to orignize The 21st annual ACM SIGGRAPH / Eurographics Symposium on Computer Animation (<a href="https://computeranimation.org/2022/index.html">SCA 2022</a>)
  
 
 ## Selected Publications [<a href="https://scholar.google.com/citations?hl=en&user=tRLJ2X4AAAAJ">Google Scholar</a>]
