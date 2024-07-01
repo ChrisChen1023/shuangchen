@@ -102,7 +102,7 @@ Last Update: 01/07/2024
 			<br>
             		IEEE Transactions on Multimedia (<b>TMM</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
-			[<a href='https://ieeexplore.ieee.org/document/10458430'><b>paper</b></a>|<a href='https://github.com/ChrisChen1023/HINT'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/chrischen1023/HINT?style=social"></td>
+			[<a href='https://ieeexplore.ieee.org/document/10458430'><b>paper</b></a>|<a href='https://github.com/ChrisChen1023/HINT'><b>code</b></a>|<a href='https://www.youtube.com/watch?v=Qkcg7nz1_rI'><b>video</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/chrischen1023/HINT?style=social">  
 		<!--</td>-->
 	<!--</tr>-->
 
