@@ -81,7 +81,7 @@ Last Update: 22/06/2024
 
 
 
- 
+<p align=right>
 ## Map
 	<a class="pull-right" href="#">
     <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=xfHZrCwVWeTUpPyh_V2GIKfmaVidU6pmDdDrefgq0yE&cl=ffffff&w=a"></script>
