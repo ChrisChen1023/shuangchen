@@ -61,6 +61,7 @@ Last Update: 01/07/2024
 			<font size="2">HINT: High-quality INpainting Transformer with Mask-Aware Encoding and Enhanced Attention
 			<br>
 			<i><b>Shuang Chen</b>,<a href="http://www.atapour.co.uk/">Amir Atapour Abarghouei</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
+   			</br>
 			<br>
             		IEEE Transactions on Multimedia (<b>TMM</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
