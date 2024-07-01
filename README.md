@@ -57,15 +57,15 @@ Last Update: 01/07/2024
 
         <tr>
 		<td><center><img width="250" src="./imgs/papers/hint.png"></center></td>
-		[<td>
+		<td>
 			<font size="2">HINT: High-quality INpainting Transformer with Mask-Aware Encoding and Enhanced Attention
 			<br>
 			<i><b>Shuang Chen</b>,<a href="http://www.atapour.co.uk/">Amir Atapour Abarghouei</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
 			<br>
             		IEEE Transactions on Multimedia (<b>TMM</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
-			[<a href='https://ieeexplore.ieee.org/document/10458430'><b>paper</b></a>|<a href='https://github.com/ChrisChen1023/HINT'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/chrischen1023/HINT?style=social">
-		</td>]
+			[<a href='https://ieeexplore.ieee.org/document/10458430'><b>paper</b></a>|<a href='https://github.com/ChrisChen1023/HINT'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/chrischen1023/HINT?style=social"></td>
+		</td>
 	</tr>
 
  
