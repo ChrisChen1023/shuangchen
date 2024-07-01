@@ -69,7 +69,7 @@ Last Update: 22/06/2024
 		<td>
 			<font size="2">Geometric Features Enhanced Human-Object Interaction Detection 
 			<br>
-			<i><a https://scholar.google.com.hk/citations?user=d9P2VxwAAAAJ&hl=en/">Manli Zhu</a>, <a href="http://www.edho.net/">Edmond S. L. Ho</a>,<b>Shuang Chen</b>,<a href="http://lyang.uk/">Longzhi Yang</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
+			<i><a href=https://scholar.google.com.hk/citations?user=d9P2VxwAAAAJ&hl=en/">Manli Zhu</a>, <a href="http://www.edho.net/">Edmond S. L. Ho</a>,<b>Shuang Chen</b>,<a href="http://lyang.uk/">Longzhi Yang</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
 			<br>
             		IEEE Transactions on Instrumentation and Measurement (<b>TIM</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
