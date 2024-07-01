@@ -56,20 +56,20 @@ Last Update: 01/07/2024
 
 - <b>Student Helper</b> at <a href="https://www.durham.ac.uk//">Durham University</a>
 
-  	09/2022
+	09/2022
 
    	Help to orignize The 21st annual ACM SIGGRAPH / Eurographics Symposium on Computer Animation (<a href="https://computeranimation.org/2022/index.html">SCA 2022</a>)
 
  - I gave a invited presentation on Cleft Aesthetic Outcomes Research Group at Newcastle host by <a href="https://www.newcastle-hospitals.nhs.uk/consultants/mr-david-sainsbury/">David Sainsbury</a>
 
-  	12/2022
+	12/2022
 
    	Gave a presentation about our work "<a href="https://ieeexplore.ieee.org/abstract/document/9926917">A Feasibility Study on Image Inpainting for Non-cleft Lip Generation from Patients with Cleft Lip</a>" and "<a href="https://www.sciencedirect.com/science/article/pii/S2665963823000544">INCLG: Inpainting for non-cleft lip generation with a multi-task image processing network</a>"
 
 
  - I gave a invited presentation on IEEE-EMBS International Conference on Biomedical and Health Informatics (BHI 2022)
 
-  	10/2022
+	10/2022
 
    	Gave a presentation about our work "<a href="https://ieeexplore.ieee.org/abstract/document/9926917">A Feasibility Study on Image Inpainting for Non-cleft Lip Generation from Patients with Cleft Lip</a>"
    
