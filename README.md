@@ -42,8 +42,8 @@ Last Update: 01/07/2024
 	- Postgraduate Module: Text Mining and Language Analytics
 	- Postgraduate Module: Programming for Data Science
 	- 2nd Year Module: Network and System
- 	- 2nd Year Module: Machine Learning
-  	- 2dn Year Module: Data science (Probability, Image Processing and Computer Graphics)
+	- 2nd Year Module: Machine Learning
+	- 2nd Year Module: Data science (Probability, Image Processing and Computer Graphics)
    
  
 ## Grant Involved
