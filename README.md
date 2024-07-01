@@ -32,7 +32,7 @@ Last Update: 22/06/2024
 - [<em><a style="color: #B23AF4">02/2024</a></em>] I am involved in Conversational Agents for Older Adults (CA4OA) as a program developer.
 
 
-## Publications [<a href="https://scholar.google.com/citations?hl=en&user=tRLJ2X4AAAAJ">Google Scholar</a>]
+## Selected Publications [<a href="https://scholar.google.com/citations?hl=en&user=tRLJ2X4AAAAJ">Google Scholar</a>]
 <table id="tbPublications" width="100%" style="border-collapse:separate; border-spacing:0px 10px;">
 	<tbody>
 
