@@ -1,5 +1,5 @@
 # Shuang (Chris) Chen
-I am currently a final-year (2021-now) Ph.D. student in the Department of Computer Science, at the Durham University (UK), under the supervision of <a href="https://hubertshum.com/">Dr. Hubert P. H. Shum</a> and <a href="http://www.atapour.co.uk/">Dr. Amir Atapour Abarghouei</a>. Prior to that, I received my Master degrees from the University of Surrey (UK) and my Bachelor degree from Shandong University of Techonology (China).
+I am currently a final-year (2021-now) Ph.D. student in the Department of Computer Science, at <a href="https://www.durham.ac.uk/">Durham University</a> (UK), under the supervision of <a href="https://hubertshum.com/">Dr. Hubert P. H. Shum</a> and <a href="http://www.atapour.co.uk/">Dr. Amir Atapour Abarghouei</a>. Prior to that, I received my Master degrees from the <a href="https://www.surrey.ac.uk/">University of Surrey</a> (UK) and my Bachelor degree from <a href="https://www.sdut.edu.cn/">Shandong University of Techonology</a> (China).
 
 
 <!--My **research interests** lie primarily in computer vision and machine learning. I have done some works about image inpainting, vedio inpainting, denoising, deblurring.-->
