@@ -45,7 +45,11 @@ Last Update: 01/07/2024
 	- 2nd Year Module: Machine Learning
 	- 2nd Year Module: Data science (Probability, Image Processing and Computer Graphics)
    
- 
+## Experience
+- Research Assistant at <a href="https://www.durham.ac.uk//">Durham University</a>
+	Project: Conversational Agents for Older Adults (CA4OA)
+	PI: <a href="https://www.durham.ac.uk/staff/lai-chong-law/">Effie Lai-Chong Law</a>
+
 ## Grant Involved
 
 
@@ -58,7 +62,7 @@ Last Update: 01/07/2024
 		<td>
 			<font size="2">Endoscopic Depth-Aware Video Inpainting 
 			<br>
-			<i><a href="https://francisxzhang.github.io/">Francis Xiatian Zhange</a>, <b>Shuang Chen</b>, <a href="https://www.swansea.ac.uk/staff/x.xie/">Xianghua Xie</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
+			<i><a href="https://francisxzhang.github.io/">Francis Xiatian Zhang</a>, <b>Shuang Chen</b>, <a href="https://www.swansea.ac.uk/staff/x.xie/">Xianghua Xie</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
 			<br>
             		International Conference on Medical Image Computing and Computer Assisted Intervention (<b>MICCAI</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<!--<br>-->
