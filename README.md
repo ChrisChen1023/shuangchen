@@ -16,7 +16,7 @@ My **research interests** lie primarily in computer vision and machine learning.
 - Image Inpainting, Denoising, Drblurring, Vedio Inpainting
 
 
-Last Update: 22/06/2024
+Last Update: 01/07/2024
 
 ## News
 - [<em><a style="color: #B23AF4">06/2024</a></em>] One paper is accepted by MICCAI 2024.
@@ -31,6 +31,9 @@ Last Update: 22/06/2024
   
 - [<em><a style="color: #B23AF4">02/2024</a></em>] I am involved in Conversational Agents for Older Adults (CA4OA) as a program developer.
 
+
+## Map
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=xfHZrCwVWeTUpPyh_V2GIKfmaVidU6pmDdDrefgq0yE&cl=ffffff&w=a"></script>
 
 ## Selected Publications [<a href="https://scholar.google.com/citations?hl=en&user=tRLJ2X4AAAAJ">Google Scholar</a>]
 <table id="tbPublications" width="100%" style="border-collapse:separate; border-spacing:0px 10px;">
@@ -80,10 +83,6 @@ Last Update: 22/06/2024
 <!--</table>-->
 
 
-
-
-## Map
-    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=xfHZrCwVWeTUpPyh_V2GIKfmaVidU6pmDdDrefgq0yE&cl=ffffff&w=a"></script>
 
 
 
