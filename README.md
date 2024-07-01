@@ -78,9 +78,9 @@ Last Update: 22/06/2024
 	<!--</tr>-->
 
  
-
+## Map
 	<a class="pull-right" href="#">
-    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=wFmme877sPr9Bi-O6mxYxCQ5d5gLMou51e3Rf9vVPyQ&cl=ffffff&w=a"></script>
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=xfHZrCwVWeTUpPyh_V2GIKfmaVidU6pmDdDrefgq0yE&cl=ffffff&w=a"></script>
 	</a>
 
 
