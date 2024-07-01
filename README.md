@@ -38,7 +38,7 @@ Last Update: 01/07/2024
 </a>
 
 ## Selected Publications [<a href="https://scholar.google.com/citations?hl=en&user=tRLJ2X4AAAAJ">Google Scholar</a>]
-<table id="tbPublications" width="100%" style="border-collapse:separate; border-spacing:0px 10px;">
+<!--<table id="tbPublications" width="100%" style="border-collapse:separate; border-spacing:0px 10px;">-->
 	<tbody>
 
 	<tr>
