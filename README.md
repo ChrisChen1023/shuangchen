@@ -37,6 +37,18 @@ Last Update: 01/07/2024
     <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=xfHZrCwVWeTUpPyh_V2GIKfmaVidU6pmDdDrefgq0yE&cl=ffffff&w=a"></script>
 </a>
 
+## Teaching
+- [<em><a style="color: #B23AF4">Demonstrator</a></em>]
+	- Postgraduate Module: Text Mining and Language Analytics
+	- Postgraduate Module: Programming for Data Science
+	- 2nd Year Module: Network and System
+ 	- 2nd Year Module: Machine Learning
+  	- 2dn Year Module: Data science (Probability, Image Processing and Computer Graphics)
+   
+ 
+## Grant Involved
+
+
 ## Selected Publications [<a href="https://scholar.google.com/citations?hl=en&user=tRLJ2X4AAAAJ">Google Scholar</a>]
 <table id="tbPublications" width="100%" style="border-collapse:separate; border-spacing:0px 10px;">
 	<tbody>
