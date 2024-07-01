@@ -53,13 +53,14 @@ Last Update: 01/07/2024
 	Project: <a href="https://aihs.webspace.durham.ac.uk/conversational-agents-for-older-adults-ca4oa/#:~:text=Trustworthy%20conversational%20agents%20(CAs)%20can,and%20cannot%20benefit%20from%20them.">Conversational Agents for Older Adults (CA4OA)</a>
  
 	PI: <a href="https://www.durham.ac.uk/staff/lai-chong-law/">Effie Lai-Chong Law</a>
- 
+
 --------------------------------------------------
 - <b>Student Helper</b> at <a href="https://www.durham.ac.uk//">Durham University</a>
 
 	09/2022
 
    	Help to orignize The 21st annual ACM SIGGRAPH / Eurographics Symposium on Computer Animation (<a href="https://computeranimation.org/2022/index.html">SCA 2022</a>)
+
 --------------------------------------------------
 - I gave a invited presentation on Cleft Aesthetic Outcomes Research Group at Newcastle host by <a href="https://www.newcastle-hospitals.nhs.uk/consultants/mr-david-sainsbury/">David Sainsbury</a>
 
