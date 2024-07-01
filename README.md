@@ -33,7 +33,9 @@ Last Update: 01/07/2024
 
 
 ## Map
+<a class="pull-right" href="#">
     <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=xfHZrCwVWeTUpPyh_V2GIKfmaVidU6pmDdDrefgq0yE&cl=ffffff&w=a"></script>
+</a>
 
 ## Selected Publications [<a href="https://scholar.google.com/citations?hl=en&user=tRLJ2X4AAAAJ">Google Scholar</a>]
 <table id="tbPublications" width="100%" style="border-collapse:separate; border-spacing:0px 10px;">
