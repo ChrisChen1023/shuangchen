@@ -51,8 +51,8 @@ Last Update: 01/07/2024
             		International Conference on Medical Image Computing and Computer Assisted Intervention (<b>MICCAI</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
 			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
-		</td>
-	</tr>
+		<!--</td>-->
+	<!--</tr>-->
 
 
         <tr>
@@ -65,8 +65,8 @@ Last Update: 01/07/2024
             		IEEE Transactions on Multimedia (<b>TMM</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
 			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
-		</td>
-	</tr>
+		<!--</td>-->
+	<!--</tr>-->
 
  
          <tr>
@@ -79,10 +79,10 @@ Last Update: 01/07/2024
             		IEEE Transactions on Instrumentation and Measurement (<b>TIM</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
 			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
-		</td>
-	</tr>
-</tbody>
-</table>
+		<!--</td>-->
+	<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->
 
 
 
