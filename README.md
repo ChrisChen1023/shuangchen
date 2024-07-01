@@ -49,7 +49,7 @@ Last Update: 01/07/2024
 			<i><a href="https://francisxzhang.github.io/">Francis Xiatian Zhange</a>, <b>Shuang Chen</b>, <a href="https://www.swansea.ac.uk/staff/x.xie/">Xianghua Xie</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
 			<br>
             		International Conference on Medical Image Computing and Computer Assisted Intervention (<b>MICCAI</b>) 2024 <!--(<b>Spotlight</b>)-->
-			<br>
+			<!--<br>-->
 			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
 		<!--</td>-->
 	<!--</tr>-->
@@ -64,7 +64,7 @@ Last Update: 01/07/2024
 			<br>
             		IEEE Transactions on Multimedia (<b>TMM</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
-			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
+			[<a href='https://ieeexplore.ieee.org/document/10458430'><b>paper</b></a>|<a href='https://github.com/ChrisChen1023/HINT'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/chrischen1023/HINT?style=social">
 		<!--</td>-->
 	<!--</tr>-->
 
