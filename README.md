@@ -88,7 +88,7 @@ Last Update: 01/07/2024
 			<br>
             		International Conference on Medical Image Computing and Computer Assisted Intervention (<b>MICCAI</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
-			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|]-->[<a href='https://github.com/FrancisXZhang/DAEVI'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/FrancisXZhang/DAEBIstyle=social">
+			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|]-->[<a href='https://github.com/FrancisXZhang/DAEVI'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/FrancisXZhang/DAEVI?style=social">
 		<!--</td>-->
 	<!--</tr>-->
 
