@@ -62,14 +62,14 @@ Last Update: 01/07/2024
    	Help to orignize The 21st annual ACM SIGGRAPH / Eurographics Symposium on Computer Animation (<a href="https://computeranimation.org/2022/index.html">SCA 2022</a>)
 
 --------------------------------------------------
-- I gave a invited presentation on Cleft Aesthetic Outcomes Research Group at Newcastle host by <a href="https://www.newcastle-hospitals.nhs.uk/consultants/mr-david-sainsbury/">David Sainsbury</a>
+- I gave an invited presentation on Cleft Aesthetic Outcomes Research Group at Newcastle host by <a href="https://www.newcastle-hospitals.nhs.uk/consultants/mr-david-sainsbury/">David Sainsbury</a>
 
 	12/2022
 
 	Gave a presentation about our work "<a href="https://ieeexplore.ieee.org/abstract/document/9926917">A Feasibility Study on Image Inpainting for Non-cleft Lip Generation from Patients with Cleft Lip</a>" and "<a href="https://www.sciencedirect.com/science/article/pii/S2665963823000544">INCLG: Inpainting for non-cleft lip generation with a multi-task image processing network</a>"
 
 --------------------------------------------------
-- I gave a invited presentation on IEEE-EMBS International Conference on Biomedical and Health Informatics (<a href="https://bhi-bsn-2022.org/">BHI 2022</a>)
+- I gave an invited presentation on IEEE-EMBS International Conference on Biomedical and Health Informatics (<a href="https://bhi-bsn-2022.org/">BHI 2022</a>)
 
 	10/2022
 
@@ -82,13 +82,13 @@ Last Update: 01/07/2024
 	<tr>
 		<td><center><img width="250" src="./imgs/ComingSoon.png"></center></td>
 		<td>
-			<font size="2">Endoscopic Depth-Aware Video Inpainting 
+			<font size="2">Depth-Aware Endoscopic Video Inpainting 
 			<br>
 			<i><a href="https://francisxzhang.github.io/">Francis Xiatian Zhang</a>, <b>Shuang Chen</b>, <a href="https://www.swansea.ac.uk/staff/x.xie/">Xianghua Xie</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
 			<br>
             		International Conference on Medical Image Computing and Computer Assisted Intervention (<b>MICCAI</b>) 2024 <!--(<b>Spotlight</b>)-->
-			<!--<br>-->
-			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
+			<br>
+			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|]-->[<a href='https://github.com/FrancisXZhang/DAEVI'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/FrancisXZhang/DAEBIstyle=social">
 		<!--</td>-->
 	<!--</tr>-->
 
