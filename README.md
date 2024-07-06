@@ -101,7 +101,7 @@ Last Update: 01/07/2024
 		<td>
 			<font size="2">Inclusive AI-driven Music Chatbots for Older Adults
 			<br>
-			<i><a href=https://scholar.google.com/citations?user=CFXzL9cAAAAJ&hl=en">Farkhandah Aziz</a>, <a href="https://www.durham.ac.uk/staff/lai-chong-law/">Effie L. C. Law</a>, <a href="https://www.luisli.org/">Li Li</a>, <b>Shuang Chen</b></i>
+			<i><a href="https://scholar.google.com/citations?user=CFXzL9cAAAAJ&hl=en">Farkhandah Aziz</a>, <a href="https://www.durham.ac.uk/staff/lai-chong-law/">Effie L. C. Law</a>, <a href="https://www.luisli.org/">Li Li</a>, <b>Shuang Chen</b></i>
 			<br>
             		Engineering Interactive Systems Embedding AI Technologies (<b>EISEAIT</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
