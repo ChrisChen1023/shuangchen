@@ -80,8 +80,9 @@ Last Update: 01/07/2024
 	<tbody>
 
 		
-   <tr>
-  <b>2024</b>
+         <tr>
+		<td><b>2024</b></td>
+		<td>
 	<tr>
 		<td><center><img width="250" src="./imgs/ComingSoon.png"></center></td>
 		<td>
@@ -150,8 +151,9 @@ Last Update: 01/07/2024
 			<br>
 			[<a href='https://www.sciencedirect.com/science/article/pii/S2665963823000544'><b>paper</b></a>|<a href='https://github.com/ChrisChen1023/INCLG'><b>code</b></a> | <a href='https://codeocean.com/capsule/4388343/tree/v1'><b>CodeOcean</b></a>]
 				
- <tr>
-<b>2022</b>
+         <tr>
+		<td><b>2022</b></td>
+		<td>
          <tr>
 		<td><center><img width="250" src="./imgs/papers/NCLG-MT.png"></center></td>
 		<td>
