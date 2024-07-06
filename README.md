@@ -119,7 +119,7 @@ Last Update: 01/07/2024
 			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
 
          <tr>
-		<td><center><img width="250" src="./imgs/papers/INCLG.png.png"></center></td>
+		<td><center><img width="250" src="./imgs/papers/INCLG.png"></center></td>
 		<td>
 			<font size="2">INCLG: Inpainting for non-cleft lip generation with a multi-task image processing network 
 			<br>
