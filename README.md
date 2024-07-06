@@ -78,7 +78,7 @@ Last Update: 01/07/2024
 ## Selected Publications [<a href="https://scholar.google.com/citations?hl=en&user=tRLJ2X4AAAAJ">Google Scholar</a>]
 <table id="tbPublications" width="100%" style="border-collapse:separate; border-spacing:0px 10px;">
 	<tbody>
-
+<b>2024</b>
 	<tr>
 		<td><center><img width="250" src="./imgs/ComingSoon.png"></center></td>
 		<td>
@@ -91,6 +91,18 @@ Last Update: 01/07/2024
 			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|]-->[<a href='https://github.com/FrancisXZhang/DAEVI'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/FrancisXZhang/DAEVI?style=social">
 		<!--</td>-->
 	<!--</tr>-->
+
+
+	 <tr>
+		<td><center><img width="250" src="./imgs/papers/chatbot.png"></center></td>
+		<td>
+			<font size="2">Inclusive AI-driven Music Chatbots for Older Adults
+			<br>
+			<a href=https://scholar.google.com/citations?user=CFXzL9cAAAAJ&hl=en">Farkhandah Aziz</a>, <a href="https://www.durham.ac.uk/staff/lai-chong-law/">Effie L. C. Law</a>, <a href="https://www.luisli.org/">Li Li</a>, <b>Shuang Chen</b>
+			<br>
+            		Engineering Interactive Systems Embedding AI Technologies (<b>EISEAIT</b>) 2024 <!--(<b>Spotlight</b>)-->
+			<br>
+			[<a href='https://www.easychair.org/publications/preprint_open/V5MJ'><b>paper</b></a>|<a href='https://github.com/l1997i/ca4oa-music-chatbot'><b>code</b></a>]
 
 
         <tr>
@@ -118,6 +130,7 @@ Last Update: 01/07/2024
 			<br>
 			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
 
+<b>2023</b>
          <tr>
 		<td><center><img width="250" src="./imgs/papers/INCLG.png"></center></td>
 		<td>
@@ -128,7 +141,7 @@ Last Update: 01/07/2024
             		Software Impacts, (<b>SIMPAC</b>) 2023 <!--(<b>Spotlight</b>)-->
 			<br>
 			[<a href='https://www.sciencedirect.com/science/article/pii/S2665963823000544'><b>paper</b></a>|<a href='https://github.com/ChrisChen1023/INCLG'><b>code</b></a> | <a href='https://codeocean.com/capsule/4388343/tree/v1'><b>CodeOcean</b></a>]
-
+<b>2022</b>
          <tr>
 		<td><center><img width="250" src="./imgs/papers/NCLG-MT.png"></center></td>
 		<td>
