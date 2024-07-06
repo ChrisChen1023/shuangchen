@@ -78,7 +78,10 @@ Last Update: 01/07/2024
 ## Selected Publications [<a href="https://scholar.google.com/citations?hl=en&user=tRLJ2X4AAAAJ">Google Scholar</a>]
 <table id="tbPublications" width="100%" style="border-collapse:separate; border-spacing:0px 10px;">
 	<tbody>
-<b>2024</b>
+
+		
+   <tr>
+  <b>2024</b>
 	<tr>
 		<td><center><img width="250" src="./imgs/ComingSoon.png"></center></td>
 		<td>
@@ -98,7 +101,7 @@ Last Update: 01/07/2024
 		<td>
 			<font size="2">Inclusive AI-driven Music Chatbots for Older Adults
 			<br>
-			<a href=https://scholar.google.com/citations?user=CFXzL9cAAAAJ&hl=en">Farkhandah Aziz</a>, <a href="https://www.durham.ac.uk/staff/lai-chong-law/">Effie L. C. Law</a>, <a href="https://www.luisli.org/">Li Li</a>, <b>Shuang Chen</b>
+			<i><a href=https://scholar.google.com/citations?user=CFXzL9cAAAAJ&hl=en">Farkhandah Aziz</a>, <a href="https://www.durham.ac.uk/staff/lai-chong-law/">Effie L. C. Law</a>, <a href="https://www.luisli.org/">Li Li</a>, <b>Shuang Chen</b></i>
 			<br>
             		Engineering Interactive Systems Embedding AI Technologies (<b>EISEAIT</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
@@ -129,25 +132,27 @@ Last Update: 01/07/2024
             		IEEE Transactions on Instrumentation and Measurement (<b>TIM</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
 			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
-
+ <tr>
 <b>2023</b>
          <tr>
 		<td><center><img width="250" src="./imgs/papers/INCLG.png"></center></td>
 		<td>
 			<font size="2">INCLG: Inpainting for non-cleft lip generation with a multi-task image processing network 
 			<br>
-			<i><a href="https://scholar.google.com.hk/citations?user=d9P2VxwAAAAJ&hl=en/">Manli Zhu</a>, <a href="http://www.edho.net/">Edmond S. L. Ho</a>,<b>Shuang Chen</b>,<a href="http://lyang.uk/">Longzhi Yang</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
+			<i><b>Shuang Chen</b>,<a href="http://www.atapour.co.uk/">Amir Atapour Abarghouei</a>,<a href="http://www.edho.net/">Edmond S. L. Ho</a>,<a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
 			<br>
             		Software Impacts, (<b>SIMPAC</b>) 2023 <!--(<b>Spotlight</b>)-->
 			<br>
 			[<a href='https://www.sciencedirect.com/science/article/pii/S2665963823000544'><b>paper</b></a>|<a href='https://github.com/ChrisChen1023/INCLG'><b>code</b></a> | <a href='https://codeocean.com/capsule/4388343/tree/v1'><b>CodeOcean</b></a>]
+				
+ <tr>
 <b>2022</b>
          <tr>
 		<td><center><img width="250" src="./imgs/papers/NCLG-MT.png"></center></td>
 		<td>
 			<font size="2">A Feasibility Study on Image Inpainting for Non-Cleft Lip Generation from Patients with Cleft Lip
 			<br>
-			<i><a href="https://scholar.google.com.hk/citations?user=d9P2VxwAAAAJ&hl=en/">Manli Zhu</a>, <a href="http://www.edho.net/">Edmond S. L. Ho</a>,<b>Shuang Chen</b>,<a href="http://lyang.uk/">Longzhi Yang</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
+			<i><b>Shuang Chen</b>,<a href="http://www.atapour.co.uk/">Amir Atapour Abarghouei</a>,<a>Jane Kerby</a>, <a href="http://www.edho.net/">Edmond S. L. Ho</a>,<a href="https://www.newcastle-hospitals.nhs.uk/consultants/mr-david-sainsbury/">David C. G. Sainsbury</a>, <a href="https://www.researchgate.net/profile/Sophie-Butterworth-2">Sophie Butterworth</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
 			<br>
             		 IEEE-EMBS International Conference on Biomedical and Health Informatics (<b>BHI</b>) 2022 <!--(<b>Spotlight</b>)-->
 			<br>
