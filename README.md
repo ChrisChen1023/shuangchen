@@ -117,6 +117,29 @@ Last Update: 01/07/2024
             		IEEE Transactions on Instrumentation and Measurement (<b>TIM</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
 			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
+
+         <tr>
+		<td><center><img width="250" src="./imgs/papers/INCLG.png.png"></center></td>
+		<td>
+			<font size="2">INCLG: Inpainting for non-cleft lip generation with a multi-task image processing network 
+			<br>
+			<i><a href="https://scholar.google.com.hk/citations?user=d9P2VxwAAAAJ&hl=en/">Manli Zhu</a>, <a href="http://www.edho.net/">Edmond S. L. Ho</a>,<b>Shuang Chen</b>,<a href="http://lyang.uk/">Longzhi Yang</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
+			<br>
+            		Software Impacts, (<b>SIMPAC</b>) 2023 <!--(<b>Spotlight</b>)-->
+			<br>
+			[<a href='https://www.sciencedirect.com/science/article/pii/S2665963823000544'><b>paper</b></a>|<a href='https://github.com/ChrisChen1023/INCLG'><b>code</b></a> | <a href='https://codeocean.com/capsule/4388343/tree/v1'><b>CodeOcean</b></a>]
+
+         <tr>
+		<td><center><img width="250" src="./imgs/papers/NCLG-MT.png"></center></td>
+		<td>
+			<font size="2">A Feasibility Study on Image Inpainting for Non-Cleft Lip Generation from Patients with Cleft Lip
+			<br>
+			<i><a href="https://scholar.google.com.hk/citations?user=d9P2VxwAAAAJ&hl=en/">Manli Zhu</a>, <a href="http://www.edho.net/">Edmond S. L. Ho</a>,<b>Shuang Chen</b>,<a href="http://lyang.uk/">Longzhi Yang</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
+			<br>
+            		 IEEE-EMBS International Conference on Biomedical and Health Informatics (<b>BHI</b>) 2022 <!--(<b>Spotlight</b>)-->
+			<br>
+			[<a href='https://ieeexplore.ieee.org/abstract/document/9926917'><b>paper</b></a>|<a href='https://github.com/ChrisChen1023/NCLG-MT'><b>code</b></a>]   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/chrischen1023/NCLG-MT?style=social">  
+   
 		<!--</td>-->
 	<!--</tr>-->
 <!--</tbody>-->
