@@ -1,5 +1,5 @@
 # Shuang (Chris) Chen
-I am currently a final-year (2021-now) Ph.D. student in the Department of Computer Science, at <a href="https://www.durham.ac.uk/">Durham University</a> (UK), under the supervision of <a href="https://hubertshum.com/">Dr. Hubert P. H. Shum</a> and <a href="http://www.atapour.co.uk/">Dr. Amir Atapour Abarghouei</a>. Prior to that, I received my Master degrees from the <a href="https://www.surrey.ac.uk/">University of Surrey</a> (UK) and my Bachelor degree from <a href="https://www.sdut.edu.cn/">Shandong University of Techonology</a> (China).
+I am currently a final-year (2021-now) Ph.D. student in the Department of Computer Science, at <a href="https://www.durham.ac.uk/">Durham University</a> (UK), under the supervision of <a href="https://hubertshum.com/">Dr. Hubert P. H. Shum</a> and <a href="http://www.atapour.co.uk/">Dr. Amir Atapour Abarghouei</a>. Prior to that, I received my Master's degree from the <a href="https://www.surrey.ac.uk/">University of Surrey</a> (UK) and my Bachelor's degree from <a href="https://www.sdut.edu.cn/">Shandong University of Techonology</a> (China).
 
 
 <!--My **research interests** lie primarily in computer vision and machine learning. I have done some works about image inpainting, vedio inpainting, denoising, deblurring.-->
@@ -8,12 +8,12 @@ I am currently a final-year (2021-now) Ph.D. student in the Department of Comput
 ## Education
 - Ph.D., Computer Science | Durham University							       		
 - M.Sc., Computer Vision, Machine Learning and Robotics | The University of Surrey	        		
-- B.S., Enginnering | Shandong University of Technology
+- B.S., Engineering | Shandong University of Technology
 
 ## Research Interests
-- Computer Vison and Machine Learning
+- Computer Vision and Machine Learning
 - Image Processing
-- Image Inpainting, Denoising, Drblurring, Vedio Inpainting
+- Image Inpainting, Denoising, Drblurring, Video Inpainting
 
 
 Last Update: 01/07/2024
@@ -27,7 +27,7 @@ Last Update: 01/07/2024
 
 - [<em><a style="color: #B23AF4">03/2024</a></em>] I become a reviewer for IEEE Transactions on Multimedia (TMM).
   
-- [<em><a style="color: #B23AF4">02/2024</a></em>] One paper is accpeted by IEEE Transactions on Multimedia (TMM), 2024.
+- [<em><a style="color: #B23AF4">02/2024</a></em>] One paper is accepted by IEEE Transactions on Multimedia (TMM), 2024.
   
 - [<em><a style="color: #B23AF4">02/2024</a></em>] I am involved in Conversational Agents for Older Adults (CA4OA) as a program developer.
 
@@ -62,14 +62,14 @@ Last Update: 01/07/2024
    	Help to orignize The 21st annual ACM SIGGRAPH / Eurographics Symposium on Computer Animation (<a href="https://computeranimation.org/2022/index.html">SCA 2022</a>)
 
 --------------------------------------------------
-- I gave an invited presentation on Cleft Aesthetic Outcomes Research Group at Newcastle host by <a href="https://www.newcastle-hospitals.nhs.uk/consultants/mr-david-sainsbury/">David Sainsbury</a>
+- I gave an invited presentation on Cleft Aesthetic Outcomes Research Group at Newcastle hosted by <a href="https://www.newcastle-hospitals.nhs.uk/consultants/mr-david-sainsbury/">David Sainsbury</a>
 
 	12/2022
 
 	Gave a presentation about our work "<a href="https://ieeexplore.ieee.org/abstract/document/9926917">A Feasibility Study on Image Inpainting for Non-cleft Lip Generation from Patients with Cleft Lip</a>" and "<a href="https://www.sciencedirect.com/science/article/pii/S2665963823000544">INCLG: Inpainting for non-cleft lip generation with a multi-task image processing network</a>"
 
 --------------------------------------------------
-- I gave an invited presentation on IEEE-EMBS International Conference on Biomedical and Health Informatics (<a href="https://bhi-bsn-2022.org/">BHI 2022</a>)
+- I gave an invited presentation at IEEE-EMBS International Conference on Biomedical and Health Informatics (<a href="https://bhi-bsn-2022.org/">BHI 2022</a>)
 
 	10/2022
 
