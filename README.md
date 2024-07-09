@@ -1,5 +1,7 @@
 # Shuang (Chris) Chen
-# Currently in Durham (UK)
+
+Currently in Durham (UK)
+
 I am currently a final-year (2021-now) Ph.D. student in the Department of Computer Science, at <a href="https://www.durham.ac.uk/">Durham University</a> (UK), under the supervision of <a href="https://hubertshum.com/">Dr. Hubert P. H. Shum</a> and <a href="http://www.atapour.co.uk/">Dr. Amir Atapour Abarghouei</a>. Prior to that, I received my Master's degree from the <a href="https://www.surrey.ac.uk/">University of Surrey</a> (UK) and my Bachelor's degree from <a href="https://www.sdut.edu.cn/">Shandong University of Techonology</a> (China).
 
 
@@ -17,7 +19,7 @@ I am currently a final-year (2021-now) Ph.D. student in the Department of Comput
 - Image Inpainting, Denoising, Drblurring, Video Inpainting
 
 
-Last Update: 01/07/2024
+Last Update: 09/07/2024
 
 ## News
 - [<em><a style="color: #B23AF4">06/2024</a></em>] One paper is accepted by MICCAI 2024.
