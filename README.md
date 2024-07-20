@@ -19,9 +19,11 @@ I am currently a final-year (2021-now) Ph.D. student in the Department of Comput
 - Image Inpainting, Denoising, Drblurring, Video Inpainting
 
 
-Last Update: 09/07/2024
+Last Update: 20/07/2024
 
 ## News
+- [<em><a style="color: #B23AF4">07/2024</a></em>] One paper is accepted by BMVC 2024.
+
 - [<em><a style="color: #B23AF4">06/2024</a></em>] One paper is accepted by MICCAI 2024.
   
 - [<em><a style="color: #B23AF4">06/2024</a></em>] One paper is accepted by IEEE Transactions on Instrumentation and Measurement (TIM), 2024.
@@ -86,6 +88,20 @@ Last Update: 09/07/2024
          <tr>
 		<td><b>2024</b></td>
 		<td>
+
+
+        <tr>
+		<td><center><img width="250" src="./imgs/ComingSoon.png"></center></td>
+		<td>
+			<font size="2">MxT: Mamba x Transformer for Image Inpainting 
+			<br>
+			<i>, <b>Shuang Chen</b>, <a>Haozheng Zhang</a>,<a href="http://www.atapour.co.uk/">Amir Atapour Abarghouei</a>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a></i>
+			<br>
+            		The 35th British Machine Vision Conference (<b>BMVC</b>) 2024 <!--(<b>Spotlight</b>)-->
+			<br>
+			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|] [<a href='https://github.com/FrancisXZhang/DAEVI'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/FrancisXZhang/DAEVI?style=social">-->
+
+   
 	<tr>
 		<td><center><img width="250" src="./imgs/ComingSoon.png"></center></td>
 		<td>
