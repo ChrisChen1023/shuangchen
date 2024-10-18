@@ -103,7 +103,7 @@ Last Update: 20/07/2024
 
    
 	<tr>
-		<td><center><img width="250" src="./imgs/ComingSoon.png"></center></td>
+		<td><center><img width="250" src="./imgs/papers/DAEVI.png"></center></td>
 		<td>
 			<font size="2">Depth-Aware Endoscopic Video Inpainting 
 			<br>
