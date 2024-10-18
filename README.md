@@ -165,7 +165,7 @@ Last Update: 20/07/2024
 			<br>
             		IEEE Transactions on Instrumentation and Measurement (<b>TIM</b>) 2024 <!--(<b>Spotlight</b>)-->
 			<br>
-			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|<a href='https://github.com/fenglinglwb/SDM'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/fenglinglwb/SDM?style=social">-->
+			[<a href='https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10597665'><b>paper</b></a>|<a href='https://github.com/zhumanli/GeoHOI'><b>code</b></a>]
 
          <tr>
 		<td><b>2023</b></td>
