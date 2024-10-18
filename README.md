@@ -82,7 +82,25 @@ Last Update: 20/07/2024
    
 ## Selected Publications [<a href="https://scholar.google.com/citations?hl=en&user=tRLJ2X4AAAAJ">Google Scholar</a>]
 <table id="tbPublications" width="100%" style="border-collapse:separate; border-spacing:0px 10px;">
-	<tbody>
+	<body>
+
+  
+         <tr>
+		<td><b>2024</b></td>
+		<td>
+
+
+        <tr>
+		<td><center><img width="250" src="./imgs/papers/one_index.png"></center></td>
+		<td>
+			<font size="2">One-Index Vector Quantization Based Adversarial Attack on Image Classification 
+			<br>
+			<i>, <a href="https://ieeexplore.ieee.org/author/37086568367">Haiju Fan</a>, <a>Xiaona Qin</a>, <b>Shuang Chen</b>, <a href="https://hubertshum.com/">Hubert P. H. Shum</a>, <a href="https://www.htu.edu.cn/cs/_t83/2018/0524/c10537a246106/page.htm">Ming Li</a></i>
+			<br>
+            		Pattern Recognition Letters (<b>PRL</b>) 2024 <!--(<b>Spotlight</b>)-->
+			<br>
+			<!--[<a href='https://arxiv.org/abs/2212.02963'><b>paper</b></a>|] [<a href='https://github.com/FrancisXZhang/DAEVI'><b>code</b></a>]  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/FrancisXZhang/DAEVI?style=social">-->
+
 
 		
          <tr>
