@@ -19,9 +19,13 @@ I am currently a final-year (2021-now) Ph.D. student in the Department of Comput
 - Image Inpainting, Denoising, Drblurring, Video Inpainting
 
 
-Last Update: 20/07/2024
+Last Update: 20/09/2024
 
 ## News
+- [<em><a style="color: #B23AF4">08/2024</a></em>] I am involved in the project of 'Sensorbees: Sensorbees are ENhanced Self-ORganizing Bio-hybrids for Ecological and Environmental Surveillance' funded by the HORIZON EIC PATHFINDER OPEN as a Research Assistence.
+
+- [<em><a style="color: #B23AF4">08/2024</a></em>] I am involved in Swarm & Computational Intelligence Lab (SwaCIL) as a Research Assistence.
+
 - [<em><a style="color: #B23AF4">07/2024</a></em>] One paper is accepted by BMVC 2024.
 
 - [<em><a style="color: #B23AF4">06/2024</a></em>] One paper is accepted by MICCAI 2024.
@@ -51,6 +55,26 @@ Last Update: 20/07/2024
 	- 2nd Year Module: Data science (Probability, Image Processing and Computer Graphics)
    
 ## Experience
+- <b>Research Assistant</b> at <a href="https://www.durham.ac.uk/">Durham University</a>
+
+	08/2024 - Present
+
+	Project: <a href="https://roboroyale.eu/">Sensorbees: Sensorbees are ENhanced Self-ORganizing Bio-hybrids for Ecological and Environmental Surveillance</a>
+ 
+	PI: <a href="https://www.durham.ac.uk/staff/farshad-arvin/">Farshad Arvin</a>
+
+- <b>Research Assistant</b> at <a href="https://www.durham.ac.uk/">Durham University</a>
+
+	08/2024 - Present
+
+	Lab: <a href="https://www.swacil.com/">Swarm & Computational Intelligence Lab (SwaCIL)</a>
+ 
+	Director: <a href="https://www.durham.ac.uk/staff/farshad-arvin/">Farshad Arvin</a>
+
+--------------------------------------------------
+
+
+
 - <b>Research Assistant</b> at <a href="https://www.durham.ac.uk/">Durham University</a>
 
 	02/2024 - 05/2024
