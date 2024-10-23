@@ -62,6 +62,7 @@ Last Update: 20/09/2024
 	Project: <a href="https://roboroyale.eu/">Sensorbees: Sensorbees are ENhanced Self-ORganizing Bio-hybrids for Ecological and Environmental Surveillance</a>
  
 	PI: <a href="https://www.durham.ac.uk/staff/farshad-arvin/">Farshad Arvin</a>
+ --------------------------------------------------
 
 - <b>Research Assistant</b> at <a href="https://www.durham.ac.uk/">Durham University</a>
 
