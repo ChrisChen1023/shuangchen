@@ -2,7 +2,7 @@
 
 Currently in Durham (UK)
 
-I am currently a final-year (2021-now) Ph.D. student in the Department of Computer Science, at <a href="https://www.durham.ac.uk/">Durham University</a> (UK), under the supervision of <a href="https://hubertshum.com/">Dr. Hubert P. H. Shum</a> and <a href="http://www.atapour.co.uk/">Dr. Amir Atapour Abarghouei</a>. Prior to that, I received my Master's degree from the <a href="https://www.surrey.ac.uk/">University of Surrey</a> (UK) and my Bachelor's degree from <a href="https://www.sdut.edu.cn/">Shandong University of Techonology</a> (China).
+I am currently a final-year (2021-now) Ph.D. student in the Department of Computer Science, at <a href="https://www.durham.ac.uk/">Durham University</a> (UK), under the supervision of <a href="https://hubertshum.com/">Prof. Hubert P. H. Shum</a> and <a href="http://www.atapour.co.uk/">Dr. Amir Atapour Abarghouei</a>. Prior to that, I received my Master's degree from the <a href="https://www.surrey.ac.uk/">University of Surrey</a> (UK) and my Bachelor's degree from <a href="https://www.sdut.edu.cn/">Shandong University of Techonology</a> (China).
 
 
 <!--My **research interests** lie primarily in computer vision and machine learning. I have done some works about image inpainting, vedio inpainting, denoising, deblurring.-->
@@ -19,9 +19,12 @@ I am currently a final-year (2021-now) Ph.D. student in the Department of Comput
 - Image Inpainting, Denoising, Drblurring, Video Inpainting
 
 
-Last Update: 20/09/2024
+Last Update: 30/10/2024
 
 ## News
+
+- [<em><a style="color: #B23AF4">10/2024</a></em>] One paper is accepted by WACV 2025.
+  
 - [<em><a style="color: #B23AF4">08/2024</a></em>] I am involved in the project of 'Sensorbees: Sensorbees are ENhanced Self-ORganizing Bio-hybrids for Ecological and Environmental Surveillance' funded by the HORIZON EIC PATHFINDER OPEN as a Research Assistence.
 
 - [<em><a style="color: #B23AF4">08/2024</a></em>] I am involved in Swarm & Computational Intelligence Lab (SwaCIL) as a Research Assistence.
