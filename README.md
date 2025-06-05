@@ -2,7 +2,9 @@
 
 Currently in Durham (UK)
 
-I am currently a final-year (2021-now) Ph.D. student in the Department of Computer Science, at <a href="https://www.durham.ac.uk/">Durham University</a> (UK), under the supervision of <a href="https://hubertshum.com/">Prof. Hubert P. H. Shum</a> and <a href="http://www.atapour.co.uk/">Dr. Amir Atapour Abarghouei</a>. Prior to that, I received my Master's degree from the <a href="https://www.surrey.ac.uk/">University of Surrey</a> (UK) and my Bachelor's degree from <a href="https://www.sdut.edu.cn/">Shandong University of Techonology</a> (China).
+I am currently Working as a PDRA for the project BioDiMoBot: Autonomous Longtime Aquatic Biodiversity and Ecology Monitoring Robot in the Department of Computer Science, at <a href="https://www.durham.ac.uk/">Durham University</a> (UK). Prior to that, I received my Master's degree from the <a href="https://www.surrey.ac.uk/">University of Surrey</a> (UK) and my Bachelor's degree from <a href="https://www.sdut.edu.cn/">Shandong University of Techonology</a> (China).
+
+My research interests span across Computer Vision, Machine Learning, Visual Information Processing and Image Inpainting.
 
 
 <!--My **research interests** lie primarily in computer vision and machine learning. I have done some works about image inpainting, vedio inpainting, denoising, deblurring.-->
@@ -22,6 +24,12 @@ I am currently a final-year (2021-now) Ph.D. student in the Department of Comput
 Last Update: 30/10/2024
 
 ## News
+
+- [<em><a style="color: #B23AF4">02/2025</a></em>] I am involved in Swarm & Computational Intelligence Lab (SwaCIL) as a Postdoctoral Researcher.
+
+- [<em><a style="color: #B23AF4">01/2025</a></em>] I start the role of Pstdoctoral Researcher at Computer Science Department at Durham University.
+
+- [<em><a style="color: #B23AF4">01/2025</a></em>] One paper is accepted by ICRA 2025.
 
 - [<em><a style="color: #B23AF4">10/2024</a></em>] One paper is accepted by WACV 2025.
   
@@ -60,7 +68,7 @@ Last Update: 30/10/2024
 ## Experience
 - <b>Research Assistant</b> at <a href="https://www.durham.ac.uk/">Durham University</a>
 
-	08/2024 - Present
+	07/2024 - 09/2024
 
 	Project: <a href="https://roboroyale.eu/">Sensorbees: Sensorbees are ENhanced Self-ORganizing Bio-hybrids for Ecological and Environmental Surveillance</a>
  
@@ -69,7 +77,7 @@ Last Update: 30/10/2024
 
 - <b>Research Assistant</b> at <a href="https://www.durham.ac.uk/">Durham University</a>
 
-	08/2024 - Present
+	09/2024 - 2024
 
 	Lab: <a href="https://www.swacil.com/">Swarm & Computational Intelligence Lab (SwaCIL)</a>
  
