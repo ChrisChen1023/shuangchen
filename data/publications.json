@@ -19,7 +19,12 @@
         "label": "Paper",
         "url": "https://arxiv.org/abs/2610.28289"
       }
-    ]
+    ],
+    "metrics": [
+      "CORE A"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "sandbar",
@@ -35,7 +40,12 @@
     "image": null,
     "imageAlt": "",
     "summary": "A band-asymmetric approach to underwater image restoration using removable frequency scaffolding.",
-    "links": []
+    "links": [],
+    "metrics": [
+      "CORE A"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "vlif",
@@ -61,7 +71,13 @@
         "label": "Code",
         "url": "https://github.com/ChrisChen1023/VLIF"
       }
-    ]
+    ],
+    "metrics": [
+      "CORE A*",
+      "17.6% acceptance"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "uiesnn",
@@ -88,7 +104,12 @@
         "label": "Code",
         "url": "https://github.com/ChrisChen1023/UIESNN"
       }
-    ]
+    ],
+    "metrics": [
+      "CORE B"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "bumblebee-olfaction",
@@ -109,7 +130,12 @@
         "label": "Lab listing",
         "url": "https://insectneurolab.com/publications/"
       }
-    ]
+    ],
+    "metrics": [
+      "Impact Factor 4.1"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "boost",
@@ -135,7 +161,13 @@
         "label": "Code",
         "url": "https://github.com/41enthusiast/BOOST/"
       }
-    ]
+    ],
+    "metrics": [
+      "Impact Factor 7.5",
+      "JCR Q1"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "caflow",
@@ -160,7 +192,12 @@
         "label": "Code",
         "url": "https://github.com/Harrison21/CaFlow"
       }
-    ]
+    ],
+    "metrics": [
+      "CORE A"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "deep-sea",
@@ -186,7 +223,12 @@
         "label": "Code",
         "url": "https://github.com/ChrisChen1023/DEEP-SEA"
       }
-    ]
+    ],
+    "metrics": [
+      "CORE A"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "micro-robots",
@@ -212,7 +254,12 @@
         "label": "Code",
         "url": "https://github.com/ChrisChen1023/Micro-Robot-Swarm"
       }
-    ]
+    ],
+    "metrics": [
+      "CORE A*"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "sem-net",
@@ -237,7 +284,13 @@
         "label": "Code",
         "url": "https://github.com/ChrisChen1023/SEM-Net"
       }
-    ]
+    ],
+    "metrics": [
+      "CORE A",
+      "Oral · top 8.2% of 2,458"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "bcqlm",
@@ -258,7 +311,12 @@
         "label": "Paper",
         "url": "https://aclanthology.org/2025.findings-emnlp.780/"
       }
-    ]
+    ],
+    "metrics": [
+      "CORE A*"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "music-chatbots",
@@ -283,7 +341,10 @@
         "label": "Code",
         "url": "https://github.com/l1997i/ca4oa-music-chatbot"
       }
-    ]
+    ],
+    "metrics": [],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "hint",
@@ -312,7 +373,13 @@
         "label": "Video",
         "url": "https://www.youtube.com/watch?v=Qkcg7nz1_rI"
       }
-    ]
+    ],
+    "metrics": [
+      "Impact Factor 9.7",
+      "JCR Q1"
+    ],
+    "citations": 67,
+    "citationsAsOf": "2025"
   },
   {
     "id": "mxt",
@@ -337,7 +404,12 @@
         "label": "Code",
         "url": "https://github.com/ChrisChen1023/MxT"
       }
-    ]
+    ],
+    "metrics": [
+      "CORE A"
+    ],
+    "citations": 26,
+    "citationsAsOf": "2025"
   },
   {
     "id": "daevi",
@@ -363,7 +435,12 @@
         "label": "Code",
         "url": "https://github.com/FrancisXZhang/DAEVI"
       }
-    ]
+    ],
+    "metrics": [
+      "CORE A"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "geohoi",
@@ -388,7 +465,13 @@
         "label": "Code",
         "url": "https://github.com/zhumanli/GeoHOI"
       }
-    ]
+    ],
+    "metrics": [
+      "Impact Factor 5.9",
+      "JCR Q1"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "artistic-images-survey",
@@ -410,7 +493,13 @@
         "label": "Paper",
         "url": "https://link.springer.com/article/10.1007/s10462-024-11051-3"
       }
-    ]
+    ],
+    "metrics": [
+      "Impact Factor 13.9",
+      "JCR Q1"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "one-index",
@@ -431,7 +520,13 @@
         "label": "Paper",
         "url": "http://hubertshum.com/publications/prl2024adversarial/files/prl2024adversarial.pdf"
       }
-    ]
+    ],
+    "metrics": [
+      "Impact Factor 3.3",
+      "JCR Q2"
+    ],
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "inclg",
@@ -461,7 +556,10 @@
         "label": "Code Ocean",
         "url": "https://codeocean.com/capsule/4388343/tree/v1"
       }
-    ]
+    ],
+    "metrics": [],
+    "citations": 10,
+    "citationsAsOf": "2026"
   },
   {
     "id": "nclg-mt",
@@ -487,6 +585,9 @@
         "label": "Code",
         "url": "https://github.com/ChrisChen1023/NCLG-MT"
       }
-    ]
+    ],
+    "metrics": [],
+    "citations": 10,
+    "citationsAsOf": "2026"
   }
 ]

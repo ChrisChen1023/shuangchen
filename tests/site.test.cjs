@@ -191,3 +191,15 @@ test('research slides form a spatial paper deck with non-interactive next-paper 
     }
   } finally { await page.close(); }
 });
+
+test('publications carry sourced venue-standing chips and dated citation counts', async () => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  try {
+    const page = await context.newPage();
+    await page.goto(origin + '/shuangchen/');
+    assert.ok(await page.locator('.publication .publication-metrics').count() >= 15, 'Most papers should show venue standing');
+    for (const chip of await page.locator('.metric-chip').all()) assert.match(await chip.innerText(), /^(CORE [ABC]\*?|Impact Factor \d+(\.\d+)?|JCR Q[1-4]|[\d.]+% acceptance|Oral.*|\d+ citations?)$/);
+    for (const chip of await page.locator('.metric-chip-citations').all()) assert.match(await chip.getAttribute('title'), /^Google Scholar, \d{4}$/);
+    assert.ok(await page.locator('.metrics-note').isVisible());
+  } finally { await context.close(); }
+});
