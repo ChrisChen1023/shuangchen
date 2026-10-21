@@ -22,6 +22,28 @@
     "imageAlt": "Shuang Chen beside the spiking neural network image deraining research poster at AAAI 2026"
   },
   {
+    "id": "diamond-insect-imaging-2025",
+    "title": "Collaborative insect imaging at Diamond Light Source",
+    "date": "2025-12-15",
+    "dateLabel": "15 December 2025",
+    "category": "Research visit",
+    "summary": "Shared a collaborative insect imaging visit to Diamond Light Source, connecting computer vision and biology.",
+    "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_diamond-trip-finished-diamond-light-source-activity-7406365127437987840-BUrH",
+    "image": "imgs/activity/diamond-insect-imaging-2025.jpg",
+    "imageAlt": "Preparing a specimen in a laboratory at Diamond Light Source"
+  },
+  {
+    "id": "deep-learning-guest-lecture-2025",
+    "title": "Guest lecture on Deep Learning",
+    "date": "2025-11-01",
+    "dateLabel": "1 November 2025",
+    "category": "Teaching",
+    "summary": "Delivered an invited Deep Learning session at Durham, sharing ideas with an engaged group of students.",
+    "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_excited-to-share-that-this-friday-i-was-invited-activity-7390495583091867648-xfMt",
+    "image": "imgs/activity/deep-learning-guest-lecture-2025.jpg",
+    "imageAlt": "A guest lecture on neural network architecture in a Durham University classroom"
+  },
+  {
     "id": "iros-2025-deep-sea",
     "title": "DEEP-SEA at IROS 2025",
     "date": "2025-10-26",
