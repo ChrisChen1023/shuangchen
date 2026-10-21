@@ -14,6 +14,7 @@ A light, responsive academic website for computer vision, brain-inspired AI and 
 - Fonts: `assets/fonts/` holds self-hosted Newsreader (headings) and Inter (body) subsets under the SIL Open Font License; see the README there. No third-party requests are made.
 - Portrait: `imgs/SC.jpg`; paper images: `imgs/papers/` and `imgs/research/`. Keep figures at or below roughly 2400 px wide and a few hundred KB; `docs/research-image-sources.md` records any resizing.
 - Research image provenance: `docs/research-image-sources.md`.
+- Citation snapshot provenance: `docs/citation-sources.md`.
 - LinkedIn source records and verified posting dates: `docs/activity-sources.md`.
 
 All 20 published/accepted papers are embedded in the HTML. JavaScript initially highlights six selected papers and enables topic filters; visitors without JavaScript can still read the entire list. Accepted papers are explicitly labelled. Citation metrics are a dated snapshot, not an automatic live count.

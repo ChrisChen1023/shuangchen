@@ -204,7 +204,8 @@ test('publications carry sourced venue-standing chips and dated citation counts'
     const page = await context.newPage();
     await page.goto(origin + '/shuangchen/');
     assert.ok(await page.locator('.publication .publication-metrics').count() >= 15, 'Most papers should show venue standing');
-    assert.equal(await page.locator('.metric-chip-citations').count(), 0, 'No citation counts are shown until dated Scholar figures are supplied');
+    assert.ok(await page.locator('.metric-chip-citations').count() >= 10, 'Papers with Google Scholar citations show a dated count');
+    assert.equal(await page.locator('#paper-hint .metric-chip-citations').innerText(), '107 citations');
     for (const chip of await page.locator('.metric-chip').all()) assert.match(await chip.innerText(), /^(CORE [ABC]\*?|Impact Factor \d+(\.\d+)?|JCR Q[1-4]|[\d.]+% acceptance|Oral.*|\d+ citations?)$/);
     for (const chip of await page.locator('.metric-chip-citations').all()) assert.match(await chip.getAttribute('title'), /^Google Scholar, \d{4}$/);
     assert.ok(await page.locator('.metrics-note').isVisible());
