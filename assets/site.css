@@ -54,14 +54,23 @@ h1{font-family:var(--serif);font-size:clamp(40px,4.5vw,61px);font-weight:500;let
 .section-number{margin-bottom:9px;color:var(--accent)}
 h2{font-family:var(--serif);font-size:34px;font-weight:500;letter-spacing:-.85px;line-height:1.3}
 .research-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.research-grid article{--research-color:var(--accent);--research-tint:#eff5fb;border:1px solid var(--line);border-radius:8px;padding:24px;background:linear-gradient(150deg,var(--research-tint),#fff 70%)}
+.research-grid article{--research-color:var(--accent);--research-tint:#eff5fb;display:flex;flex-direction:column;min-width:0;border:1px solid var(--line);border-radius:8px;padding:24px;background:linear-gradient(150deg,var(--research-tint),#fff 70%)}
 .research-grid article:nth-child(2){--research-color:var(--teal);--research-tint:#edf7f3}
 .research-grid article:nth-child(3){--research-color:var(--orange);--research-tint:#fff5ed}
 .research-grid article::before{content:"";display:block;width:42px;height:3px;border-radius:2px;background:var(--research-color);margin-bottom:18px}
 .research-index{font-size:11px;color:var(--research-color);display:block;margin-bottom:9px}
 h3{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:-.35px;line-height:1.4;margin-bottom:11px}
+.research-grid h3{font-size:24px;font-weight:600;margin-bottom:16px}
+.research-figure{margin:0 0 20px;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.research-image-link{display:flex;align-items:center;justify-content:center;height:174px;padding:10px;background:#fff;cursor:zoom-in}
+.research-image-link img{width:100%;height:100%;object-fit:contain}
+.research-figure figcaption{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:space-between;padding:9px 11px;background:var(--research-tint);border-top:1px solid var(--line);font-size:10px;line-height:1.6;color:var(--muted)}
+.research-figure figcaption a{color:var(--research-color);font-weight:600;text-decoration:none}
+.research-figure figcaption a:hover{text-decoration:underline}
 .research-grid p,.teaching-grid p{font-size:14px;color:var(--muted);line-height:1.85}
-.research-grid .text-link{display:inline-block;margin-top:15px;color:var(--research-color)}
+.research-grid p strong{color:var(--ink)}
+.research-grid .text-link{align-self:flex-start;display:inline-block;margin-top:auto;padding-top:18px;color:var(--research-color)}
+.research-grid article:focus-within{border-color:var(--research-color);box-shadow:0 6px 20px #17364c0a}
 .text-link{font-size:12px;font-weight:600;text-decoration:none}
 .text-link:hover{text-decoration:underline}
 .heading-with-link{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:12px}
@@ -102,7 +111,8 @@ h3{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:-.35px
 #publication-list[data-layout="selected"] .publication-identity{padding:24px;background:linear-gradient(120deg,#e8f1f9,#eef8f4)}
 #publication-list[data-layout="selected"] .publication-identity strong{font-size:35px;letter-spacing:-1px}
 #publication-list[data-layout="selected"] .publication-identity span{color:var(--accent)}
-#publication-list[data-layout="selected"] .publication-meta{margin-bottom:9px}
+#publication-list[data-layout="selected"] .publication-meta{margin-bottom:11px;font-size:12px}
+#publication-list[data-layout="selected"] .publication-meta>span:first-child{padding:3px 8px;background:#edf3f8;border-radius:3px}
 #publication-list[data-layout="selected"] .publication h3{font-size:17px;line-height:1.5;margin-bottom:10px}
 #publication-list[data-layout="selected"] .publication-summary{margin-top:10px;margin-bottom:16px}
 #publication-list[data-layout="selected"] .publication-links{margin-top:auto;padding-top:3px}
@@ -270,4 +280,10 @@ h4{font-size:14px;font-weight:600;line-height:1.6}
   .contact-email{font-size:13px}
 }
 .activity-source-note{margin-top:16px;font-size:11px;line-height:1.8;color:var(--muted)}
+@media(prefers-reduced-motion:no-preference){
+  .research-grid article,.activity-card,#publication-list[data-layout="selected"] .publication{transition:box-shadow .2s ease,border-color .2s ease}
+  .research-grid article:hover{border-color:var(--research-color);box-shadow:0 8px 24px #17364c0d}
+  .activity-card:hover,#publication-list[data-layout="selected"] .publication:hover{border-color:#8eafc2;box-shadow:0 8px 24px #17364c0d}
+  .profile-links a,.view-switch button,.topic-filters button{transition:background-color .15s ease,color .15s ease,border-color .15s ease}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

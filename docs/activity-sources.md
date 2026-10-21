@@ -1,6 +1,6 @@
 # LinkedIn field notes
 
-The site owner requested a one-time import of existing LinkedIn posts, with future updates on demand. These are curated static summaries, not an automatic LinkedIn feed. No scheduled job or account credential is involved.
+The site owner initially requested an import of existing LinkedIn posts, then authorised weekly checks on 21 October 2026. A Codex thread automation checks public sources every Monday at 09:00 Europe/London and can publish verified additions after review and browser checks. These remain curated static summaries, with original source links; on-demand updates are also supported. No LinkedIn account credential is used.
 
 Five original posts were publicly accessible and verified against the owner's profile. Posting dates came from each post's public JSON-LD `datePublished`; the local photos were obtained from those same public post pages. Summaries are newly written and concise. Reposts, likes and unrelated namesakes are excluded.
 
