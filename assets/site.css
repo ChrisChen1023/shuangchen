@@ -191,7 +191,9 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
 .metrics-note a{color:inherit}
 .publication-summary{font-size:13.5px;color:var(--muted);line-height:1.75;margin:8px 0 10px}
 .publication-links{display:flex;flex-wrap:wrap;gap:6px 16px}
-.publication-links a{display:inline-flex;align-items:center;gap:3px;font-size:11.5px;font-weight:600;text-decoration:none}
+.publication-links a{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;text-decoration:none}
+.link-icon{width:14px;height:14px;flex:none}
+.activity-link .link-icon{width:15px;height:15px}
 .publication-links a:hover{text-decoration:underline}
 #publication-list[data-layout="selected"]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:18px}
 #publication-list[data-layout="selected"] .publication{display:flex;flex-direction:column;gap:0;padding:0;margin:0;min-width:0;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);overflow:hidden;box-shadow:var(--shadow-sm)}
@@ -400,8 +402,10 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
   nav a{transition:color .2s var(--ease-out)}
   nav a::after{transition:transform .3s var(--ease-out)}
   .text-link{transition:background-size .3s var(--ease-out),color .2s}
-  .text-link span,.profile-links span,.publication-links span,.activity-link span,.contact-email span,.latest-note a span{transition:transform .25s var(--ease-spring)}
-  .text-link:hover span,.profile-links a:hover span,.publication-links a:hover span,.activity-link:hover span,.contact-email:hover span,.latest-note a:hover span{transform:translate(2px,-2px)}
+  .text-link span,.profile-links span,.contact-email span,.latest-note a span{transition:transform .25s var(--ease-spring)}
+  .text-link:hover span,.profile-links a:hover span,.contact-email:hover span,.latest-note a:hover span{transform:translate(2px,-2px)}
+  .link-icon{transition:transform .25s var(--ease-spring)}
+  .publication-links a:hover .link-icon,.activity-link:hover .link-icon{transform:translateY(-2px) scale(1.1)}
   .intro::before{animation:drift 22s ease-in-out infinite alternate}
   .portrait-frame::before{transition:transform .5s var(--ease-out)}
   .portrait{transition:transform .5s var(--ease-out),box-shadow .5s var(--ease-out)}
