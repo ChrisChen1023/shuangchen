@@ -96,7 +96,7 @@
       if (!dialog) build();
       const source = link.querySelector('img');
       const figcaption = link.closest('figure')?.querySelector('figcaption');
-      const label = figcaption?.querySelector('.research-paper-heading a')?.textContent.replace(/\s*↗\s*$/, '');
+      const label = figcaption?.querySelector('.research-paper-heading a')?.textContent.trim();
       const venue = figcaption?.querySelector('.research-paper-heading span')?.textContent;
       const summary = figcaption?.querySelector('.research-paper-caption')?.textContent;
       const image = dialog.querySelector('img');

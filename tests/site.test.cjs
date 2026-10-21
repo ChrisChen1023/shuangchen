@@ -169,7 +169,7 @@ test('each research area contains multiple distinct, sourced papers without Java
       for (const figure of await figures.all()) {
         assert.ok(await figure.isVisible());
         assert.ok((await figure.locator('img').getAttribute('alt')).length > 15);
-        const paperLink = await figure.locator('figcaption a').getAttribute('href');
+        const paperLink = await figure.locator('figcaption a').first().getAttribute('href');
         assert.match(paperLink, /^https:\/\//);
         assert.ok((await figure.locator('figcaption').innerText()).length > 15);
       }

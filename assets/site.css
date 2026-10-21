@@ -125,7 +125,10 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
 .research-figure figcaption a{color:var(--research-color);font-weight:600;text-decoration:none}
 .research-figure figcaption a:hover{text-decoration:underline}
 .research-paper-heading{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:2px 8px;margin-bottom:4px}
-.research-paper-heading>a{font-size:13.5px;display:inline-flex;align-items:center;gap:3px}
+.research-paper-links{display:inline-flex;align-items:center;gap:8px}
+.research-paper-links a{font-size:13.5px;display:inline-flex;align-items:center;gap:5px}
+.research-paper-code{opacity:.75}
+.research-paper-code:hover{opacity:1}
 .research-paper-heading>span{font-size:10.5px;letter-spacing:.02em;white-space:nowrap}
 .research-paper-caption{display:block;font-size:11.5px;line-height:1.55}
 /* Paper slideshow: a perspective stage with the current paper in front and a decorative preview of the next one behind. */
@@ -405,7 +408,7 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
   .text-link span,.profile-links span,.contact-email span,.latest-note a span{transition:transform .25s var(--ease-spring)}
   .text-link:hover span,.profile-links a:hover span,.contact-email:hover span,.latest-note a:hover span{transform:translate(2px,-2px)}
   .link-icon{transition:transform .25s var(--ease-spring)}
-  .publication-links a:hover .link-icon,.activity-link:hover .link-icon{transform:translateY(-2px) scale(1.1)}
+  .publication-links a:hover .link-icon,.activity-link:hover .link-icon,.research-paper-links a:hover .link-icon{transform:translateY(-2px) scale(1.1)}
   .intro::before{animation:drift 22s ease-in-out infinite alternate}
   .portrait-frame::before{transition:transform .5s var(--ease-out)}
   .portrait{transition:transform .5s var(--ease-out),box-shadow .5s var(--ease-out)}

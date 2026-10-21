@@ -1,6 +1,7 @@
 import { readFile, writeFile, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { icon } from './icons.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const areas = JSON.parse(await readFile(path.join(root, 'data/research-areas.json'), 'utf8'));
@@ -21,12 +22,13 @@ for (const area of areas) {
     if (!paper || !paper.topics.includes(area.id) || paperIds.has(item.id)) throw new Error(`Invalid or duplicate paper in ${area.id}: ${item.id}`);
     paperIds.add(item.id);
     const primary = paper.links.find(link => link.label.toLowerCase() === 'paper');
+    const code = paper.links.find(link => link.label.toLowerCase() === 'code');
     if (!paper.image || paper.image.startsWith('/') || paper.image.includes('..') || !paper.imageAlt || !primary || new URL(primary.url).protocol !== 'https:') throw new Error(`Missing sourced figure: ${item.id}`);
     await access(path.join(root, paper.image));
     const venue = `${venueNames[paper.venue] || paper.venue} ${paper.year}${item.id === 'sem-net' ? ' · Oral' : ''}`;
     slides.push(`            <figure class="research-slide research-figure" data-paper-id="${escape(item.id)}">
               <a class="research-image-link" href="${escape(paper.image)}" aria-label="View the ${escape(item.label)} figure at full size"><img src="${escape(paper.image)}" alt="${escape(paper.imageAlt)}" width="400" height="240" loading="lazy" decoding="async"></a>
-              <figcaption><div class="research-paper-heading"><a href="${escape(primary.url)}" title="${escape(paper.title)}">${escape(item.label)} <span aria-hidden="true">↗</span></a><span>${escape(venue)}</span></div><span class="research-paper-caption">${escape(item.caption)}</span></figcaption>
+              <figcaption><div class="research-paper-heading"><span class="research-paper-links"><a href="${escape(primary.url)}" title="${escape(paper.title)}">${icon('paper')}${escape(item.label)}</a>${code ? `<a class="research-paper-code" href="${escape(code.url)}" aria-label="${escape(item.label)} code on GitHub" title="Code">${icon('code')}</a>` : ''}</span><span>${escape(venue)}</span></div><span class="research-paper-caption">${escape(item.caption)}</span></figcaption>
             </figure>`);
   }
   const dots = area.papers.map((item, index) => `<button type="button" data-carousel-go="${index}" aria-label="Show ${escape(item.label)}" aria-current="${index === 0}"><span aria-hidden="true"></span></button>`).join('');
