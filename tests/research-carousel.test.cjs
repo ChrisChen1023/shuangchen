@@ -11,7 +11,11 @@ let server, browser, origin;
 function carousel(name = 'Vision', count = 3) {
   const titles = ['HINT', 'Rain Transformer', 'Event Vision'].slice(0, count);
   return `<section class="research-carousel" data-research-carousel data-carousel-interval="5200" aria-label="${name} papers">
-    ${titles.map((title, index) => `<figure class="research-slide research-figure" data-paper-id="${index}"><a href="#figure-${index}" aria-label="View ${title} figure"><img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Crect width='120' height='60' fill='navy'/%3E%3C/svg%3E" alt="${title} architecture"></a><figcaption><a href="#paper-${index}">${title}</a></figcaption></figure>`).join('')}
+    <div class="research-stage">
+      ${titles.map((title, index) => `<figure id="${name}-figure-${index}" class="research-slide research-figure" data-paper-id="${index}"><a id="${name}-image-${index}" href="#figure-${index}" aria-label="View ${title} figure"><img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Crect width='120' height='60' fill='navy'/%3E%3C/svg%3E" alt="${title} architecture"></a><figcaption><a href="#paper-${index}">${title}</a></figcaption></figure>`).join('')}
+      <div class="research-stage-preview" data-carousel-preview aria-hidden="true" inert hidden></div>
+    </div>
+    <div class="research-playback" hidden><span data-carousel-playback>Auto play</span><span class="research-progress-track"><span data-carousel-progress></span></span></div>
     <div class="research-carousel-controls" hidden>
       <button data-carousel-prev aria-label="Previous paper">Previous</button>
       <button data-carousel-next aria-label="Next paper">Next</button>
@@ -30,6 +34,11 @@ function fixture({ cards = 1, spacer = false, count = 3 } = {}) {
     main { display: flex; gap: 12px; align-items: start; }
     section { flex: 1; min-width: 0; padding: 10px; border: 1px solid; }
     figure { margin: 0; } img { width: 100%; height: 100px; }
+    .research-stage { position: relative; perspective: 900px; transform-style: preserve-3d; }
+    .research-slide { transform: translate3d(0, 0, 28px) rotateY(0deg) scale(1); }
+    .research-stage-preview, .research-slide-outgoing { position: absolute; inset: 0; pointer-events: none; }
+    .research-stage-preview { transform: translate3d(40px, 0, -80px) rotateY(-18deg) scale(.9); }
+    [data-carousel-progress] { display: block; height: 2px; transform-origin: left; transform: scaleX(0); }
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   </style><script defer src="/assets/research-carousel.js"></script></head><body>
     <button id="outside">Outside carousel</button>${spacer ? '<div style="height: 1400px"></div>' : ''}
@@ -89,7 +98,7 @@ test('initialization exposes one linked paper and immediately navigates to anoth
     assert.match(await card.locator('[data-carousel-status]').innerText(), /Rain Transformer.*2.*3/);
     assert.equal(await card.locator('[data-carousel-go="1"]').getAttribute('aria-current'), 'true');
     assert.equal(await card.locator('[data-carousel-go="0"]').getAttribute('aria-current'), 'false');
-    assert.equal(await card.locator('img[loading="eager"]').count(), 3);
+    assert.equal(await card.locator('.research-slide img[loading="eager"]').count(), 3);
   } finally { await page.close(); }
 });
 
@@ -132,31 +141,36 @@ test('offscreen cards start and stop rotation as they enter and leave the viewpo
   } finally { await page.close(); }
 });
 
-// Losing any pause condition would replace a paper while it is being inspected.
-test('hover and keyboard focus pause rotation without disabling manual navigation', async () => {
+// Pointer inspection and persistent navigation focus must not silently stop the slideshow.
+test('hover and navigation focus keep autoplay running while slide-link focus pauses it', async () => {
   const page = await openFixture();
   try {
     await ready(page);
     const card = page.locator('[data-research-carousel]');
     await card.hover();
-    await page.clock.fastForward(16000);
-    assert.equal(await current(card), 'HINT');
-    await page.mouse.move(1100, 650);
     await page.clock.fastForward(5300);
     assert.equal(await current(card), 'Rain Transformer');
+    assert.equal(await card.getAttribute('data-carousel-state'), 'playing');
+    assert.equal(await card.locator('[data-carousel-playback]').innerText(), 'Auto play');
     await card.locator('.research-slide:visible figcaption a').focus();
     await page.clock.fastForward(16000);
     assert.equal(await current(card), 'Rain Transformer');
+    assert.equal(await card.getAttribute('data-carousel-state'), 'paused');
+    assert.equal(await card.locator('[data-carousel-playback]').innerText(), 'Paused');
     const next = card.getByRole('button', { name: 'Next paper', exact: true });
     await next.focus();
     await page.keyboard.press('Enter');
     assert.equal(await current(card), 'Event Vision');
     assert.equal(await next.evaluate(button => document.activeElement === button), true);
-    await page.clock.fastForward(16000);
-    assert.equal(await current(card), 'Event Vision');
-    await page.locator('#outside').focus();
     await page.clock.fastForward(5300);
     assert.equal(await current(card), 'HINT');
+    assert.equal(await next.evaluate(button => document.activeElement === button), true);
+    const dot = card.getByRole('button', { name: 'Show Rain Transformer', exact: true });
+    await dot.focus();
+    await page.keyboard.press('Enter');
+    await page.clock.fastForward(5300);
+    assert.equal(await current(card), 'Event Vision');
+    assert.equal(await dot.evaluate(button => document.activeElement === button), true);
   } finally { await page.close(); }
 });
 
@@ -169,12 +183,14 @@ async function setDocumentHidden(page, hidden) {
 }
 
 // A transient resume must never erase the visitor's explicit pause preference.
-test('explicit pause survives hover, focus and page visibility changes until resumed', async () => {
+test('explicit pause persists until Play resumes rotation with its button still focused', async () => {
   const page = await openFixture();
   try {
     await ready(page);
     const card = page.locator('[data-research-carousel]');
     await card.getByRole('button', { name: 'Pause automatic rotation' }).click();
+    assert.equal(await card.getAttribute('data-carousel-state'), 'paused');
+    assert.equal(await card.locator('[data-carousel-playback]').innerText(), 'Paused');
     await page.locator('#outside').focus();
     await page.mouse.move(1100, 650);
     await setDocumentHidden(page, true);
@@ -184,15 +200,18 @@ test('explicit pause survives hover, focus and page visibility changes until res
     await page.mouse.move(1100, 650);
     await page.clock.fastForward(16000);
     assert.equal(await current(card), 'HINT');
-    await card.getByRole('button', { name: 'Resume automatic rotation' }).click();
-    await page.locator('#outside').focus();
-    await page.mouse.move(1100, 650);
-    await setDocumentHidden(page, true);
-    await page.clock.fastForward(16000);
-    assert.equal(await current(card), 'HINT');
-    await setDocumentHidden(page, false);
+    const play = card.locator('[data-carousel-toggle]');
+    await play.click();
+    assert.equal(await play.evaluate(button => document.activeElement === button), true);
     await page.clock.fastForward(5300);
     assert.equal(await current(card), 'Rain Transformer');
+    assert.equal(await play.evaluate(button => document.activeElement === button), true);
+    await setDocumentHidden(page, true);
+    await page.clock.fastForward(16000);
+    assert.equal(await current(card), 'Rain Transformer');
+    await setDocumentHidden(page, false);
+    await page.clock.fastForward(5300);
+    assert.equal(await current(card), 'Event Vision');
   } finally { await page.close(); }
 });
 
@@ -202,6 +221,8 @@ test('reduced motion initially and at runtime stops auto rotation while preservi
   try {
     await ready(page);
     const card = page.locator('[data-research-carousel]');
+    assert.equal(await card.getAttribute('data-carousel-state'), 'reduced');
+    assert.equal(await card.locator('[data-carousel-playback]').innerText(), 'Reduced motion');
     await page.clock.fastForward(16000);
     assert.equal(await current(card), 'HINT');
     await card.getByRole('button', { name: 'Next paper', exact: true }).click();
@@ -251,14 +272,51 @@ test('keyboard dots and previous wrap correctly and rapid navigation cancels obs
       return { count: animations.length, duration: animations[0]?.effect.getTiming().duration, frames: animations[0]?.effect.getKeyframes().map(frame => frame.transform) };
     });
     assert.equal(motion.count, 1);
-    assert.ok(motion.duration >= 250 && motion.duration <= 450);
+    assert.ok(motion.duration >= 700 && motion.duration <= 1000);
+    assert.match(motion.frames[0], /translate3d\(.+rotateY\(/);
     assert.notEqual(motion.frames[0], motion.frames[1]);
-    assert.equal(await card.evaluate(element => element.getAnimations({ subtree: true }).length), 1);
+    const outgoing = card.locator('.research-slide-outgoing');
+    assert.equal(await outgoing.count(), 1);
+    assert.equal(await outgoing.locator('figcaption').innerText(), 'Rain Transformer');
+    const departure = await outgoing.evaluate(slide => slide.getAnimations()[0].effect.getKeyframes().map(frame => frame.transform));
+    assert.match(departure[1], /translate3d\(.+rotateY\(/);
+    assert.equal(await card.getByRole('link').count(), 2, 'Decorative copies must add no accessible links');
+    const progress = await card.locator('[data-carousel-progress]').evaluate(element => element.getAnimations()[0]?.effect.getTiming());
+    assert.equal(progress.duration, 5200);
+    assert.equal(progress.iterations, 1);
     await card.locator('.research-slide:visible figcaption a').focus();
     assert.equal(await card.evaluate(element => element.getAnimations({ subtree: true }).length), 0);
+    assert.equal(await outgoing.count(), 0);
     await page.clock.fastForward(600);
     assert.equal(await current(card), 'Event Vision');
-    assert.equal(await card.locator('.research-slide:visible').evaluate(slide => getComputedStyle(slide).transform), 'none');
+    assert.equal(await card.locator('.research-slide:visible').evaluate(slide => getComputedStyle(slide).transform), 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 28, 1)');
+  } finally { await page.close(); }
+});
+
+// A duplicated current frame or linked clone would misrepresent the next paper and keyboard order.
+test('two-paper previews show the actual next paper safely and motion cleans up when disabled', async () => {
+  const page = await openFixture({ count: 2 });
+  try {
+    await ready(page);
+    const card = page.locator('[data-research-carousel]');
+    const preview = card.locator('[data-carousel-preview]');
+    assert.equal(await preview.isVisible(), true);
+    assert.equal(await preview.locator('figure').count(), 1);
+    assert.equal(await preview.locator('figcaption').innerText(), 'Rain Transformer');
+    assert.equal(await preview.locator('img').getAttribute('alt'), 'Rain Transformer architecture');
+    assert.equal(await preview.locator('a, [id], [role], [aria-label]').count(), 0);
+    assert.equal(await preview.getAttribute('aria-hidden'), 'true');
+    assert.equal(await preview.getAttribute('inert'), '');
+    assert.equal(await card.locator('.research-slide').count(), 2);
+    await card.evaluate(element => element.querySelector('[data-carousel-next]').click());
+    assert.equal(await current(card), 'Rain Transformer');
+    assert.equal(await preview.locator('figcaption').innerText(), 'HINT');
+    assert.equal(await card.locator('.research-slide-outgoing').count(), 1);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.waitForFunction(() => document.querySelector('[data-carousel-toggle]').disabled);
+    assert.equal(await card.locator('.research-slide-outgoing').count(), 0);
+    assert.equal(await card.evaluate(element => element.getAnimations({ subtree: true }).length), 0);
+    assert.equal(await current(card), 'Rain Transformer');
   } finally { await page.close(); }
 });
 
