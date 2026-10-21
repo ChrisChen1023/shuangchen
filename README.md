@@ -6,10 +6,11 @@ A light, responsive academic website for computer vision, brain-inspired AI and 
 
 ## Update content
 
-- Biography, news, experience, education and teaching: edit `index.html` outside the publication markers.
-- Publications: edit `data/publications.json`, then run `node scripts/render-publications.mjs` and commit both the JSON and generated `index.html`.
+- Biography, news, experience, education and teaching: edit `index.html` outside the generated content markers.
+- Publications: edit `data/publications.json`, then run `node scripts/render-publications.mjs` and `node scripts/render-research.mjs`; commit the JSON and generated `index.html`.
+- Research areas: edit `data/research-areas.json` and run `node scripts/render-research.mjs`. Each area references multiple existing publication IDs; images, alternative text, venues and paper links come from `data/publications.json`.
 - LinkedIn field notes: edit `data/linkedin-posts.json`, add genuine post photos under `imgs/activity/`, then run `node scripts/render-activity.mjs` and commit the JSON, photos and generated `index.html`. Posts are verified and published as static summaries with original source links.
-- Styles: `assets/site.css`; publication filtering and optional motion: `assets/site.js`.
+- Styles: `assets/site.css`; publication filtering and entry motion: `assets/site.js`; research-paper carousels: `assets/research-carousel.js`.
 - Portrait: `imgs/SC.jpg`; paper images: `imgs/papers/` and `imgs/research/`.
 - Research image provenance: `docs/research-image-sources.md`.
 - LinkedIn source records and verified posting dates: `docs/activity-sources.md`.
@@ -22,7 +23,7 @@ The owner authorised a weekly Codex thread automation, scheduled for Monday at 0
 
 ## Interaction
 
-Research cards include genuine paper figures, full-size image links and publication sources. Research, publication, activity and news entries have brief, one-time scroll reveals; publication filters and the news archive have short transition feedback. Baseline content stays visible if JavaScript or animation APIs are unavailable. The animation layer respects reduced-motion preferences, including changes while the page is open, and cancels animations around keyboard focus.
+Each research area contains multiple genuine paper figures, full-size image links and publication sources. Its carousel automatically rotates papers while visible, with slide movement, manual arrows, paper selectors and a pause control. Hover, keyboard focus and hidden tabs pause automatic changes; reduced-motion preferences disable automatic rotation and transitions. Without JavaScript all papers remain readable in sequence. Research, publication, activity and news entries also retain brief, one-time scroll reveals. Publication filters and the news archive have short transition feedback.
 
 ## Preview
 
@@ -32,7 +33,7 @@ The published site lives at `/shuangchen/`. All asset paths are relative, and `_
 
 ## Browser checks
 
-With Node.js and Playwright available, run `node --test tests/site.test.cjs tests/motion.test.cjs`. On a new machine, install the development browser with `npm install --no-save playwright` and `npx playwright install chromium` first. Checks cover selected/all publication views, combined topic filters and empty states, keyboard controls, mobile overflow, local assets and anchors, no-JavaScript reading, the production URL subpath, motion preferences and animation API fallbacks.
+With Node.js and Playwright available, run `node --test tests/site.test.cjs tests/motion.test.cjs tests/research-carousel.test.cjs`. On a new machine, install the development browser with `npm install --no-save playwright` and `npx playwright install chromium` first. Checks cover publication filters, keyboard controls, mobile overflow, local assets and anchors, static multi-paper reading, the production URL subpath, carousel rotation and pause behavior, motion preferences and animation API fallbacks.
 
 ## Design references
 
