@@ -10,7 +10,7 @@ A light, responsive academic website for computer vision, brain-inspired AI and 
 - Publications: edit `data/publications.json`, then run `node scripts/render-publications.mjs` and commit both the JSON and generated `index.html`.
 - LinkedIn field notes: edit `data/linkedin-posts.json`, add genuine post photos under `imgs/activity/`, then run `node scripts/render-activity.mjs` and commit the JSON, photos and generated `index.html`. Posts are verified and published as static summaries with original source links.
 - Styles: `assets/site.css`; publication filtering and optional motion: `assets/site.js`.
-- Portrait: `imgs/SC.jpg`; paper images: `imgs/papers/` and `imgs/research/`.
+- Portrait: `imgs/SC.jpg`; paper images: `imgs/papers/` and `imgs/research/`. Keep figures at or below roughly 2400 px wide and a few hundred KB; `docs/research-image-sources.md` records any resizing.
 - Research image provenance: `docs/research-image-sources.md`.
 - LinkedIn source records and verified posting dates: `docs/activity-sources.md`.
 
@@ -23,6 +23,10 @@ The owner authorised a weekly Codex thread automation, scheduled for Monday at 0
 ## Interaction
 
 Research cards include genuine paper figures, full-size image links and publication sources. Research, publication, activity and news entries have brief, one-time scroll reveals; publication filters and the news archive have short transition feedback. Baseline content stays visible if JavaScript or animation APIs are unavailable. The animation layer respects reduced-motion preferences, including changes while the page is open, and cancels animations around keyboard focus.
+
+## Print and sharing
+
+A print stylesheet (`@media print` in `assets/site.css`) hides the navigation and filter controls, shows all 20 publications in a compact list and prints link targets, so the page doubles as a simple CV-style PDF. Open Graph, Twitter card and JSON-LD `Person` metadata in `index.html` describe the page for search engines and link previews.
 
 ## Preview
 

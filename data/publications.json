@@ -44,7 +44,7 @@
       "brain"
     ],
     "selected": true,
-    "image": "imgs/research/vlif-spiking-neuron.png",
+    "image": "imgs/research/vlif-spiking-neuron.jpg",
     "imageAlt": "Comparison of traditional LIF and Visual LIF neurons and their spatial and temporal processing.",
     "summary": "Visual LIF neurons bring spatial contextual processing to spiking networks for image deraining.",
     "links": [

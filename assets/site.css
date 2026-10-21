@@ -287,3 +287,24 @@ h4{font-size:14px;font-weight:600;line-height:1.6}
   .profile-links a,.view-switch button,.topic-filters button{transition:background-color .15s ease,color .15s ease,border-color .15s ease}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Print: a plain, complete record of the page with every publication shown. */
+@media print{
+  html{scroll-padding-top:0}
+  body{background:#fff;color:#000;font-size:12px}
+  .skip-link,.site-header,.publication-controls,.publication-count,.empty-state,.latest-note a,.footer-meta a[href="#top"]{display:none!important}
+  .intro,.research-grid article,.activity-card,.latest-note,.portrait-frame{background:#fff;box-shadow:none;border-color:#ccc}
+  .page-shell{width:100%}
+  .section-block{padding-top:32px}
+  .section-heading{break-after:avoid}
+  .research-grid,.activity-grid{grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .research-grid article,.activity-card,.publication,.timeline li{break-inside:avoid}
+  #publication-list[data-layout]{display:block}
+  #publication-list[data-layout] .publication,.publication[hidden]{display:grid!important;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:14px 0;border:0;border-bottom:1px solid #ccc;border-radius:0}
+  #publication-list[data-layout] .publication-media{width:auto;height:100px;border:1px solid #ddd}
+  #publication-list[data-layout] .publication-copy{padding:0}
+  #publication-list[data-layout] .publication-identity{padding:12px;background:#f3f3f3}
+  #publication-list[data-layout] .publication-identity strong{font-size:18px;letter-spacing:-.3px}
+  a{color:#000;text-decoration:none}
+  .publication-links a::after,.contact-email::after,.profile-links a::after{content:" " attr(href);font-weight:400;color:#555;overflow-wrap:anywhere}
+  .profile-links a::after{display:block;font-size:9px}
+}
