@@ -34,7 +34,11 @@ for (const area of areas) {
           <span class="research-index">${escape(area.index)}</span>
           <h3>${escape(area.title)}</h3>
           <div class="research-carousel" data-research-carousel data-carousel-interval="5200" role="group" aria-label="${escape(area.title)} papers">
+            <div class="research-stage">
 ${slides.join('\n')}
+              <div class="research-stage-preview" data-carousel-preview aria-hidden="true" inert hidden></div>
+            </div>
+            <div class="research-playback" hidden><span data-carousel-playback>Auto play</span><span class="research-progress-track" aria-hidden="true"><span class="research-progress-bar" data-carousel-progress></span></span></div>
             <div class="research-carousel-controls" hidden>
               <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Previous paper"><span aria-hidden="true">←</span></button>
               <div class="research-carousel-dots">${dots}</div>

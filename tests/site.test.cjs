@@ -166,3 +166,25 @@ test('each research area contains multiple distinct, sourced papers without Java
     }
   } finally { await context.close(); }
 });
+
+test('research slides form a spatial paper deck with non-interactive next-paper previews', async () => {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 }, reducedMotion: 'no-preference' });
+  try {
+    await page.goto(origin + '/shuangchen/');
+    const cards = page.locator('[data-research-carousel]');
+    for (const card of await cards.all()) {
+      assert.equal(await card.locator('.research-stage').count(), 1, 'Each area needs a paper stage');
+      assert.ok(await card.locator('.research-stage').evaluate(element => parseFloat(getComputedStyle(element).perspective) > 0), 'The paper stage needs perspective');
+      const front = card.locator('.research-slide:not([hidden])');
+      assert.equal(await front.count(), 1);
+      assert.match(await front.evaluate(element => getComputedStyle(element).transform), /^matrix3d\(/, 'The current paper should sit in front of the next one');
+      const preview = card.locator('[data-carousel-preview]');
+      assert.ok(await preview.isVisible());
+      assert.equal(await preview.getAttribute('aria-hidden'), 'true');
+      assert.ok(await preview.evaluate(element => element.inert));
+      assert.equal(await preview.locator('a,button,[id]').count(), 0, 'A decorative preview must not duplicate interactive content');
+      assert.equal(await preview.locator('img').count(), 1);
+      assert.ok(await card.locator('[data-carousel-playback]').isVisible());
+    }
+  } finally { await page.close(); }
+});
