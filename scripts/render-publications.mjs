@@ -44,7 +44,7 @@ const html = papers.map(paper => {
     : `<div class="publication-identity" aria-hidden="true"><strong>${escape(identity[paper.id] || paper.venue)}</strong><span>${escape(paper.venue)} · ${paper.year}</span></div>`;
   const links = paper.links.map(link => `<a href="${escape(link.url)}">${escape(link.label)} <span aria-hidden="true">↗</span></a>`).join('');
   // Venue standing (CORE rank, impact factor, acceptance) and a dated Google Scholar citation count.
-  const chips = (paper.metrics ?? []).map(label => `<span class="metric-chip">${escape(label)}</span>`);
+  const chips = (paper.metrics ?? []).map(label => `<span class="metric-chip${/^(CORE|Impact Factor|JCR)/.test(label) ? '' : ' metric-chip-highlight'}">${escape(label)}</span>`);
   if (paper.citations != null) chips.push(`<span class="metric-chip metric-chip-citations" title="Google Scholar, ${escape(paper.citationsAsOf)}">${paper.citations} citation${paper.citations === 1 ? '' : 's'}</span>`);
   const metrics = chips.length ? `<p class="publication-metrics" aria-label="Venue standing and citations">${chips.join('')}</p>` : '';
   return `<article class="publication" id="paper-${escape(paper.id)}" data-selected="${paper.selected}" data-topics="${escape(paper.topics.join(' '))}">

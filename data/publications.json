@@ -398,8 +398,8 @@
       "Impact Factor 9.7",
       "JCR Q1"
     ],
-    "citations": 67,
-    "citationsAsOf": "2025"
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "mxt",
@@ -429,8 +429,8 @@
     "metrics": [
       "CORE A"
     ],
-    "citations": 26,
-    "citationsAsOf": "2025"
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "daevi",
@@ -587,8 +587,8 @@
       }
     ],
     "metrics": [],
-    "citations": 10,
-    "citationsAsOf": "2026"
+    "citations": null,
+    "citationsAsOf": null
   },
   {
     "id": "nclg-mt",
@@ -618,7 +618,7 @@
       }
     ],
     "metrics": [],
-    "citations": 10,
-    "citationsAsOf": "2026"
+    "citations": null,
+    "citationsAsOf": null
   }
 ]

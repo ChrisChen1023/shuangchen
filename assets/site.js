@@ -16,18 +16,25 @@
     let view = 'selected';
     let topic = 'all';
 
-    function update() {
+    const matches = paper => (view === 'all' || paper.dataset.selected === 'true') && (topic === 'all' || paper.dataset.topics.split(' ').includes(topic));
+
+    // A topic with no selected papers widens the view to all publications instead of showing nothing;
+    // choosing "Selected" while such a topic is active clears the topic.
+    function update(changed) {
+      let widened = false;
+      if (!papers.some(matches)) {
+        if (changed === 'view' && view === 'selected') topic = 'all';
+        else if (view === 'selected') { view = 'all'; widened = true; }
+      }
       list.dataset.layout = view;
       let visible = 0;
       for (const paper of papers) {
-        const inView = view === 'all' || paper.dataset.selected === 'true';
-        const inTopic = topic === 'all' || paper.dataset.topics.split(' ').includes(topic);
-        paper.hidden = !(inView && inTopic);
+        paper.hidden = !matches(paper);
         if (!paper.hidden) visible++;
       }
       for (const button of controls.querySelectorAll('[data-view]')) button.setAttribute('aria-pressed', String(button.dataset.view === view));
       for (const button of controls.querySelectorAll('[data-topic]')) button.setAttribute('aria-pressed', String(button.dataset.topic === topic));
-      count.textContent = `${visible} ${view === 'selected' ? 'selected ' : ''}${visible === 1 ? 'paper' : 'papers'}${topic === 'all' ? '' : ' in this topic'}`;
+      count.textContent = `${visible} ${view === 'selected' ? 'selected ' : ''}${visible === 1 ? 'paper' : 'papers'}${topic === 'all' ? '' : ' in this topic'}${widened ? ' · no selected papers here, so all publications are shown' : ''}`;
       empty.hidden = visible !== 0;
     }
 
@@ -36,7 +43,7 @@
       if (!button || !controls.contains(button)) return;
       if (button.dataset.view) view = button.dataset.view;
       if (button.dataset.topic) topic = button.dataset.topic;
-      update();
+      update(button.dataset.view ? 'view' : 'topic');
       motion.resultsChanged(list);
     });
 

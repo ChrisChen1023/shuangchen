@@ -40,13 +40,19 @@ test('topic filters and publication views compose and recover from an empty sele
     assert.equal(await page.locator('.publication:visible').count(), 20);
     await page.getByRole('button', { name: 'Medical imaging', exact: true }).click();
     assert.ok(await page.locator('.publication:visible').count() > 0);
+    // "Selected" with a topic that has no selected papers clears the topic rather than showing nothing.
     await page.getByRole('button', { name: 'Selected', exact: true }).click();
-    assert.equal(await page.locator('.publication:visible').count(), 0);
-    assert.ok(await page.locator('#publication-empty').isVisible());
-    await page.getByRole('button', { name: 'All topics', exact: true }).click();
     assert.equal(await page.locator('.publication:visible').count(), 6);
+    assert.equal(await page.getByRole('button', { name: 'All topics', exact: true }).getAttribute('aria-pressed'), 'true');
     assert.equal(await page.getByRole('button', { name: 'Selected', exact: true }).getAttribute('aria-pressed'), 'true');
-    assert.equal(await page.getByRole('button', { name: 'All publications', exact: true }).getAttribute('aria-pressed'), 'false');
+    // A topic without selected papers widens the view to all publications.
+    await page.getByRole('button', { name: 'Medical imaging', exact: true }).click();
+    assert.equal(await page.locator('.publication:visible').count(), 4);
+    assert.equal(await page.getByRole('button', { name: 'All publications', exact: true }).getAttribute('aria-pressed'), 'true');
+    assert.match(await page.locator('#publication-count').innerText(), /4 papers in this topic · no selected papers here/);
+    assert.ok(await page.locator('#publication-empty').isHidden());
+    await page.getByRole('button', { name: 'All topics', exact: true }).click();
+    assert.equal(await page.locator('.publication:visible').count(), 20);
   } finally { await page.close(); }
 });
 
@@ -198,6 +204,7 @@ test('publications carry sourced venue-standing chips and dated citation counts'
     const page = await context.newPage();
     await page.goto(origin + '/shuangchen/');
     assert.ok(await page.locator('.publication .publication-metrics').count() >= 15, 'Most papers should show venue standing');
+    assert.equal(await page.locator('.metric-chip-citations').count(), 0, 'No citation counts are shown until dated Scholar figures are supplied');
     for (const chip of await page.locator('.metric-chip').all()) assert.match(await chip.innerText(), /^(CORE [ABC]\*?|Impact Factor \d+(\.\d+)?|JCR Q[1-4]|[\d.]+% acceptance|Oral.*|\d+ citations?)$/);
     for (const chip of await page.locator('.metric-chip-citations').all()) assert.match(await chip.getAttribute('title'), /^Google Scholar, \d{4}$/);
     assert.ok(await page.locator('.metrics-note').isVisible());
