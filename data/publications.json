@@ -14,7 +14,12 @@
     "image": null,
     "imageAlt": "",
     "summary": "Cross-prior visual bridging for chest X-ray report generation informed by prior examinations.",
-    "links": []
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2610.28289"
+      }
+    ]
   },
   {
     "id": "sandbar",
@@ -71,8 +76,8 @@
       "robotics"
     ],
     "selected": true,
-    "image": null,
-    "imageAlt": "",
+    "image": "imgs/research/uiesnn-overview.jpg",
+    "imageAlt": "UIESNN architecture with multi-scale spiking residual blocks and frequency decomposition for underwater image enhancement.",
     "summary": "A scale-aware spiking neural network for enhancing underwater imagery.",
     "links": [
       {
@@ -169,8 +174,8 @@
       "robotics"
     ],
     "selected": true,
-    "image": null,
-    "imageAlt": "",
+    "image": "imgs/research/deep-sea-overview.png",
+    "imageAlt": "DEEP-SEA underwater image restoration architecture with dual-frequency self-attention and spatial-frequency modulation.",
     "summary": "Deep-learning image enhancement supports environmental perception in underwater environments.",
     "links": [
       {

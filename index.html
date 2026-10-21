@@ -24,8 +24,9 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/newsreader-normal-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
   <link rel="preload" as="image" href="imgs/SC.jpg">
-  <link rel="stylesheet" href="assets/site.css?v=20261021-5">
-  <script src="assets/site.js?v=20261021-5" defer></script>
+  <link rel="stylesheet" href="assets/site.css?v=20261021-7">
+  <script src="assets/site.js?v=20261021-7" defer></script>
+  <script src="assets/research-carousel.js?v=20261021-7" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -101,41 +102,102 @@
       </aside>
     </section>
 
-    <div class="latest-note"><span class="small-label">Latest</span><p><strong>Two papers accepted at WACV 2027:</strong> CPVB-RG on chest X-ray report generation and SandBAR on underwater image restoration. <a href="#news">More updates <span aria-hidden="true">↗</span></a></p></div>
+    <div class="latest-note"><span class="small-label">Latest</span><p><strong>Two papers accepted at WACV 2027:</strong> <a href="https://arxiv.org/abs/2610.28289">CPVB-RG</a> on chest X-ray report generation and SandBAR on underwater image restoration. <a href="#news">More updates <span aria-hidden="true">↗</span></a></p></div>
 
     <section class="section-block" id="research" aria-labelledby="research-heading">
       <div class="section-heading"><p class="section-number">01 / Research</p><h2 id="research-heading">Seeing clearly. Learning efficiently.</h2></div>
       <div class="research-grid">
+        <!-- RESEARCH:START -->
         <article>
           <span class="research-index">01 / Restore &amp; understand</span>
           <h3>Computer vision</h3>
-          <figure class="research-figure">
-            <a class="research-image-link" href="imgs/papers/hint.png" aria-label="View the HINT image inpainting results at full size"><img src="imgs/papers/hint.png" alt="HINT comparison showing masked inputs and reconstructed facial, indoor and patterned images." width="250" height="195" loading="lazy" decoding="async"></a>
-            <figcaption><span>Image inpainting · HINT</span><a href="https://doi.org/10.1109/TMM.2024.3369897">IEEE TMM 2024 <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
+          <div class="research-carousel" data-research-carousel data-carousel-interval="5200" role="group" aria-label="Computer vision papers">
+            <div class="research-stage">
+            <figure class="research-slide research-figure" data-paper-id="hint">
+              <a class="research-image-link" href="imgs/papers/hint.png" aria-label="View the HINT figure at full size"><img src="imgs/papers/hint.png" alt="HINT image inpainting research figure" width="400" height="240" loading="lazy" decoding="async"></a>
+              <figcaption><div class="research-paper-heading"><a href="https://doi.org/10.1109/TMM.2024.3369897" title="HINT: High-quality INpainting Transformer with Mask-Aware Encoding and Enhanced Attention">HINT <span aria-hidden="true">↗</span></a><span>IEEE TMM 2024</span></div><span class="research-paper-caption">Mask-aware transformers for image inpainting.</span></figcaption>
+            </figure>
+            <figure class="research-slide research-figure" data-paper-id="sem-net">
+              <a class="research-image-link" href="imgs/research/sem-net-overview.png" aria-label="View the SEM-Net figure at full size"><img src="imgs/research/sem-net-overview.png" alt="SEM-Net image inpainting architecture and spatially enhanced state-space modelling block." width="400" height="240" loading="lazy" decoding="async"></a>
+              <figcaption><div class="research-paper-heading"><a href="https://openaccess.thecvf.com/content/WACV2025/html/Chen_SEM-Net_Efficient_Pixel_Modelling_for_Image_Inpainting_with_Spatially_Enhanced_WACV_2025_paper.html" title="SEM-Net: Efficient Pixel Modelling for Image Inpainting with Spatially Enhanced SSM">SEM-Net <span aria-hidden="true">↗</span></a><span>WACV 2025 · Oral</span></div><span class="research-paper-caption">Efficient image inpainting with state-space models.</span></figcaption>
+            </figure>
+            <figure class="research-slide research-figure" data-paper-id="daevi">
+              <a class="research-image-link" href="imgs/papers/DAEVI.png" aria-label="View the DAEVI figure at full size"><img src="imgs/papers/DAEVI.png" alt="Depth-aware endoscopic video inpainting research figure" width="400" height="240" loading="lazy" decoding="async"></a>
+              <figcaption><div class="research-paper-heading"><a href="https://link.springer.com/chapter/10.1007/978-3-031-72089-5_14" title="Depth-Aware Endoscopic Video Inpainting">DAEVI <span aria-hidden="true">↗</span></a><span>MICCAI 2024</span></div><span class="research-paper-caption">Depth-aware reconstruction of endoscopic video.</span></figcaption>
+            </figure>
+              <div class="research-stage-preview" data-carousel-preview aria-hidden="true" inert hidden></div>
+            </div>
+            <div class="research-carousel-controls" hidden>
+              <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Previous paper"><span aria-hidden="true">←</span></button>
+              <div class="research-carousel-dots"><button type="button" data-carousel-go="0" aria-label="Show HINT" aria-current="true"><span aria-hidden="true"></span></button><button type="button" data-carousel-go="1" aria-label="Show SEM-Net" aria-current="false"><span aria-hidden="true"></span></button><button type="button" data-carousel-go="2" aria-label="Show DAEVI" aria-current="false"><span aria-hidden="true"></span></button></div>
+              <span class="research-carousel-count" data-carousel-count>1 / 3</span>
+              <button type="button" class="carousel-arrow" data-carousel-next aria-label="Next paper"><span aria-hidden="true">→</span></button>
+              <button type="button" class="carousel-toggle" data-carousel-toggle aria-label="Pause automatic rotation">Pause</button>
+            </div>
+            <p class="sr-only" data-carousel-status role="status" aria-live="polite"></p>
+          </div>
           <p><strong>Recovering visual information</strong> from incomplete or degraded observations. My work spans image inpainting, restoration, visual representation learning and biomedical imaging.</p>
           <a class="text-link" href="#publications">Explore the papers <span aria-hidden="true">↗</span></a>
         </article>
         <article>
           <span class="research-index">02 / Learn efficiently</span>
           <h3>Brain-inspired AI</h3>
-          <figure class="research-figure">
-            <a class="research-image-link" href="imgs/research/vlif-spiking-neuron.jpg" aria-label="View the Visual LIF neuron diagram at full size"><img src="imgs/research/vlif-spiking-neuron.jpg" alt="Traditional LIF and Visual LIF neurons compared, showing spatial context and temporal processing." width="2400" height="655" loading="lazy" decoding="async"></a>
-            <figcaption><span>Visual LIF neuron</span><a href="https://doi.org/10.1609/aaai.v40i4.37295">AAAI 2026 <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
+          <div class="research-carousel" data-research-carousel data-carousel-interval="5200" role="group" aria-label="Brain-inspired AI papers">
+            <div class="research-stage">
+            <figure class="research-slide research-figure" data-paper-id="vlif">
+              <a class="research-image-link" href="imgs/research/vlif-spiking-neuron.jpg" aria-label="View the Visual LIF figure at full size"><img src="imgs/research/vlif-spiking-neuron.jpg" alt="Comparison of traditional LIF and Visual LIF neurons and their spatial and temporal processing." width="400" height="240" loading="lazy" decoding="async"></a>
+              <figcaption><div class="research-paper-heading"><a href="https://doi.org/10.1609/aaai.v40i4.37295" title="Exploring the Potentials of Spiking Neural Networks for Image Deraining">Visual LIF <span aria-hidden="true">↗</span></a><span>AAAI 2026</span></div><span class="research-paper-caption">Spatial context in spiking neurons for image deraining.</span></figcaption>
+            </figure>
+            <figure class="research-slide research-figure" data-paper-id="uiesnn">
+              <a class="research-image-link" href="imgs/research/uiesnn-overview.jpg" aria-label="View the UIESNN figure at full size"><img src="imgs/research/uiesnn-overview.jpg" alt="UIESNN architecture with multi-scale spiking residual blocks and frequency decomposition for underwater image enhancement." width="400" height="240" loading="lazy" decoding="async"></a>
+              <figcaption><div class="research-paper-heading"><a href="https://arxiv.org/abs/2605.08376" title="UIESNN: A Scale-Aware Spiking Network for Underwater Image Enhancement">UIESNN <span aria-hidden="true">↗</span></a><span>IJCNN 2026</span></div><span class="research-paper-caption">Scale-aware spiking networks for underwater enhancement.</span></figcaption>
+            </figure>
+              <div class="research-stage-preview" data-carousel-preview aria-hidden="true" inert hidden></div>
+            </div>
+            <div class="research-carousel-controls" hidden>
+              <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Previous paper"><span aria-hidden="true">←</span></button>
+              <div class="research-carousel-dots"><button type="button" data-carousel-go="0" aria-label="Show Visual LIF" aria-current="true"><span aria-hidden="true"></span></button><button type="button" data-carousel-go="1" aria-label="Show UIESNN" aria-current="false"><span aria-hidden="true"></span></button></div>
+              <span class="research-carousel-count" data-carousel-count>1 / 2</span>
+              <button type="button" class="carousel-arrow" data-carousel-next aria-label="Next paper"><span aria-hidden="true">→</span></button>
+              <button type="button" class="carousel-toggle" data-carousel-toggle aria-label="Pause automatic rotation">Pause</button>
+            </div>
+            <p class="sr-only" data-carousel-status role="status" aria-live="polite"></p>
+          </div>
           <p><strong>Artificial neurons and spiking networks</strong> for visual processing. I explore how biological structure and behaviour can inspire efficient temporal computation and adaptive perception.</p>
-          <a class="text-link" href="https://github.com/ChrisChen1023/VLIF">Visual LIF research <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://github.com/ChrisChen1023/VLIF">Explore spiking vision <span aria-hidden="true">↗</span></a>
         </article>
         <article>
           <span class="research-index">03 / Perceive &amp; act</span>
           <h3>Robotic perception</h3>
-          <figure class="research-figure">
-            <a class="research-image-link" href="imgs/research/micro-robot-swarm-pipeline.png" aria-label="View the micro-robot visual monitoring pipeline at full size"><img src="imgs/research/micro-robot-swarm-pipeline.png" alt="Micro-robot monitoring pipeline from simulated snapshots through coordinate prediction to reconstructed images." width="1691" height="660" loading="lazy" decoding="async"></a>
-            <figcaption><span>Micro-robot visual monitoring</span><a href="https://doi.org/10.1109/ICRA55743.2025.11128089">ICRA 2025 <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
+          <div class="research-carousel" data-research-carousel data-carousel-interval="5200" role="group" aria-label="Robotic perception papers">
+            <div class="research-stage">
+            <figure class="research-slide research-figure" data-paper-id="micro-robots">
+              <a class="research-image-link" href="imgs/research/micro-robot-swarm-pipeline.png" aria-label="View the Micro-robot swarm figure at full size"><img src="imgs/research/micro-robot-swarm-pipeline.png" alt="Micro-robot monitoring pipeline from simulated snapshots to coordinate prediction and image assembly." width="400" height="240" loading="lazy" decoding="async"></a>
+              <figcaption><div class="research-paper-heading"><a href="https://arxiv.org/abs/2503.02752" title="Deep Learning-Enhanced Visual Monitoring in Hazardous Underwater Environments with a Swarm of Micro-Robots">Micro-robot swarm <span aria-hidden="true">↗</span></a><span>ICRA 2025</span></div><span class="research-paper-caption">Reconstructing a shared view from micro-robot snapshots.</span></figcaption>
+            </figure>
+            <figure class="research-slide research-figure" data-paper-id="deep-sea">
+              <a class="research-image-link" href="imgs/research/deep-sea-overview.png" aria-label="View the DEEP-SEA figure at full size"><img src="imgs/research/deep-sea-overview.png" alt="DEEP-SEA underwater image restoration architecture with dual-frequency self-attention and spatial-frequency modulation." width="400" height="240" loading="lazy" decoding="async"></a>
+              <figcaption><div class="research-paper-heading"><a href="https://arxiv.org/abs/2508.12824" title="DEEP-SEA: Deep-Learning Enhancement for Environmental Perception in Submerged Aquatics">DEEP-SEA <span aria-hidden="true">↗</span></a><span>IROS 2025</span></div><span class="research-paper-caption">Restoring visual information in submerged environments.</span></figcaption>
+            </figure>
+            <figure class="research-slide research-figure" data-paper-id="uiesnn">
+              <a class="research-image-link" href="imgs/research/uiesnn-overview.jpg" aria-label="View the UIESNN figure at full size"><img src="imgs/research/uiesnn-overview.jpg" alt="UIESNN architecture with multi-scale spiking residual blocks and frequency decomposition for underwater image enhancement." width="400" height="240" loading="lazy" decoding="async"></a>
+              <figcaption><div class="research-paper-heading"><a href="https://arxiv.org/abs/2605.08376" title="UIESNN: A Scale-Aware Spiking Network for Underwater Image Enhancement">UIESNN <span aria-hidden="true">↗</span></a><span>IJCNN 2026</span></div><span class="research-paper-caption">Spiking vision for underwater environmental perception.</span></figcaption>
+            </figure>
+              <div class="research-stage-preview" data-carousel-preview aria-hidden="true" inert hidden></div>
+            </div>
+            <div class="research-carousel-controls" hidden>
+              <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Previous paper"><span aria-hidden="true">←</span></button>
+              <div class="research-carousel-dots"><button type="button" data-carousel-go="0" aria-label="Show Micro-robot swarm" aria-current="true"><span aria-hidden="true"></span></button><button type="button" data-carousel-go="1" aria-label="Show DEEP-SEA" aria-current="false"><span aria-hidden="true"></span></button><button type="button" data-carousel-go="2" aria-label="Show UIESNN" aria-current="false"><span aria-hidden="true"></span></button></div>
+              <span class="research-carousel-count" data-carousel-count>1 / 3</span>
+              <button type="button" class="carousel-arrow" data-carousel-next aria-label="Next paper"><span aria-hidden="true">→</span></button>
+              <button type="button" class="carousel-toggle" data-carousel-toggle aria-label="Pause automatic rotation">Pause</button>
+            </div>
+            <p class="sr-only" data-carousel-status role="status" aria-live="polite"></p>
+          </div>
           <p><strong>Reliable vision in challenging environments:</strong> underwater image enhancement, camera-based monitoring and collaborative micro-robot sensing. Active and event-based perception are developing research directions.</p>
           <a class="text-link" href="https://github.com/ChrisChen1023/DEEP-SEA">Underwater perception <span aria-hidden="true">↗</span></a>
         </article>
+        <!-- RESEARCH:END -->
       </div>
     </section>
 
@@ -153,10 +215,10 @@
   <figure class="publication-media"><div class="publication-identity" aria-hidden="true"><strong>CPVB-RG</strong><span>WACV · 2027</span></div></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>WACV · 2027</span><span class="accepted-label">Accepted</span></p>
-    <h3>CPVB-RG: Cross-Prior Visual Bridging for Prior-Aware Chest X-Ray Report Generation</h3>
+    <h3><a href="https://arxiv.org/abs/2610.28289">CPVB-RG: Cross-Prior Visual Bridging for Prior-Aware Chest X-Ray Report Generation</a></h3>
     <p class="publication-authors">Sike Xiang, <strong>Shuang Chen</strong>, Julie Cox, Amir Atapour-Abarghouei</p>
     <p class="publication-summary">Cross-prior visual bridging for chest X-ray report generation informed by prior examinations.</p>
-
+    <div class="publication-links"><a href="https://arxiv.org/abs/2610.28289">Paper <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
 <article class="publication" id="paper-sandbar" data-selected="false" data-topics="vision">
@@ -180,7 +242,7 @@
   </div>
 </article>
 <article class="publication" id="paper-uiesnn" data-selected="true" data-topics="vision brain robotics">
-  <figure class="publication-media"><div class="publication-identity" aria-hidden="true"><strong>UIESNN</strong><span>IJCNN · 2026</span></div></figure>
+  <figure class="publication-media"><img src="imgs/research/uiesnn-overview.jpg" alt="UIESNN architecture with multi-scale spiking residual blocks and frequency decomposition for underwater image enhancement." width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>IJCNN · 2026</span></p>
     <h3><a href="https://arxiv.org/abs/2605.08376">UIESNN: A Scale-Aware Spiking Network for Underwater Image Enhancement</a></h3>
@@ -220,7 +282,7 @@
   </div>
 </article>
 <article class="publication" id="paper-deep-sea" data-selected="true" data-topics="vision robotics">
-  <figure class="publication-media"><div class="publication-identity" aria-hidden="true"><strong>DEEP-SEA</strong><span>IROS · 2025</span></div></figure>
+  <figure class="publication-media"><img src="imgs/research/deep-sea-overview.png" alt="DEEP-SEA underwater image restoration architecture with dual-frequency self-attention and spatial-frequency modulation." width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>IROS · 2025</span></p>
     <h3><a href="https://arxiv.org/abs/2508.12824">DEEP-SEA: Deep-Learning Enhancement for Environmental Perception in Submerged Aquatics</a></h3>

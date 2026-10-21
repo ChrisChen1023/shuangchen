@@ -6,10 +6,11 @@ A light, responsive academic website for computer vision, brain-inspired AI and 
 
 ## Update content
 
-- Biography, news, experience, education and teaching: edit `index.html` outside the publication markers.
-- Publications: edit `data/publications.json`, then run `node scripts/render-publications.mjs` and commit both the JSON and generated `index.html`.
+- Biography, news, experience, education and teaching: edit `index.html` outside the generated content markers.
+- Publications: edit `data/publications.json`, then run `node scripts/render-publications.mjs` and `node scripts/render-research.mjs`; commit the JSON and generated `index.html`.
+- Research areas: edit `data/research-areas.json` and run `node scripts/render-research.mjs`. Each area references multiple existing publication IDs; images, alternative text, venues and paper links come from `data/publications.json`.
 - LinkedIn field notes: edit `data/linkedin-posts.json`, add genuine post photos under `imgs/activity/`, then run `node scripts/render-activity.mjs` and commit the JSON, photos and generated `index.html`. Posts are verified and published as static summaries with original source links.
-- Styles: `assets/site.css`; publication filtering, scroll reveals, header behaviour and the figure lightbox: `assets/site.js`.
+- Styles: `assets/site.css`; publication filtering, scroll reveals, header behaviour and the figure lightbox: `assets/site.js`; research-paper slideshows: `assets/research-carousel.js`.
 - Fonts: `assets/fonts/` holds self-hosted Newsreader (headings) and Inter (body) subsets under the SIL Open Font License; see the README there. No third-party requests are made.
 - Portrait: `imgs/SC.jpg`; paper images: `imgs/papers/` and `imgs/research/`. Keep figures at or below roughly 2400 px wide and a few hundred KB; `docs/research-image-sources.md` records any resizing.
 - Research image provenance: `docs/research-image-sources.md`.
@@ -23,7 +24,7 @@ The owner authorised a weekly Codex thread automation, scheduled for Monday at 0
 
 ## Interaction
 
-Research cards include genuine paper figures and publication sources; clicking a figure opens it in a lightbox (`<dialog>`) with Escape, close-button and backdrop dismissal, while modified clicks and non-JavaScript visitors get the plain image link. Research, publication, activity, news, timeline and hero content have one-time staggered reveals (fade, rise and blur-to-sharp) driven by an IntersectionObserver and the Web Animations API with no persistent fill; citation metrics count up once; the header condenses on scroll and underlines the section in view; cards, links and buttons have short hover transitions. Baseline content stays visible if JavaScript, IntersectionObserver or animation APIs are unavailable, when printing, and for anyone with reduced motion enabled (including changes while the page is open); animations are cancelled around keyboard focus.
+Each research area shows several genuine paper figures in a slideshow with a perspective paper stage, a non-interactive preview of the next paper and coordinated depth transitions, plus arrows, paper selectors and pause/resume; playback pauses for focused paper links, hidden tabs, offscreen stages and reduced motion, and without JavaScript all papers read in sequence. Clicking a figure opens it in a lightbox (`<dialog>`) with Escape, close-button and backdrop dismissal, while modified clicks and non-JavaScript visitors get the plain image link. Research, publication, activity, news, timeline and hero content have one-time staggered reveals (fade, rise and blur-to-sharp) driven by an IntersectionObserver and the Web Animations API with no persistent fill; citation metrics count up once; the header condenses on scroll and underlines the section in view; cards, links and buttons have short hover transitions. Baseline content stays visible if JavaScript, IntersectionObserver or animation APIs are unavailable, when printing, and for anyone with reduced motion enabled (including changes while the page is open); animations are cancelled around keyboard focus.
 
 ## Print and sharing
 
@@ -37,7 +38,7 @@ The published site lives at `/shuangchen/`. All asset paths are relative, and `_
 
 ## Browser checks
 
-With Node.js and Playwright available, run `node --test tests/site.test.cjs tests/motion.test.cjs tests/enhancements.test.cjs` (each suite can also be run on its own). On a new machine, install the development browser with `npm install --no-save playwright` and `npx playwright install chromium` first. Checks cover selected/all publication views, combined topic filters and empty states, keyboard controls, mobile overflow, local assets and anchors, no-JavaScript reading, the production URL subpath, motion preferences and animation API fallbacks, self-hosted fonts with no external requests, the lightbox, the condensing header and section tracking, metric count-up and print/focus reveal shortcuts.
+With Node.js and Playwright available, run `node --test tests/site.test.cjs tests/motion.test.cjs tests/enhancements.test.cjs tests/research-carousel.test.cjs` (each suite can also be run on its own). On a new machine, install the development browser with `npm install --no-save playwright` and `npx playwright install chromium` first. Checks cover selected/all publication views, combined topic filters and empty states, keyboard controls, mobile overflow, local assets and anchors, no-JavaScript reading including static multi-paper research areas, carousel rotation and pause behaviour, the production URL subpath, motion preferences and animation API fallbacks, self-hosted fonts with no external requests, the lightbox, the condensing header and section tracking, metric count-up and print/focus reveal shortcuts.
 
 ## Design references
 

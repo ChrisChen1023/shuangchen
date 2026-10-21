@@ -1,0 +1,40 @@
+[
+  {
+    "id": "vision",
+    "index": "01 / Restore & understand",
+    "title": "Computer vision",
+    "lead": "Recovering visual information",
+    "description": " from incomplete or degraded observations. My work spans image inpainting, restoration, visual representation learning and biomedical imaging.",
+    "link": { "label": "Explore the papers", "url": "#publications" },
+    "papers": [
+      { "id": "hint", "label": "HINT", "caption": "Mask-aware transformers for image inpainting." },
+      { "id": "sem-net", "label": "SEM-Net", "caption": "Efficient image inpainting with state-space models." },
+      { "id": "daevi", "label": "DAEVI", "caption": "Depth-aware reconstruction of endoscopic video." }
+    ]
+  },
+  {
+    "id": "brain",
+    "index": "02 / Learn efficiently",
+    "title": "Brain-inspired AI",
+    "lead": "Artificial neurons and spiking networks",
+    "description": " for visual processing. I explore how biological structure and behaviour can inspire efficient temporal computation and adaptive perception.",
+    "link": { "label": "Explore spiking vision", "url": "https://github.com/ChrisChen1023/VLIF" },
+    "papers": [
+      { "id": "vlif", "label": "Visual LIF", "caption": "Spatial context in spiking neurons for image deraining." },
+      { "id": "uiesnn", "label": "UIESNN", "caption": "Scale-aware spiking networks for underwater enhancement." }
+    ]
+  },
+  {
+    "id": "robotics",
+    "index": "03 / Perceive & act",
+    "title": "Robotic perception",
+    "lead": "Reliable vision in challenging environments:",
+    "description": " underwater image enhancement, camera-based monitoring and collaborative micro-robot sensing. Active and event-based perception are developing research directions.",
+    "link": { "label": "Underwater perception", "url": "https://github.com/ChrisChen1023/DEEP-SEA" },
+    "papers": [
+      { "id": "micro-robots", "label": "Micro-robot swarm", "caption": "Reconstructing a shared view from micro-robot snapshots." },
+      { "id": "deep-sea", "label": "DEEP-SEA", "caption": "Restoring visual information in submerged environments." },
+      { "id": "uiesnn", "label": "UIESNN", "caption": "Spiking vision for underwater environmental perception." }
+    ]
+  }
+]

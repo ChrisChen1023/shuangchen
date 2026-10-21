@@ -88,11 +88,14 @@
     function open(link) {
       if (!dialog) build();
       const source = link.querySelector('img');
-      const caption = link.closest('figure')?.querySelector('figcaption span');
+      const figcaption = link.closest('figure')?.querySelector('figcaption');
+      const label = figcaption?.querySelector('.research-paper-heading a')?.textContent.replace(/\s*↗\s*$/, '');
+      const venue = figcaption?.querySelector('.research-paper-heading span')?.textContent;
+      const summary = figcaption?.querySelector('.research-paper-caption')?.textContent;
       const image = dialog.querySelector('img');
       image.src = link.href;
       image.alt = source?.alt || '';
-      dialog.querySelector('figcaption span').textContent = caption ? caption.textContent : (source?.alt || '');
+      dialog.querySelector('figcaption span').textContent = [label, venue, summary].filter(Boolean).join(' · ') || figcaption?.textContent.trim() || source?.alt || '';
       dialog.querySelector('figcaption a').href = link.href;
       dialog.showModal();
       motion.enter(dialog.querySelector('figure'));

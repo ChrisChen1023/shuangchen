@@ -51,7 +51,7 @@ test('topic filters and publication views compose and recover from an empty sele
 });
 
 test('the page, anchors and local assets work on desktop and narrow mobile widths', async () => {
-  const page = await browser.newPage();
+  const page = await browser.newPage({ reducedMotion: 'reduce' });
   page.setDefaultTimeout(5000);
   const errors = [], missing = [];
   page.on('pageerror', error => errors.push(error.message));
@@ -68,8 +68,8 @@ test('the page, anchors and local assets work on desktop and narrow mobile width
     // Reveal every paper before exercising lazy-loaded image assets.
     await page.getByRole('button', { name: 'All publications', exact: true }).click();
     for (const image of await page.locator('img').all()) {
-      await image.scrollIntoViewIfNeeded();
-      await image.evaluate(img => img.decode());
+      if (await image.isVisible()) await image.scrollIntoViewIfNeeded();
+      await image.evaluate(img => { img.loading = 'eager'; return img.decode(); });
       assert.ok(await image.evaluate(img => img.naturalWidth > 0));
     }
     assert.deepEqual(errors, []);
@@ -146,4 +146,48 @@ test('imported LinkedIn updates have readable summaries and original source link
       assert.ok(source.protocol === 'https:' && /(^|\.)linkedin\.com$/.test(source.hostname));
     }
   } finally { await context.close(); }
+});
+
+test('each research area contains multiple distinct, sourced papers without JavaScript', async () => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  try {
+    const page = await context.newPage();
+    await page.goto(origin + '/shuangchen/');
+    const areas = page.locator('.research-grid article');
+    assert.equal(await areas.count(), 3);
+    for (const area of await areas.all()) {
+      const figures = area.locator('figure');
+      assert.ok(await figures.count() >= 2, 'Every area needs multiple papers');
+      const ids = await figures.evaluateAll(items => items.map(item => item.dataset.paperId));
+      assert.equal(new Set(ids).size, ids.length, 'Papers within an area must be distinct');
+      for (const figure of await figures.all()) {
+        assert.ok(await figure.isVisible());
+        assert.ok((await figure.locator('img').getAttribute('alt')).length > 15);
+        const paperLink = await figure.locator('figcaption a').getAttribute('href');
+        assert.match(paperLink, /^https:\/\//);
+        assert.ok((await figure.locator('figcaption').innerText()).length > 15);
+      }
+    }
+  } finally { await context.close(); }
+});
+
+test('research slides form a spatial paper deck with non-interactive next-paper previews', async () => {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 }, reducedMotion: 'no-preference' });
+  try {
+    await page.goto(origin + '/shuangchen/');
+    const cards = page.locator('[data-research-carousel]');
+    for (const card of await cards.all()) {
+      assert.equal(await card.locator('.research-stage').count(), 1, 'Each area needs a paper stage');
+      assert.ok(await card.locator('.research-stage').evaluate(element => parseFloat(getComputedStyle(element).perspective) > 0), 'The paper stage needs perspective');
+      const front = card.locator('.research-slide:not([hidden])');
+      assert.equal(await front.count(), 1);
+      assert.match(await front.evaluate(element => getComputedStyle(element).transform), /^matrix3d\(/, 'The current paper should sit in front of the next one');
+      const preview = card.locator('[data-carousel-preview]');
+      assert.ok(await preview.isVisible());
+      assert.equal(await preview.getAttribute('aria-hidden'), 'true');
+      assert.ok(await preview.evaluate(element => element.inert));
+      assert.equal(await preview.locator('a,button,[id]').count(), 0, 'A decorative preview must not duplicate interactive content');
+      assert.equal(await preview.locator('img').count(), 1);
+    }
+  } finally { await page.close(); }
 });

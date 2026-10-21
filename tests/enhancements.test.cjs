@@ -82,8 +82,7 @@ test('modified clicks on a figure keep the plain link behaviour', async () => {
     const link = page.locator('.research-image-link').first();
     await link.scrollIntoViewIfNeeded();
     const [popup] = await Promise.all([context.waitForEvent('page'), link.click({ modifiers: ['Control'] })]);
-    await popup.waitForLoadState();
-    assert.match(popup.url(), /hint\.png$/);
+    await popup.waitForURL(/hint\.png$/);
     await popup.close();
     assert.equal(await page.locator('dialog.lightbox[open]').count(), 0);
   } finally { await context.close(); }
