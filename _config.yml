@@ -1,5 +1,10 @@
 title: Shuang (Chris) Chen
-logo: ./imgs/SC.jpg
-#description:
-show_downloads: true
-theme: jekyll-theme-minimal
+description: Computer vision, brain-inspired AI and robotic perception at Durham University.
+url: https://chrischen1023.github.io
+baseurl: /shuangchen
+exclude:
+  - data
+  - scripts
+  - tests
+  - docs
+  - README.md

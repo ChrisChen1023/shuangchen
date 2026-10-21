@@ -1,0 +1,106 @@
+const { test, before, after } = require('node:test');
+const assert = require('node:assert/strict');
+const { createServer } = require('node:http');
+const { readFile } = require('node:fs/promises');
+const path = require('node:path');
+const { chromium } = require('playwright');
+
+const root = path.resolve(__dirname, '..');
+const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml' };
+let server, browser, origin;
+
+before(async () => {
+  server = createServer(async (req, res) => {
+    let pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+    if (pathname.startsWith('/shuangchen/')) pathname = pathname.slice('/shuangchen'.length);
+    const file = path.resolve(root, '.' + (pathname.endsWith('/') ? pathname + 'index.html' : pathname));
+    if (!file.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
+    try { const bytes = await readFile(file); res.writeHead(200, { 'Content-Type': types[path.extname(file)] || 'application/octet-stream' }).end(bytes); }
+    catch { res.writeHead(404).end('Not found'); }
+  });
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  origin = `http://127.0.0.1:${server.address().port}`;
+  browser = await chromium.launch({ headless: true });
+});
+
+after(async () => { await browser?.close(); if (server) await new Promise(resolve => server.close(resolve)); });
+
+test('topic filters and publication views compose and recover from an empty selection', async () => {
+  const page = await browser.newPage();
+  try {
+    const response = await page.goto(origin + '/shuangchen/');
+    assert.equal(response.status(), 200, 'The new homepage must exist at the GitHub Pages subpath');
+    await page.waitForSelector('.publication-controls:not([hidden])');
+    assert.equal(await page.locator('.publication:visible').count(), 6);
+    await page.getByRole('button', { name: 'Brain-inspired AI', exact: true }).click();
+    assert.equal(await page.locator('.publication:visible').count(), 2);
+    assert.match(await page.locator('#publication-list').innerText(), /Spiking Neural Networks for Image Deraining/);
+    await page.getByRole('button', { name: 'All publications', exact: true }).click();
+    await page.getByRole('button', { name: 'All topics', exact: true }).click();
+    assert.equal(await page.locator('.publication:visible').count(), 20);
+    await page.getByRole('button', { name: 'Applications', exact: true }).click();
+    assert.ok(await page.locator('.publication:visible').count() > 0);
+    await page.getByRole('button', { name: 'Selected', exact: true }).click();
+    assert.equal(await page.locator('.publication:visible').count(), 0);
+    assert.ok(await page.locator('#publication-empty').isVisible());
+    await page.getByRole('button', { name: 'All topics', exact: true }).click();
+    assert.equal(await page.locator('.publication:visible').count(), 6);
+    assert.equal(await page.getByRole('button', { name: 'Selected', exact: true }).getAttribute('aria-pressed'), 'true');
+    assert.equal(await page.getByRole('button', { name: 'All publications', exact: true }).getAttribute('aria-pressed'), 'false');
+  } finally { await page.close(); }
+});
+
+test('the page, anchors and local assets work on desktop and narrow mobile widths', async () => {
+  const page = await browser.newPage();
+  page.setDefaultTimeout(5000);
+  const errors = [], missing = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('response', response => { if (response.url().startsWith(origin) && response.status() >= 400) missing.push(response.url()); });
+  try {
+    await page.goto(origin + '/shuangchen/');
+    await page.waitForSelector('.publication:visible');
+    for (const width of [360, 390, 768, 1440]) {
+      await page.setViewportSize({ width, height: 950 });
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `No horizontal overflow at ${width}px`);
+    }
+    const invalidAnchors = await page.locator('a[href^="#"]').evaluateAll(links => links.map(link => link.hash).filter(hash => hash.length > 1 && !document.getElementById(hash.slice(1))));
+    assert.deepEqual(invalidAnchors, []);
+    // Reveal every paper before exercising lazy-loaded image assets.
+    await page.getByRole('button', { name: 'All publications', exact: true }).click();
+    for (const image of await page.locator('img').all()) {
+      await image.scrollIntoViewIfNeeded();
+      await image.evaluate(img => img.decode());
+      assert.ok(await image.evaluate(img => img.naturalWidth > 0));
+    }
+    assert.deepEqual(errors, []);
+    assert.deepEqual(missing, []);
+  } finally { await page.close(); }
+});
+
+test('research and contact remain fully readable without JavaScript', async () => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  try {
+    const page = await context.newPage();
+    await page.goto(origin + '/shuangchen/');
+    assert.equal(await page.locator('.publication:visible').count(), 20);
+    assert.ok(await page.getByRole('link', { name: 'shuang.chen@durham.ac.uk', exact: true }).isVisible());
+    assert.equal(await page.locator('.publication-controls:visible').count(), 0);
+    assert.ok(await page.getByRole('heading', { name: /Shuang/ }).isVisible());
+  } finally { await context.close(); }
+});
+
+test('publication controls are reachable and usable from the keyboard', async () => {
+  const page = await browser.newPage();
+  try {
+    await page.goto(origin + '/shuangchen/');
+    const all = page.getByRole('button', { name: 'All publications', exact: true });
+    await all.focus();
+    await page.keyboard.press('Enter');
+    assert.equal(await page.locator('.publication:visible').count(), 20);
+    const brain = page.getByRole('button', { name: 'Brain-inspired AI', exact: true });
+    await brain.focus();
+    await page.keyboard.press('Space');
+    assert.equal(await brain.getAttribute('aria-pressed'), 'true');
+    assert.equal(await page.locator('.publication:visible').count(), 2);
+  } finally { await page.close(); }
+});

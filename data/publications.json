@@ -1,0 +1,487 @@
+[
+  {
+    "id": "cpvb-rg",
+    "title": "CPVB-RG: Cross-Prior Visual Bridging for Prior-Aware Chest X-Ray Report Generation",
+    "authors": "Sike Xiang, Shuang Chen, Julie Cox, Amir Atapour-Abarghouei",
+    "venue": "WACV",
+    "year": 2027,
+    "status": "accepted",
+    "topics": [
+      "vision",
+      "applications"
+    ],
+    "selected": false,
+    "image": null,
+    "imageAlt": "",
+    "summary": "Cross-prior visual bridging for chest X-ray report generation informed by prior examinations.",
+    "links": []
+  },
+  {
+    "id": "sandbar",
+    "title": "SandBAR: A Band-Asymmetric Architecture for Underwater Image Restoration with Removable Frequency Scaffolding",
+    "authors": "Yanzi Liu, Haoran Hou, Jiachi Tong, Shen Chen, Shuang Chen",
+    "venue": "WACV",
+    "year": 2027,
+    "status": "accepted",
+    "topics": [
+      "vision"
+    ],
+    "selected": false,
+    "image": null,
+    "imageAlt": "",
+    "summary": "A band-asymmetric approach to underwater image restoration using removable frequency scaffolding.",
+    "links": []
+  },
+  {
+    "id": "vlif",
+    "title": "Exploring the Potentials of Spiking Neural Networks for Image Deraining",
+    "authors": "Shuang Chen, Tomas Krajnik, Farshad Arvin, Amir Atapour-Abarghouei",
+    "venue": "AAAI",
+    "year": 2026,
+    "status": "published",
+    "topics": [
+      "vision",
+      "brain"
+    ],
+    "selected": true,
+    "image": "imgs/research/vlif-spiking-neuron.png",
+    "imageAlt": "Comparison of traditional LIF and Visual LIF neurons and their spatial and temporal processing.",
+    "summary": "Visual LIF neurons bring spatial contextual processing to spiking networks for image deraining.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1609/aaai.v40i4.37295"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ChrisChen1023/VLIF"
+      }
+    ]
+  },
+  {
+    "id": "uiesnn",
+    "title": "UIESNN: A Scale-Aware Spiking Network for Underwater Image Enhancement",
+    "authors": "Shuang Chen, Ruochen Li, Zihan Zhu, Ronald Thenius, Farshad Arvin, Amir Atapour-Abarghouei",
+    "venue": "IJCNN",
+    "year": 2026,
+    "status": "published",
+    "topics": [
+      "vision",
+      "brain",
+      "robotics"
+    ],
+    "selected": true,
+    "image": null,
+    "imageAlt": "",
+    "summary": "A scale-aware spiking neural network for enhancing underwater imagery.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2605.08376"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ChrisChen1023/UIESNN"
+      }
+    ]
+  },
+  {
+    "id": "bumblebee-olfaction",
+    "title": "Sexual dimorphisms of the olfactory system are conserved across bumblebee species",
+    "authors": "J. Oppersma, W. E, W. C. Gomez-Ramirez, I. Muktar, T. Wise, M. Bolton, Shuang Chen, A. Atapour-Abarghouei, C. Polidori, O. Riabinina",
+    "venue": "iScience",
+    "year": 2026,
+    "status": "accepted",
+    "topics": [
+      "applications"
+    ],
+    "selected": false,
+    "image": null,
+    "imageAlt": "",
+    "summary": "An interdisciplinary study of sex differences in olfactory anatomy across bumblebee species.",
+    "links": [
+      {
+        "label": "Lab listing",
+        "url": "https://insectneurolab.com/publications/"
+      }
+    ]
+  },
+  {
+    "id": "boost",
+    "title": "BOOST: Out-of-distribution-informed adaptive sampling for bias mitigation in stylistic convolutional neural networks",
+    "authors": "Mridula Vijendran, Shuang Chen, Jingjing Deng, Hubert P. H. Shum",
+    "venue": "Expert Systems with Applications",
+    "year": 2026,
+    "status": "published",
+    "topics": [
+      "vision",
+      "applications"
+    ],
+    "selected": false,
+    "image": null,
+    "imageAlt": "",
+    "summary": "Out-of-distribution-informed adaptive sampling addresses bias in stylistic convolutional neural networks.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0957417425025229"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/41enthusiast/BOOST/"
+      }
+    ]
+  },
+  {
+    "id": "caflow",
+    "title": "CaFlow: Enhancing Long-Term Action Quality Assessment with Causal Counterfactual Flow",
+    "authors": "Ruisheng Han et al. (including Shuang Chen)",
+    "venue": "WACV",
+    "year": 2026,
+    "status": "published",
+    "topics": [
+      "vision"
+    ],
+    "selected": false,
+    "image": null,
+    "imageAlt": "",
+    "summary": "Causal counterfactual flow supports long-term assessment of action quality in video.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "http://adaptive-intelligence.co.uk/wp-content/uploads/2025/12/han2026caflow.pdf"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/Harrison21/CaFlow"
+      }
+    ]
+  },
+  {
+    "id": "deep-sea",
+    "title": "DEEP-SEA: Deep-Learning Enhancement for Environmental Perception in Submerged Aquatics",
+    "authors": "Shuang Chen, Ronald Thenius, Farshad Arvin, Amir Atapour-Abarghouei",
+    "venue": "IROS",
+    "year": 2025,
+    "status": "published",
+    "topics": [
+      "vision",
+      "robotics"
+    ],
+    "selected": true,
+    "image": null,
+    "imageAlt": "",
+    "summary": "Deep-learning image enhancement supports environmental perception in underwater environments.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2508.12824"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ChrisChen1023/DEEP-SEA"
+      }
+    ]
+  },
+  {
+    "id": "micro-robots",
+    "title": "Deep Learning-Enhanced Visual Monitoring in Hazardous Underwater Environments with a Swarm of Micro-Robots",
+    "authors": "Shuang Chen, Yifeng He, Barry Lennox, Farshad Arvin, Amir Atapour-Abarghouei",
+    "venue": "ICRA",
+    "year": 2025,
+    "status": "published",
+    "topics": [
+      "vision",
+      "robotics"
+    ],
+    "selected": true,
+    "image": "imgs/research/micro-robot-swarm-pipeline.png",
+    "imageAlt": "Micro-robot monitoring pipeline from simulated snapshots to coordinate prediction and image assembly.",
+    "summary": "Collaborative visual monitoring combines micro-robot imagery through coordinate prediction, alignment and reconstruction.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2503.02752"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ChrisChen1023/Micro-Robot-Swarm"
+      }
+    ]
+  },
+  {
+    "id": "sem-net",
+    "title": "SEM-Net: Efficient Pixel Modelling for Image Inpainting with Spatially Enhanced SSM",
+    "authors": "Shuang Chen, Haozheng Zhang, Amir Atapour-Abarghouei, Hubert P. H. Shum",
+    "venue": "WACV",
+    "year": 2025,
+    "status": "published",
+    "topics": [
+      "vision"
+    ],
+    "selected": true,
+    "image": "imgs/research/sem-net-overview.png",
+    "imageAlt": "SEM-Net image inpainting architecture and spatially enhanced state-space modelling block.",
+    "summary": "Spatially enhanced state-space modelling for efficient image inpainting.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://openaccess.thecvf.com/content/WACV2025/html/Chen_SEM-Net_Efficient_Pixel_Modelling_for_Image_Inpainting_with_Spatially_Enhanced_WACV_2025_paper.html"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ChrisChen1023/SEM-Net"
+      }
+    ]
+  },
+  {
+    "id": "bcqlm",
+    "title": "BcQLM: Efficient Vision-Language Understanding with Distilled Q-Gated Cross-Modal Fusion",
+    "authors": "Sike Xiang, Shuang Chen, Amir Atapour-Abarghouei",
+    "venue": "Findings of EMNLP",
+    "year": 2025,
+    "status": "published",
+    "topics": [
+      "vision"
+    ],
+    "selected": false,
+    "image": null,
+    "imageAlt": "",
+    "summary": "Distilled Q-gated cross-modal fusion connects visual and language representations for efficient multimodal understanding.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://aclanthology.org/2025.findings-emnlp.780/"
+      }
+    ]
+  },
+  {
+    "id": "music-chatbots",
+    "title": "Inclusive AI-Driven Music Chatbots for Older Adults",
+    "authors": "Farkhandah Aziz, Effie Lai-Chong Law, Li Li, Shuang Chen",
+    "venue": "Engineering Interactive Computer Systems: EICS 2024 International Workshops",
+    "year": 2025,
+    "status": "published",
+    "topics": [
+      "applications"
+    ],
+    "selected": false,
+    "image": "imgs/papers/chatbot.png",
+    "imageAlt": "Music chatbot research figure",
+    "summary": "Human-centred design and evaluation of inclusive conversational music agents for older adults.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1007/978-3-031-91760-8_6"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/l1997i/ca4oa-music-chatbot"
+      }
+    ]
+  },
+  {
+    "id": "hint",
+    "title": "HINT: High-quality INpainting Transformer with Mask-Aware Encoding and Enhanced Attention",
+    "authors": "Shuang Chen, Amir Atapour-Abarghouei, Hubert P. H. Shum",
+    "venue": "IEEE Transactions on Multimedia",
+    "year": 2024,
+    "status": "published",
+    "topics": [
+      "vision"
+    ],
+    "selected": true,
+    "image": "imgs/papers/hint.png",
+    "imageAlt": "HINT image inpainting research figure",
+    "summary": "Mask-aware encoding and enhanced attention reconstruct missing image regions with a transformer.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1109/TMM.2024.3369897"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ChrisChen1023/HINT"
+      },
+      {
+        "label": "Video",
+        "url": "https://www.youtube.com/watch?v=Qkcg7nz1_rI"
+      }
+    ]
+  },
+  {
+    "id": "mxt",
+    "title": "MxT: Mamba x Transformer for Image Inpainting",
+    "authors": "Shuang Chen, Amir Atapour-Abarghouei, Haozheng Zhang, Hubert P. H. Shum",
+    "venue": "BMVC",
+    "year": 2024,
+    "status": "published",
+    "topics": [
+      "vision"
+    ],
+    "selected": false,
+    "image": "imgs/papers/MxT.png",
+    "imageAlt": "MxT image inpainting research figure",
+    "summary": "Mamba and transformer components are combined for image inpainting.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2407.16126"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ChrisChen1023/MxT"
+      }
+    ]
+  },
+  {
+    "id": "daevi",
+    "title": "Depth-Aware Endoscopic Video Inpainting",
+    "authors": "Francis Xiatian Zhang, Shuang Chen, Xianghua Xie, Hubert P. H. Shum",
+    "venue": "MICCAI",
+    "year": 2024,
+    "status": "published",
+    "topics": [
+      "vision",
+      "applications"
+    ],
+    "selected": false,
+    "image": "imgs/papers/DAEVI.png",
+    "imageAlt": "Depth-aware endoscopic video inpainting research figure",
+    "summary": "Depth information guides the reconstruction of missing regions in endoscopic video.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://link.springer.com/chapter/10.1007/978-3-031-72089-5_14"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/FrancisXZhang/DAEVI"
+      }
+    ]
+  },
+  {
+    "id": "geohoi",
+    "title": "Geometric Features Enhanced Human-Object Interaction Detection",
+    "authors": "Manli Zhu, Edmond S. L. Ho, Shuang Chen, Longzhi Yang, Hubert P. H. Shum",
+    "venue": "IEEE Transactions on Instrumentation and Measurement",
+    "year": 2024,
+    "status": "published",
+    "topics": [
+      "vision"
+    ],
+    "selected": false,
+    "image": "imgs/papers/icon.png",
+    "imageAlt": "Geometric human-object interaction detection research figure",
+    "summary": "Geometric features support the detection of interactions between people and objects.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/html/2406.18691v1"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/zhumanli/GeoHOI"
+      }
+    ]
+  },
+  {
+    "id": "artistic-images-survey",
+    "title": "Artificial Intelligence for Geometry-Based Feature Extraction, Analysis and Synthesis in Artistic Images: A Survey",
+    "authors": "Mridula Vijendran, Jingjing Deng, Shuang Chen, Edmond S. L. Ho, Hubert P. H. Shum",
+    "venue": "Artificial Intelligence Review",
+    "year": 2024,
+    "status": "published",
+    "topics": [
+      "vision",
+      "applications"
+    ],
+    "selected": false,
+    "image": null,
+    "imageAlt": "",
+    "summary": "A survey of AI methods for extracting, analysing and synthesising geometric features in artistic images.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://link.springer.com/article/10.1007/s10462-024-11051-3"
+      }
+    ]
+  },
+  {
+    "id": "one-index",
+    "title": "One-Index Vector Quantization Based Adversarial Attack on Image Classification",
+    "authors": "Haiju Fan, Xiaona Qin, Shuang Chen, Hubert P. H. Shum, Ming Li",
+    "venue": "Pattern Recognition Letters",
+    "year": 2024,
+    "status": "published",
+    "topics": [
+      "vision"
+    ],
+    "selected": false,
+    "image": "imgs/papers/one_index.png",
+    "imageAlt": "One-index vector quantization adversarial attack research figure",
+    "summary": "One-index vector quantization is used to construct adversarial attacks on image classification.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "http://hubertshum.com/publications/prl2024adversarial/files/prl2024adversarial.pdf"
+      }
+    ]
+  },
+  {
+    "id": "inclg",
+    "title": "INCLG: Inpainting for Non-Cleft Lip Generation with a Multi-Task Image Processing Network",
+    "authors": "Shuang Chen, Amir Atapour-Abarghouei, Edmond S. L. Ho, Hubert P. H. Shum",
+    "venue": "Software Impacts",
+    "year": 2023,
+    "status": "published",
+    "topics": [
+      "vision",
+      "applications"
+    ],
+    "selected": false,
+    "image": "imgs/papers/INCLG.png",
+    "imageAlt": "INCLG multi-task image inpainting research figure",
+    "summary": "A multi-task image processing network explores non-cleft lip generation through inpainting.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2665963823000544"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ChrisChen1023/INCLG"
+      },
+      {
+        "label": "Code Ocean",
+        "url": "https://codeocean.com/capsule/4388343/tree/v1"
+      }
+    ]
+  },
+  {
+    "id": "nclg-mt",
+    "title": "A Feasibility Study on Image Inpainting for Non-cleft Lip Generation from Patients with Cleft Lip",
+    "authors": "Shuang Chen, Amir Atapour-Abarghouei, Jane Kerby, Edmond S. L. Ho, David C. G. Sainsbury, Sophie Butterworth, Hubert P. H. Shum",
+    "venue": "IEEE-EMBS BHI",
+    "year": 2022,
+    "status": "published",
+    "topics": [
+      "vision",
+      "applications"
+    ],
+    "selected": false,
+    "image": "imgs/papers/NCLG-MT.png",
+    "imageAlt": "Non-cleft lip generation feasibility study research figure",
+    "summary": "A feasibility study of image inpainting for generating non-cleft lip appearances from patient images.",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1109/bhi56158.2022.9926917"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ChrisChen1023/NCLG-MT"
+      }
+    ]
+  }
+]
