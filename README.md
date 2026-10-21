@@ -8,9 +8,11 @@ A light, responsive academic website for computer vision, brain-inspired AI and 
 
 - Biography, news, experience, education and teaching: edit `index.html` outside the publication markers.
 - Publications: edit `data/publications.json`, then run `node scripts/render-publications.mjs` and commit both the JSON and generated `index.html`.
+- LinkedIn field notes: edit `data/linkedin-posts.json`, add genuine post photos under `imgs/activity/`, then run `node scripts/render-activity.mjs` and commit the JSON, photos and generated `index.html`. This is a curated snapshot updated on demand, not an automatic feed or scheduled job.
 - Styles: `assets/site.css`; publication filtering: `assets/site.js`.
 - Portrait: `imgs/SC.jpg`; paper images: `imgs/papers/` and `imgs/research/`.
 - Research image provenance: `docs/research-image-sources.md`.
+- LinkedIn source records and verified posting dates: `docs/activity-sources.md`.
 
 All 20 published/accepted papers are embedded in the HTML. JavaScript initially highlights six selected papers and enables topic filters; visitors without JavaScript can still read the entire list. Accepted papers are explicitly labelled. Citation metrics are a dated snapshot, not an automatic live count.
 

@@ -3,12 +3,14 @@
   const papers = [...document.querySelectorAll('.publication')];
   const count = document.getElementById('publication-count');
   const empty = document.getElementById('publication-empty');
-  if (!controls || !papers.length || !count || !empty) return;
+  const list = document.getElementById('publication-list');
+  if (!controls || !papers.length || !count || !empty || !list) return;
 
   let view = 'selected';
   let topic = 'all';
 
   function update() {
+    list.dataset.layout = view;
     let visible = 0;
     for (const paper of papers) {
       const inView = view === 'all' || paper.dataset.selected === 'true';
