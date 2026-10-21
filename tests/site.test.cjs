@@ -6,7 +6,7 @@ const path = require('node:path');
 const { chromium } = require('playwright');
 
 const root = path.resolve(__dirname, '..');
-const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml' };
+const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.woff2': 'font/woff2' };
 let server, browser, origin;
 
 before(async () => {
@@ -110,18 +110,22 @@ test('selected papers form a visual grid while the complete list keeps its readi
   try {
     await page.goto(origin + '/shuangchen/');
     await page.waitForSelector('.publication-controls:not([hidden])');
+    const settled = () => page.evaluate(() => Promise.all(document.getAnimations().filter(animation => !(animation instanceof CSSAnimation) && !(animation instanceof CSSTransition)).map(animation => animation.finished.catch(() => {}))));
+    await settled();
     let cards = page.locator('.publication:visible');
     const first = await cards.nth(0).boundingBox();
     const second = await cards.nth(1).boundingBox();
     assert.ok(Math.abs(first.y - second.y) < 2, 'Selected papers should share a grid row on desktop');
     assert.ok(second.x > first.x + first.width - 2);
     await page.getByRole('button', { name: 'All publications', exact: true }).click();
+    await settled();
     cards = page.locator('.publication:visible');
     const fullFirst = await cards.nth(0).boundingBox();
     const fullSecond = await cards.nth(1).boundingBox();
     assert.ok(fullSecond.y > fullFirst.y + fullFirst.height - 2, 'The complete list should read vertically');
     await page.getByRole('button', { name: 'Selected', exact: true }).click();
     await page.setViewportSize({ width: 390, height: 844 });
+    await settled();
     const mobileFirst = await page.locator('.publication:visible').nth(0).boundingBox();
     const mobileSecond = await page.locator('.publication:visible').nth(1).boundingBox();
     assert.ok(mobileSecond.y > mobileFirst.y + mobileFirst.height - 2, 'Selected cards should stack on mobile');
