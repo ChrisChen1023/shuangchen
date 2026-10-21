@@ -23,7 +23,7 @@ The owner authorised a weekly Codex thread automation, scheduled for Monday at 0
 
 ## Interaction
 
-Each research area contains multiple genuine paper figures, full-size image links and publication sources. Its slideshow has a perspective paper stage, a non-interactive preview of the next paper, and coordinated outgoing/incoming depth transitions. Visible playback state and progress accompany manual arrows, paper selectors and pause/resume. Automatic playback continues while hovering or using persistent controls; focusing a paper link pauses it so focused content is retained. Hidden tabs, offscreen stages and reduced-motion preferences also pause playback. Without JavaScript all papers remain readable in sequence. Research, publication, activity and news entries retain brief, one-time scroll reveals.
+Each research area contains multiple genuine paper figures, full-size image links and publication sources. Its slideshow has a perspective paper stage, a non-interactive preview of the next paper, and coordinated outgoing/incoming depth transitions, with manual arrows, paper selectors and pause/resume. Automatic playback continues while hovering or using persistent controls; focusing a paper link pauses it so focused content is retained. Hidden tabs, offscreen stages and reduced-motion preferences also pause playback. Without JavaScript all papers remain readable in sequence. Research, publication, activity and news entries retain brief, one-time scroll reveals.
 
 ## Preview
 

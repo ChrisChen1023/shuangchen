@@ -14,7 +14,12 @@
     "image": null,
     "imageAlt": "",
     "summary": "Cross-prior visual bridging for chest X-ray report generation informed by prior examinations.",
-    "links": []
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2610.28289"
+      }
+    ]
   },
   {
     "id": "sandbar",

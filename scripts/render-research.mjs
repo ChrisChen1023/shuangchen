@@ -38,7 +38,6 @@ for (const area of areas) {
 ${slides.join('\n')}
               <div class="research-stage-preview" data-carousel-preview aria-hidden="true" inert hidden></div>
             </div>
-            <div class="research-playback" hidden><span data-carousel-playback>Auto play</span><span class="research-progress-track" aria-hidden="true"><span class="research-progress-bar" data-carousel-progress></span></span></div>
             <div class="research-carousel-controls" hidden>
               <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Previous paper"><span aria-hidden="true">←</span></button>
               <div class="research-carousel-dots">${dots}</div>

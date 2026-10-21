@@ -17,9 +17,6 @@
     const status = carousel.querySelector('[data-carousel-status]');
     const stage = carousel.querySelector('.research-stage') || carousel;
     const preview = carousel.querySelector('[data-carousel-preview]');
-    const playback = carousel.querySelector('.research-playback');
-    const playbackLabel = carousel.querySelector('[data-carousel-playback]');
-    const progress = carousel.querySelector('[data-carousel-progress]');
     const requestedInterval = Number(carousel.dataset.carouselInterval);
     const interval = (requestedInterval > 0 ? requestedInterval : 5200) + carouselIndex * 700;
     let index = 0;
@@ -27,7 +24,6 @@
     let animations = [];
     let outgoing = null;
     let motionVersion = 0;
-    let progressAnimation = null;
     let userPaused = false;
     let focused = slides.some(slide => slide.contains(document.activeElement));
     let visible = typeof window.IntersectionObserver !== 'function';
@@ -63,19 +59,10 @@
     function schedule() {
       window.clearTimeout(timer);
       timer = null;
-      progressAnimation?.cancel();
-      progressAnimation = null;
       const rotating = canRotate();
       carousel.dataset.carouselState = reducedMotion() ? 'reduced' : rotating ? 'playing' : 'paused';
-      if (playbackLabel) playbackLabel.textContent = reducedMotion()
-        ? 'Reduced motion' : userPaused || focused ? 'Paused' : 'Auto play';
       updateToggle();
       if (!rotating) return;
-      if (typeof progress?.animate === 'function') {
-        progressAnimation = progress.animate([
-          { transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }
-        ], { duration: interval, easing: 'linear', iterations: 1, fill: 'forwards' });
-      }
       timer = window.setTimeout(() => {
         timer = null;
         if (!canRotate()) return;
@@ -206,7 +193,6 @@
     show(0);
     carousel.dataset.carouselReady = 'true';
     if (controls) controls.hidden = slides.length < 2;
-    if (playback) playback.hidden = slides.length < 2;
 
     if (typeof window.IntersectionObserver === 'function') {
       const observer = new IntersectionObserver(entries => {
