@@ -51,7 +51,7 @@ test('topic filters and publication views compose and recover from an empty sele
 });
 
 test('the page, anchors and local assets work on desktop and narrow mobile widths', async () => {
-  const page = await browser.newPage();
+  const page = await browser.newPage({ reducedMotion: 'reduce' });
   page.setDefaultTimeout(5000);
   const errors = [], missing = [];
   page.on('pageerror', error => errors.push(error.message));
@@ -68,8 +68,8 @@ test('the page, anchors and local assets work on desktop and narrow mobile width
     // Reveal every paper before exercising lazy-loaded image assets.
     await page.getByRole('button', { name: 'All publications', exact: true }).click();
     for (const image of await page.locator('img').all()) {
-      await image.scrollIntoViewIfNeeded();
-      await image.evaluate(img => img.decode());
+      if (await image.isVisible()) await image.scrollIntoViewIfNeeded();
+      await image.evaluate(img => { img.loading = 'eager'; return img.decode(); });
       assert.ok(await image.evaluate(img => img.naturalWidth > 0));
     }
     assert.deepEqual(errors, []);
@@ -140,6 +140,29 @@ test('imported LinkedIn updates have readable summaries and original source link
       assert.ok((await card.locator('.activity-summary').innerText()).length > 0);
       const source = new URL(await card.locator('.activity-link').getAttribute('href'));
       assert.ok(source.protocol === 'https:' && /(^|\.)linkedin\.com$/.test(source.hostname));
+    }
+  } finally { await context.close(); }
+});
+
+test('each research area contains multiple distinct, sourced papers without JavaScript', async () => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  try {
+    const page = await context.newPage();
+    await page.goto(origin + '/shuangchen/');
+    const areas = page.locator('.research-grid article');
+    assert.equal(await areas.count(), 3);
+    for (const area of await areas.all()) {
+      const figures = area.locator('figure');
+      assert.ok(await figures.count() >= 2, 'Every area needs multiple papers');
+      const ids = await figures.evaluateAll(items => items.map(item => item.dataset.paperId));
+      assert.equal(new Set(ids).size, ids.length, 'Papers within an area must be distinct');
+      for (const figure of await figures.all()) {
+        assert.ok(await figure.isVisible());
+        assert.ok((await figure.locator('img').getAttribute('alt')).length > 15);
+        const paperLink = await figure.locator('figcaption a').getAttribute('href');
+        assert.match(paperLink, /^https:\/\//);
+        assert.ok((await figure.locator('figcaption').innerText()).length > 15);
+      }
     }
   } finally { await context.close(); }
 });
