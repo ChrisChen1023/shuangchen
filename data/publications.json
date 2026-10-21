@@ -8,7 +8,9 @@
     "status": "accepted",
     "topics": [
       "vision",
-      "applications"
+      "applications",
+      "medical",
+      "vl"
     ],
     "selected": false,
     "image": null,
@@ -34,7 +36,9 @@
     "year": 2027,
     "status": "accepted",
     "topics": [
-      "vision"
+      "vision",
+      "restoration",
+      "underwater"
     ],
     "selected": false,
     "image": null,
@@ -56,7 +60,9 @@
     "status": "published",
     "topics": [
       "vision",
-      "brain"
+      "brain",
+      "snn",
+      "restoration"
     ],
     "selected": true,
     "image": "imgs/research/vlif-spiking-neuron.jpg",
@@ -89,7 +95,10 @@
     "topics": [
       "vision",
       "brain",
-      "robotics"
+      "robotics",
+      "snn",
+      "restoration",
+      "underwater"
     ],
     "selected": true,
     "image": "imgs/research/uiesnn-overview.jpg",
@@ -119,7 +128,8 @@
     "year": 2026,
     "status": "accepted",
     "topics": [
-      "applications"
+      "applications",
+      "interdisciplinary"
     ],
     "selected": false,
     "image": null,
@@ -146,7 +156,9 @@
     "status": "published",
     "topics": [
       "vision",
-      "applications"
+      "applications",
+      "robust",
+      "art"
     ],
     "selected": false,
     "image": null,
@@ -177,7 +189,8 @@
     "year": 2026,
     "status": "published",
     "topics": [
-      "vision"
+      "vision",
+      "video"
     ],
     "selected": false,
     "image": null,
@@ -208,7 +221,9 @@
     "status": "published",
     "topics": [
       "vision",
-      "robotics"
+      "robotics",
+      "restoration",
+      "underwater"
     ],
     "selected": true,
     "image": "imgs/research/deep-sea-overview.png",
@@ -239,7 +254,8 @@
     "status": "published",
     "topics": [
       "vision",
-      "robotics"
+      "robotics",
+      "underwater"
     ],
     "selected": true,
     "image": "imgs/research/micro-robot-swarm-pipeline.png",
@@ -269,7 +285,8 @@
     "year": 2025,
     "status": "published",
     "topics": [
-      "vision"
+      "vision",
+      "inpainting"
     ],
     "selected": true,
     "image": "imgs/research/sem-net-overview.png",
@@ -300,7 +317,8 @@
     "year": 2025,
     "status": "published",
     "topics": [
-      "vision"
+      "vision",
+      "vl"
     ],
     "selected": false,
     "image": null,
@@ -326,7 +344,8 @@
     "year": 2025,
     "status": "published",
     "topics": [
-      "applications"
+      "applications",
+      "interdisciplinary"
     ],
     "selected": false,
     "image": "imgs/papers/chatbot.png",
@@ -354,7 +373,8 @@
     "year": 2024,
     "status": "published",
     "topics": [
-      "vision"
+      "vision",
+      "inpainting"
     ],
     "selected": true,
     "image": "imgs/papers/hint.png",
@@ -389,7 +409,8 @@
     "year": 2024,
     "status": "published",
     "topics": [
-      "vision"
+      "vision",
+      "inpainting"
     ],
     "selected": false,
     "image": "imgs/papers/MxT.png",
@@ -420,7 +441,10 @@
     "status": "published",
     "topics": [
       "vision",
-      "applications"
+      "applications",
+      "inpainting",
+      "medical",
+      "video"
     ],
     "selected": false,
     "image": "imgs/papers/DAEVI.png",
@@ -450,7 +474,8 @@
     "year": 2024,
     "status": "published",
     "topics": [
-      "vision"
+      "vision",
+      "video"
     ],
     "selected": false,
     "image": "imgs/papers/icon.png",
@@ -482,7 +507,8 @@
     "status": "published",
     "topics": [
       "vision",
-      "applications"
+      "applications",
+      "art"
     ],
     "selected": false,
     "image": null,
@@ -509,7 +535,8 @@
     "year": 2024,
     "status": "published",
     "topics": [
-      "vision"
+      "vision",
+      "robust"
     ],
     "selected": false,
     "image": "imgs/papers/one_index.png",
@@ -537,7 +564,9 @@
     "status": "published",
     "topics": [
       "vision",
-      "applications"
+      "applications",
+      "inpainting",
+      "medical"
     ],
     "selected": false,
     "image": "imgs/papers/INCLG.png",
@@ -570,7 +599,9 @@
     "status": "published",
     "topics": [
       "vision",
-      "applications"
+      "applications",
+      "inpainting",
+      "medical"
     ],
     "selected": false,
     "image": "imgs/papers/NCLG-MT.png",

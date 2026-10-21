@@ -24,9 +24,9 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/newsreader-normal-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
   <link rel="preload" as="image" href="imgs/SC.jpg">
-  <link rel="stylesheet" href="assets/site.css?v=20261021-8">
-  <script src="assets/site.js?v=20261021-8" defer></script>
-  <script src="assets/research-carousel.js?v=20261021-8" defer></script>
+  <link rel="stylesheet" href="assets/site.css?v=20261021-9">
+  <script src="assets/site.js?v=20261021-9" defer></script>
+  <script src="assets/research-carousel.js?v=20261021-9" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -207,12 +207,12 @@
       <p class="metrics-note">Venue standing: conference ranks from the <a href="https://portal.core.edu.au/conf-ranks/">CORE 2023 ranking</a>; impact factors and quartiles from the 2024 Journal Citation Reports; acceptance figures from the venues. Citation counts are dated Google Scholar snapshots.</p>
       <div class="publication-controls" hidden>
         <div class="view-switch" role="group" aria-label="Publication view"><button type="button" data-view="selected" aria-pressed="true">Selected</button><button type="button" data-view="all" aria-pressed="false">All publications</button></div>
-        <div class="topic-filters" role="group" aria-label="Filter publications by research topic"><button type="button" data-topic="all" aria-pressed="true">All topics</button><button type="button" data-topic="vision" aria-pressed="false">Computer vision</button><button type="button" data-topic="brain" aria-pressed="false">Brain-inspired AI</button><button type="button" data-topic="robotics" aria-pressed="false">Robotics</button><button type="button" data-topic="applications" aria-pressed="false">Applications</button></div>
+        <div class="topic-filters" role="group" aria-label="Filter publications by research theme"><!-- TOPICS:START --><button type="button" data-topic="all" aria-pressed="true">All topics</button><button type="button" data-topic="inpainting" aria-pressed="false">Image inpainting<span class="topic-count" aria-hidden="true">6</span></button><button type="button" data-topic="restoration" aria-pressed="false">Restoration &amp; enhancement<span class="topic-count" aria-hidden="true">4</span></button><button type="button" data-topic="snn" aria-pressed="false">Spiking neural networks<span class="topic-count" aria-hidden="true">2</span></button><button type="button" data-topic="underwater" aria-pressed="false">Underwater perception<span class="topic-count" aria-hidden="true">4</span></button><button type="button" data-topic="robotics" aria-pressed="false">Robotics<span class="topic-count" aria-hidden="true">3</span></button><button type="button" data-topic="medical" aria-pressed="false">Medical imaging<span class="topic-count" aria-hidden="true">4</span></button><button type="button" data-topic="vl" aria-pressed="false">Vision &amp; language<span class="topic-count" aria-hidden="true">2</span></button><button type="button" data-topic="video" aria-pressed="false">Video &amp; human understanding<span class="topic-count" aria-hidden="true">3</span></button><button type="button" data-topic="robust" aria-pressed="false">Robustness &amp; fairness<span class="topic-count" aria-hidden="true">2</span></button><button type="button" data-topic="art" aria-pressed="false">Art &amp; creativity<span class="topic-count" aria-hidden="true">2</span></button><button type="button" data-topic="interdisciplinary" aria-pressed="false">Interdisciplinary<span class="topic-count" aria-hidden="true">2</span></button><!-- TOPICS:END --></div>
       </div>
       <p id="publication-count" class="publication-count" role="status" aria-live="polite">20 publications and accepted papers</p>
       <div id="publication-list">
         <!-- PUBLICATIONS:START -->
-<article class="publication" id="paper-cpvb-rg" data-selected="false" data-topics="vision applications">
+<article class="publication" id="paper-cpvb-rg" data-selected="false" data-topics="vision applications medical vl">
   <figure class="publication-media"><div class="publication-identity" aria-hidden="true"><strong>CPVB-RG</strong><span>WACV · 2027</span></div></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>WACV · 2027</span><span class="accepted-label">Accepted</span></p>
@@ -223,7 +223,7 @@
     <div class="publication-links"><a href="https://arxiv.org/abs/2610.28289">Paper <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-sandbar" data-selected="false" data-topics="vision">
+<article class="publication" id="paper-sandbar" data-selected="false" data-topics="vision restoration underwater">
   <figure class="publication-media"><div class="publication-identity" aria-hidden="true"><strong>SandBAR</strong><span>WACV · 2027</span></div></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>WACV · 2027</span><span class="accepted-label">Accepted</span></p>
@@ -234,7 +234,7 @@
 
   </div>
 </article>
-<article class="publication" id="paper-vlif" data-selected="true" data-topics="vision brain">
+<article class="publication" id="paper-vlif" data-selected="true" data-topics="vision brain snn restoration">
   <figure class="publication-media"><img src="imgs/research/vlif-spiking-neuron.jpg" alt="Comparison of traditional LIF and Visual LIF neurons and their spatial and temporal processing." width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>AAAI · 2026</span></p>
@@ -245,7 +245,7 @@
     <div class="publication-links"><a href="https://doi.org/10.1609/aaai.v40i4.37295">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ChrisChen1023/VLIF">Code <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-uiesnn" data-selected="true" data-topics="vision brain robotics">
+<article class="publication" id="paper-uiesnn" data-selected="true" data-topics="vision brain robotics snn restoration underwater">
   <figure class="publication-media"><img src="imgs/research/uiesnn-overview.jpg" alt="UIESNN architecture with multi-scale spiking residual blocks and frequency decomposition for underwater image enhancement." width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>IJCNN · 2026</span></p>
@@ -256,7 +256,7 @@
     <div class="publication-links"><a href="https://arxiv.org/abs/2605.08376">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ChrisChen1023/UIESNN">Code <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-bumblebee-olfaction" data-selected="false" data-topics="applications">
+<article class="publication" id="paper-bumblebee-olfaction" data-selected="false" data-topics="applications interdisciplinary">
   <figure class="publication-media"><div class="publication-identity" aria-hidden="true"><strong>Insect brains</strong><span>iScience · 2026</span></div></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>iScience · 2026</span><span class="accepted-label">Accepted</span></p>
@@ -267,7 +267,7 @@
     <div class="publication-links"><a href="https://insectneurolab.com/publications/">Lab listing <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-boost" data-selected="false" data-topics="vision applications">
+<article class="publication" id="paper-boost" data-selected="false" data-topics="vision applications robust art">
   <figure class="publication-media"><div class="publication-identity" aria-hidden="true"><strong>BOOST</strong><span>Expert Systems with Applications · 2026</span></div></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>Expert Systems with Applications · 2026</span></p>
@@ -278,7 +278,7 @@
     <div class="publication-links"><a href="https://www.sciencedirect.com/science/article/pii/S0957417425025229">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/41enthusiast/BOOST/">Code <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-caflow" data-selected="false" data-topics="vision">
+<article class="publication" id="paper-caflow" data-selected="false" data-topics="vision video">
   <figure class="publication-media"><div class="publication-identity" aria-hidden="true"><strong>CaFlow</strong><span>WACV · 2026</span></div></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>WACV · 2026</span></p>
@@ -289,7 +289,7 @@
     <div class="publication-links"><a href="http://adaptive-intelligence.co.uk/wp-content/uploads/2025/12/han2026caflow.pdf">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/Harrison21/CaFlow">Code <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-deep-sea" data-selected="true" data-topics="vision robotics">
+<article class="publication" id="paper-deep-sea" data-selected="true" data-topics="vision robotics restoration underwater">
   <figure class="publication-media"><img src="imgs/research/deep-sea-overview.png" alt="DEEP-SEA underwater image restoration architecture with dual-frequency self-attention and spatial-frequency modulation." width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>IROS · 2025</span></p>
@@ -300,7 +300,7 @@
     <div class="publication-links"><a href="https://arxiv.org/abs/2508.12824">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ChrisChen1023/DEEP-SEA">Code <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-micro-robots" data-selected="true" data-topics="vision robotics">
+<article class="publication" id="paper-micro-robots" data-selected="true" data-topics="vision robotics underwater">
   <figure class="publication-media"><img src="imgs/research/micro-robot-swarm-pipeline.png" alt="Micro-robot monitoring pipeline from simulated snapshots to coordinate prediction and image assembly." width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>ICRA · 2025</span></p>
@@ -311,7 +311,7 @@
     <div class="publication-links"><a href="https://arxiv.org/abs/2503.02752">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ChrisChen1023/Micro-Robot-Swarm">Code <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-sem-net" data-selected="true" data-topics="vision">
+<article class="publication" id="paper-sem-net" data-selected="true" data-topics="vision inpainting">
   <figure class="publication-media"><img src="imgs/research/sem-net-overview.png" alt="SEM-Net image inpainting architecture and spatially enhanced state-space modelling block." width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>WACV · 2025</span><span class="accepted-label">Oral</span></p>
@@ -322,7 +322,7 @@
     <div class="publication-links"><a href="https://openaccess.thecvf.com/content/WACV2025/html/Chen_SEM-Net_Efficient_Pixel_Modelling_for_Image_Inpainting_with_Spatially_Enhanced_WACV_2025_paper.html">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ChrisChen1023/SEM-Net">Code <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-bcqlm" data-selected="false" data-topics="vision">
+<article class="publication" id="paper-bcqlm" data-selected="false" data-topics="vision vl">
   <figure class="publication-media"><div class="publication-identity" aria-hidden="true"><strong>BcQLM</strong><span>Findings of EMNLP · 2025</span></div></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>Findings of EMNLP · 2025</span></p>
@@ -333,7 +333,7 @@
     <div class="publication-links"><a href="https://aclanthology.org/2025.findings-emnlp.780/">Paper <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-music-chatbots" data-selected="false" data-topics="applications">
+<article class="publication" id="paper-music-chatbots" data-selected="false" data-topics="applications interdisciplinary">
   <figure class="publication-media"><img src="imgs/papers/chatbot.png" alt="Music chatbot research figure" width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>Engineering Interactive Computer Systems: EICS 2024 International Workshops · 2025</span></p>
@@ -344,7 +344,7 @@
     <div class="publication-links"><a href="https://doi.org/10.1007/978-3-031-91760-8_6">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/l1997i/ca4oa-music-chatbot">Code <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-hint" data-selected="true" data-topics="vision">
+<article class="publication" id="paper-hint" data-selected="true" data-topics="vision inpainting">
   <figure class="publication-media"><img src="imgs/papers/hint.png" alt="HINT image inpainting research figure" width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>IEEE Transactions on Multimedia · 2024</span></p>
@@ -355,7 +355,7 @@
     <div class="publication-links"><a href="https://doi.org/10.1109/TMM.2024.3369897">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ChrisChen1023/HINT">Code <span aria-hidden="true">↗</span></a><a href="https://www.youtube.com/watch?v=Qkcg7nz1_rI">Video <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-mxt" data-selected="false" data-topics="vision">
+<article class="publication" id="paper-mxt" data-selected="false" data-topics="vision inpainting">
   <figure class="publication-media"><img src="imgs/papers/MxT.png" alt="MxT image inpainting research figure" width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>BMVC · 2024</span></p>
@@ -366,7 +366,7 @@
     <div class="publication-links"><a href="https://arxiv.org/abs/2407.16126">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ChrisChen1023/MxT">Code <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-daevi" data-selected="false" data-topics="vision applications">
+<article class="publication" id="paper-daevi" data-selected="false" data-topics="vision applications inpainting medical video">
   <figure class="publication-media"><img src="imgs/papers/DAEVI.png" alt="Depth-aware endoscopic video inpainting research figure" width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>MICCAI · 2024</span></p>
@@ -377,7 +377,7 @@
     <div class="publication-links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-72089-5_14">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/FrancisXZhang/DAEVI">Code <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-geohoi" data-selected="false" data-topics="vision">
+<article class="publication" id="paper-geohoi" data-selected="false" data-topics="vision video">
   <figure class="publication-media"><img src="imgs/papers/icon.png" alt="Geometric human-object interaction detection research figure" width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>IEEE Transactions on Instrumentation and Measurement · 2024</span></p>
@@ -388,7 +388,7 @@
     <div class="publication-links"><a href="https://arxiv.org/html/2406.18691v1">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/zhumanli/GeoHOI">Code <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-artistic-images-survey" data-selected="false" data-topics="vision applications">
+<article class="publication" id="paper-artistic-images-survey" data-selected="false" data-topics="vision applications art">
   <figure class="publication-media"><div class="publication-identity" aria-hidden="true"><strong>Artificial Intelligence Review</strong><span>Artificial Intelligence Review · 2024</span></div></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>Artificial Intelligence Review · 2024</span></p>
@@ -399,7 +399,7 @@
     <div class="publication-links"><a href="https://link.springer.com/article/10.1007/s10462-024-11051-3">Paper <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-one-index" data-selected="false" data-topics="vision">
+<article class="publication" id="paper-one-index" data-selected="false" data-topics="vision robust">
   <figure class="publication-media"><img src="imgs/papers/one_index.png" alt="One-index vector quantization adversarial attack research figure" width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>Pattern Recognition Letters · 2024</span></p>
@@ -410,7 +410,7 @@
     <div class="publication-links"><a href="http://hubertshum.com/publications/prl2024adversarial/files/prl2024adversarial.pdf">Paper <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-inclg" data-selected="false" data-topics="vision applications">
+<article class="publication" id="paper-inclg" data-selected="false" data-topics="vision applications inpainting medical">
   <figure class="publication-media"><img src="imgs/papers/INCLG.png" alt="INCLG multi-task image inpainting research figure" width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>Software Impacts · 2023</span></p>
@@ -421,7 +421,7 @@
     <div class="publication-links"><a href="https://www.sciencedirect.com/science/article/pii/S2665963823000544">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ChrisChen1023/INCLG">Code <span aria-hidden="true">↗</span></a><a href="https://codeocean.com/capsule/4388343/tree/v1">Code Ocean <span aria-hidden="true">↗</span></a></div>
   </div>
 </article>
-<article class="publication" id="paper-nclg-mt" data-selected="false" data-topics="vision applications">
+<article class="publication" id="paper-nclg-mt" data-selected="false" data-topics="vision applications inpainting medical">
   <figure class="publication-media"><img src="imgs/papers/NCLG-MT.png" alt="Non-cleft lip generation feasibility study research figure" width="400" height="240" loading="lazy" decoding="async"></figure>
   <div class="publication-copy">
     <p class="publication-meta"><span>IEEE-EMBS BHI · 2022</span></p>

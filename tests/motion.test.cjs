@@ -150,10 +150,10 @@ test('rapid filtering keeps focus and updates results immediately with one bound
     assert.equal(await page.locator('#publication-list').evaluate(list => list.getAnimations().length), 0, 'Initial filtering should not animate');
     const state = await page.evaluate(() => {
       const click = selector => document.querySelector(selector).click();
-      click('[data-topic="applications"]');
+      click('[data-topic="medical"]');
       click('[data-topic="all"]');
       click('[data-view="all"]');
-      const button = document.querySelector('[data-topic="brain"]');
+      const button = document.querySelector('[data-topic="snn"]');
       button.focus();
       button.click();
       const list = document.getElementById('publication-list');
@@ -208,7 +208,7 @@ for (const missing of ['IntersectionObserver', 'animate']) {
       await page.goto(origin + '/shuangchen/');
       await page.getByRole('button', { name: 'All publications', exact: true }).click();
       assert.equal(await page.locator('.publication:visible').count(), 20);
-      await page.getByRole('button', { name: 'Brain-inspired AI', exact: true }).click();
+      await page.getByRole('button', { name: 'Spiking neural networks', exact: true }).click();
       assert.equal(await page.locator('.publication:visible').count(), 2);
       await settleMotion(page);
       await assertReadable(page.locator('.activity-card').first());

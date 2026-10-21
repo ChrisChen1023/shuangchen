@@ -5,13 +5,29 @@ import path from 'node:path';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const papers = JSON.parse(await readFile(path.join(root, 'data/publications.json'), 'utf8'));
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-const knownTopics = new Set(['vision', 'brain', 'robotics', 'applications']);
+// Broad areas (vision, brain, robotics, applications) group the research cards; the finer themes drive the topic filters.
+const areaTopics = new Set(['vision', 'brain', 'robotics', 'applications']);
+const filterTopics = new Map([
+  ['inpainting', 'Image inpainting'],
+  ['restoration', 'Restoration & enhancement'],
+  ['snn', 'Spiking neural networks'],
+  ['underwater', 'Underwater perception'],
+  ['robotics', 'Robotics'],
+  ['medical', 'Medical imaging'],
+  ['vl', 'Vision & language'],
+  ['video', 'Video & human understanding'],
+  ['robust', 'Robustness & fairness'],
+  ['art', 'Art & creativity'],
+  ['interdisciplinary', 'Interdisciplinary']
+]);
+const knownTopics = new Set([...areaTopics, ...filterTopics.keys()]);
 const ids = new Set();
 for (const paper of papers) {
   if (!paper.id || ids.has(paper.id)) throw new Error(`Missing or duplicate publication id: ${paper.id}`);
   ids.add(paper.id);
   if (!['published', 'accepted'].includes(paper.status)) throw new Error(`Invalid publication status: ${paper.id}`);
   if (!paper.topics.every(topic => knownTopics.has(topic))) throw new Error(`Unknown topic: ${paper.id}`);
+  if (!paper.topics.some(topic => filterTopics.has(topic))) throw new Error(`Every paper needs at least one filterable theme: ${paper.id}`);
   if (paper.image && (paper.image.startsWith('/') || paper.image.includes('..'))) throw new Error(`Use a local relative image path: ${paper.id}`);
   if (!Array.isArray(paper.metrics ?? [])) throw new Error(`metrics must be a list of short labels: ${paper.id}`);
   if (paper.citations != null && (!Number.isInteger(paper.citations) || paper.citations < 0 || !paper.citationsAsOf)) throw new Error(`citations needs a non-negative integer and a citationsAsOf year: ${paper.id}`);
@@ -44,9 +60,17 @@ const html = papers.map(paper => {
 </article>`;
 }).join('\n').replace(/[ \t]+$/gm, '');
 
+const topicButtons = ['<button type="button" data-topic="all" aria-pressed="true">All topics</button>', ...[...filterTopics]
+  .map(([key, label]) => [key, label, papers.filter(paper => paper.topics.includes(key)).length])
+  .filter(([, , count]) => count > 0)
+  .map(([key, label, count]) => `<button type="button" data-topic="${key}" aria-pressed="false">${escape(label)}<span class="topic-count" aria-hidden="true">${count}</span></button>`)].join('');
+
 const indexPath = path.join(root, 'index.html');
 const original = await readFile(indexPath, 'utf8');
 const markers = /<!-- PUBLICATIONS:START -->[\s\S]*?<!-- PUBLICATIONS:END -->/;
-if (!markers.test(original)) throw new Error('Publication markers are missing from index.html');
-await writeFile(indexPath, original.replace(markers, `<!-- PUBLICATIONS:START -->\n${html}\n<!-- PUBLICATIONS:END -->`));
+const topicMarkers = /<!-- TOPICS:START -->[\s\S]*?<!-- TOPICS:END -->/;
+if (!markers.test(original) || !topicMarkers.test(original)) throw new Error('Publication or topic markers are missing from index.html');
+await writeFile(indexPath, original
+  .replace(markers, `<!-- PUBLICATIONS:START -->\n${html}\n<!-- PUBLICATIONS:END -->`)
+  .replace(topicMarkers, `<!-- TOPICS:START -->${topicButtons}<!-- TOPICS:END -->`));
 console.log(`Rendered ${papers.length} publications (${papers.filter(paper => paper.selected).length} selected).`);

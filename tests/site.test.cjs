@@ -32,13 +32,13 @@ test('topic filters and publication views compose and recover from an empty sele
     assert.equal(response.status(), 200, 'The new homepage must exist at the GitHub Pages subpath');
     await page.waitForSelector('.publication-controls:not([hidden])');
     assert.equal(await page.locator('.publication:visible').count(), 6);
-    await page.getByRole('button', { name: 'Brain-inspired AI', exact: true }).click();
+    await page.getByRole('button', { name: 'Spiking neural networks', exact: true }).click();
     assert.equal(await page.locator('.publication:visible').count(), 2);
     assert.match(await page.locator('#publication-list').innerText(), /Spiking Neural Networks for Image Deraining/);
     await page.getByRole('button', { name: 'All publications', exact: true }).click();
     await page.getByRole('button', { name: 'All topics', exact: true }).click();
     assert.equal(await page.locator('.publication:visible').count(), 20);
-    await page.getByRole('button', { name: 'Applications', exact: true }).click();
+    await page.getByRole('button', { name: 'Medical imaging', exact: true }).click();
     assert.ok(await page.locator('.publication:visible').count() > 0);
     await page.getByRole('button', { name: 'Selected', exact: true }).click();
     assert.equal(await page.locator('.publication:visible').count(), 0);
@@ -97,7 +97,7 @@ test('publication controls are reachable and usable from the keyboard', async ()
     await all.focus();
     await page.keyboard.press('Enter');
     assert.equal(await page.locator('.publication:visible').count(), 20);
-    const brain = page.getByRole('button', { name: 'Brain-inspired AI', exact: true });
+    const brain = page.getByRole('button', { name: 'Spiking neural networks', exact: true });
     await brain.focus();
     await page.keyboard.press('Space');
     assert.equal(await brain.getAttribute('aria-pressed'), 'true');
