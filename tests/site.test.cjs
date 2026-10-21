@@ -184,7 +184,6 @@ test('research slides form a spatial paper deck with non-interactive next-paper 
       assert.ok(await preview.evaluate(element => element.inert));
       assert.equal(await preview.locator('a,button,[id]').count(), 0, 'A decorative preview must not duplicate interactive content');
       assert.equal(await preview.locator('img').count(), 1);
-      assert.ok(await card.locator('[data-carousel-playback]').isVisible());
     }
   } finally { await page.close(); }
 });

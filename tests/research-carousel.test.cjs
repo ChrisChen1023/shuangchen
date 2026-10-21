@@ -15,7 +15,6 @@ function carousel(name = 'Vision', count = 3) {
       ${titles.map((title, index) => `<figure id="${name}-figure-${index}" class="research-slide research-figure" data-paper-id="${index}"><a id="${name}-image-${index}" href="#figure-${index}" aria-label="View ${title} figure"><img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Crect width='120' height='60' fill='navy'/%3E%3C/svg%3E" alt="${title} architecture"></a><figcaption><a href="#paper-${index}">${title}</a></figcaption></figure>`).join('')}
       <div class="research-stage-preview" data-carousel-preview aria-hidden="true" inert hidden></div>
     </div>
-    <div class="research-playback" hidden><span data-carousel-playback>Auto play</span><span class="research-progress-track"><span data-carousel-progress></span></span></div>
     <div class="research-carousel-controls" hidden>
       <button data-carousel-prev aria-label="Previous paper">Previous</button>
       <button data-carousel-next aria-label="Next paper">Next</button>
@@ -38,7 +37,6 @@ function fixture({ cards = 1, spacer = false, count = 3 } = {}) {
     .research-slide { transform: translate3d(0, 0, 28px) rotateY(0deg) scale(1); }
     .research-stage-preview, .research-slide-outgoing { position: absolute; inset: 0; pointer-events: none; }
     .research-stage-preview { transform: translate3d(40px, 0, -80px) rotateY(-18deg) scale(.9); }
-    [data-carousel-progress] { display: block; height: 2px; transform-origin: left; transform: scaleX(0); }
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   </style><script defer src="/assets/research-carousel.js"></script></head><body>
     <button id="outside">Outside carousel</button>${spacer ? '<div style="height: 1400px"></div>' : ''}
@@ -151,12 +149,10 @@ test('hover and navigation focus keep autoplay running while slide-link focus pa
     await page.clock.fastForward(5300);
     assert.equal(await current(card), 'Rain Transformer');
     assert.equal(await card.getAttribute('data-carousel-state'), 'playing');
-    assert.equal(await card.locator('[data-carousel-playback]').innerText(), 'Auto play');
     await card.locator('.research-slide:visible figcaption a').focus();
     await page.clock.fastForward(16000);
     assert.equal(await current(card), 'Rain Transformer');
     assert.equal(await card.getAttribute('data-carousel-state'), 'paused');
-    assert.equal(await card.locator('[data-carousel-playback]').innerText(), 'Paused');
     const next = card.getByRole('button', { name: 'Next paper', exact: true });
     await next.focus();
     await page.keyboard.press('Enter');
@@ -190,7 +186,6 @@ test('explicit pause persists until Play resumes rotation with its button still 
     const card = page.locator('[data-research-carousel]');
     await card.getByRole('button', { name: 'Pause automatic rotation' }).click();
     assert.equal(await card.getAttribute('data-carousel-state'), 'paused');
-    assert.equal(await card.locator('[data-carousel-playback]').innerText(), 'Paused');
     await page.locator('#outside').focus();
     await page.mouse.move(1100, 650);
     await setDocumentHidden(page, true);
@@ -222,7 +217,6 @@ test('reduced motion initially and at runtime stops auto rotation while preservi
     await ready(page);
     const card = page.locator('[data-research-carousel]');
     assert.equal(await card.getAttribute('data-carousel-state'), 'reduced');
-    assert.equal(await card.locator('[data-carousel-playback]').innerText(), 'Reduced motion');
     await page.clock.fastForward(16000);
     assert.equal(await current(card), 'HINT');
     await card.getByRole('button', { name: 'Next paper', exact: true }).click();
@@ -281,9 +275,6 @@ test('keyboard dots and previous wrap correctly and rapid navigation cancels obs
     const departure = await outgoing.evaluate(slide => slide.getAnimations()[0].effect.getKeyframes().map(frame => frame.transform));
     assert.match(departure[1], /translate3d\(.+rotateY\(/);
     assert.equal(await card.getByRole('link').count(), 2, 'Decorative copies must add no accessible links');
-    const progress = await card.locator('[data-carousel-progress]').evaluate(element => element.getAnimations()[0]?.effect.getTiming());
-    assert.equal(progress.duration, 5200);
-    assert.equal(progress.iterations, 1);
     await card.locator('.research-slide:visible figcaption a').focus();
     assert.equal(await card.evaluate(element => element.getAnimations({ subtree: true }).length), 0);
     assert.equal(await outgoing.count(), 0);
