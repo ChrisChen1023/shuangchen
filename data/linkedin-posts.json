@@ -1,0 +1,35 @@
+[
+  {
+    "id": "computer-vision-teaching-2026",
+    "title": "Teaching Computer Vision at Durham",
+    "date": "2026-03-03",
+    "dateLabel": "3 March 2026",
+    "category": "Teaching",
+    "summary": "Delivered Computer Vision lectures at Durham, helping students connect foundational image representations and feature extraction with practical applications.",
+    "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_i-had-the-pleasure-of-delivering-computer-activity-7434390972735688705-jTg_",
+    "image": "imgs/activity/computer-vision-teaching-2026.jpg",
+    "imageAlt": "A Computer Vision lecture in a Durham University classroom"
+  },
+  {
+    "id": "aaai-2026-vlif",
+    "title": "Presenting image deraining research at AAAI 2026",
+    "date": "2026-01-25",
+    "dateLabel": "25 January 2026",
+    "category": "Conference",
+    "summary": "Presented research on spiking neural networks for image deraining at AAAI 2026, exchanging ideas with researchers and collaborators.",
+    "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_slay-another-dragon-happy-to-attend-activity-7421213756128411649-TS0a",
+    "image": "imgs/activity/aaai-2026-vlif.jpg",
+    "imageAlt": "Shuang Chen beside the spiking neural network image deraining research poster at AAAI 2026"
+  },
+  {
+    "id": "iros-2025-deep-sea",
+    "title": "DEEP-SEA at IROS 2025",
+    "date": "2025-10-26",
+    "dateLabel": "26 October 2025",
+    "category": "Conference",
+    "summary": "Presented DEEP-SEA underwater perception research at IROS 2025 and discussed embodied intelligence with the robotics community.",
+    "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_iros2025-activity-7388327458221113344-LMhl",
+    "image": "imgs/activity/iros-2025-deep-sea.jpg",
+    "imageAlt": "An IROS 2025 presentation on underwater image enhancement with an audience in the conference room"
+  }
+]

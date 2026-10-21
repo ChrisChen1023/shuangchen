@@ -104,3 +104,42 @@ test('publication controls are reachable and usable from the keyboard', async ()
     assert.equal(await page.locator('.publication:visible').count(), 2);
   } finally { await page.close(); }
 });
+
+test('selected papers form a visual grid while the complete list keeps its reading layout', async () => {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  try {
+    await page.goto(origin + '/shuangchen/');
+    await page.waitForSelector('.publication-controls:not([hidden])');
+    let cards = page.locator('.publication:visible');
+    const first = await cards.nth(0).boundingBox();
+    const second = await cards.nth(1).boundingBox();
+    assert.ok(Math.abs(first.y - second.y) < 2, 'Selected papers should share a grid row on desktop');
+    assert.ok(second.x > first.x + first.width - 2);
+    await page.getByRole('button', { name: 'All publications', exact: true }).click();
+    cards = page.locator('.publication:visible');
+    const fullFirst = await cards.nth(0).boundingBox();
+    const fullSecond = await cards.nth(1).boundingBox();
+    assert.ok(fullSecond.y > fullFirst.y + fullFirst.height - 2, 'The complete list should read vertically');
+    await page.getByRole('button', { name: 'Selected', exact: true }).click();
+    await page.setViewportSize({ width: 390, height: 844 });
+    const mobileFirst = await page.locator('.publication:visible').nth(0).boundingBox();
+    const mobileSecond = await page.locator('.publication:visible').nth(1).boundingBox();
+    assert.ok(mobileSecond.y > mobileFirst.y + mobileFirst.height - 2, 'Selected cards should stack on mobile');
+  } finally { await page.close(); }
+});
+
+test('imported LinkedIn updates have readable summaries and original source links without JavaScript', async () => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  try {
+    const page = await context.newPage();
+    await page.goto(origin + '/shuangchen/');
+    const cards = page.locator('.activity-card');
+    assert.ok(await cards.count() >= 3, 'Existing LinkedIn updates should be included in the static page');
+    for (const card of await cards.all()) {
+      assert.ok((await card.locator('h3').innerText()).length > 0);
+      assert.ok((await card.locator('.activity-summary').innerText()).length > 0);
+      const source = new URL(await card.locator('.activity-link').getAttribute('href'));
+      assert.ok(source.protocol === 'https:' && /(^|\.)linkedin\.com$/.test(source.hostname));
+    }
+  } finally { await context.close(); }
+});
