@@ -10,7 +10,7 @@
 :root{
   --paper:#f8f6f1;--paper-deep:#f1ede6;--card:#fffdfa;
   --ink:#141c26;--ink-2:#2a3542;--muted:#5d6975;--faint:#8b95a0;
-  --accent:#1f5a8a;--accent-ink:#153f62;--teal:#13796d;--orange:#b4562b;
+  --accent:#1f5a8a;--accent-ink:#153f62;--teal:#13796d;--orange:#b4562b;--violet:#5b3d9c;--violet-ink:#43297a;
   --line:rgba(20,28,38,.09);--line-strong:rgba(20,28,38,.17);
   --shadow-sm:0 1px 2px rgba(20,28,38,.05),0 2px 8px -2px rgba(20,28,38,.06);
   --shadow-md:0 2px 4px rgba(20,28,38,.04),0 18px 40px -22px rgba(20,28,38,.22);
@@ -173,13 +173,17 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
 .publication-count{font-size:11.5px;color:var(--faint);margin:18px 0 0;letter-spacing:.01em}
 .publication{display:grid;grid-template-columns:210px minmax(0,1fr);gap:32px;padding:30px 0;border-bottom:1px solid var(--line);align-items:start}
 .publication:first-child{border-top:1px solid var(--line);margin-top:12px}
-.publication-media{margin:3px 0 0;background:#fff;border:1px solid var(--line);height:138px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:10px}
+/* Solid venue badge above each thumbnail, in the spirit of al-folio publication pages. */
+.publication-visual{position:relative;display:flex;flex-direction:column;gap:8px;margin-top:3px;min-width:0}
+.venue-badge{display:flex;align-items:center;justify-content:center;min-height:24px;padding:3px 10px;border-radius:7px;background:var(--violet);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.4;text-align:center;box-shadow:0 1px 2px rgba(67,41,122,.28)}
+.publication-media{margin:0;background:#fff;border:1px solid var(--line);height:138px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:10px}
 .publication-media img{object-fit:contain;width:100%;height:100%;padding:8px}
 .publication-identity{position:relative;width:100%;height:100%;background:linear-gradient(135deg,var(--paper-deep),#fff);padding:20px;display:flex;flex-direction:column;justify-content:center;gap:6px;overflow:hidden}
 .publication-identity::after{content:"";position:absolute;right:-24px;bottom:-24px;width:96px;height:96px;border-radius:50%;border:1px solid var(--line-strong);opacity:.7}
 .publication-identity strong{font-family:var(--serif);font-size:27px;font-weight:500;color:var(--ink);line-height:1.1;letter-spacing:-.02em;overflow-wrap:anywhere;font-variation-settings:"opsz" 72}
 .publication-identity span{font-size:10.5px;line-height:1.5;letter-spacing:.04em;color:var(--muted)}
 .publication-meta{display:flex;flex-wrap:wrap;gap:7px 10px;align-items:center;color:var(--accent);font-size:11.5px;font-weight:600;letter-spacing:.01em;margin-bottom:8px}
+.venue-short{display:none}
 .accepted-label{font-weight:600;font-size:10px;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;color:var(--orange);background:rgba(180,86,43,.09);border:1px solid rgba(180,86,43,.25);border-radius:999px}
 .publication h3{font-family:var(--sans);font-size:16.5px;font-weight:600;letter-spacing:-.01em;line-height:1.45;margin-bottom:8px}
 .publication h3 a{color:var(--ink);text-decoration:none}
@@ -200,6 +204,11 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
 .publication-links a:hover{text-decoration:underline}
 #publication-list[data-layout="selected"]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:18px}
 #publication-list[data-layout="selected"] .publication{display:flex;flex-direction:column;gap:0;padding:0;margin:0;min-width:0;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);overflow:hidden;box-shadow:var(--shadow-sm)}
+#publication-list[data-layout="selected"] .publication-visual{width:100%;flex:none;gap:0;margin:0}
+/* In the selected grid the venue badge moves off the figure into the meta line, as a solid violet pill. */
+#publication-list[data-layout="selected"] .venue-badge{display:none}
+#publication-list[data-layout="selected"] .venue-name{display:none}
+#publication-list[data-layout="selected"] .venue-short{display:inline}
 #publication-list[data-layout="selected"] .publication-media{width:100%;height:186px;flex:none;margin:0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:linear-gradient(180deg,#fff,var(--paper-deep))}
 #publication-list[data-layout="selected"] .publication-media img{padding:14px;object-fit:contain}
 #publication-list[data-layout="selected"] .publication-copy{display:flex;flex-direction:column;flex:1;width:100%;padding:24px 26px 24px}
@@ -207,7 +216,7 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
 #publication-list[data-layout="selected"] .publication-identity strong{font-size:38px}
 #publication-list[data-layout="selected"] .publication-identity span{color:var(--accent)}
 #publication-list[data-layout="selected"] .publication-meta{margin-bottom:12px;font-size:12px}
-#publication-list[data-layout="selected"] .publication-meta>span:first-child{padding:3px 9px;background:rgba(31,90,138,.08);border-radius:999px}
+#publication-list[data-layout="selected"] .publication-meta>span:first-child{padding:3px 10px;border-radius:999px;background:var(--violet);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 1px 2px rgba(67,41,122,.28)}
 #publication-list[data-layout="selected"] .publication h3{font-size:17.5px;line-height:1.45;margin-bottom:10px}
 #publication-list[data-layout="selected"] .publication-metrics{margin-top:10px}
 #publication-list[data-layout="selected"] .publication-summary{margin-top:10px;margin-bottom:18px}
@@ -266,6 +275,16 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
 .timeline .text-link{margin-top:8px;font-size:11.5px}
 
 /* ---------- Teaching ---------- */
+.student-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;list-style:none;margin:0;padding:0}
+.student-card{display:flex;gap:18px;align-items:flex-start;min-width:0;padding:24px 26px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow-sm)}
+.student-initials{flex:none;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:19px;font-weight:500;letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,var(--violet),var(--accent))}
+.student-card h3{font-family:var(--sans);font-size:17px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em;line-height:1.4}
+.student-card h3 a{color:var(--ink);text-decoration:none}
+.student-card h3 a:hover{color:var(--accent)}
+.student-role{font-size:11.5px;letter-spacing:.03em;font-weight:600;color:var(--violet);margin:0 0 8px}
+.student-note{font-size:13.5px;line-height:1.75;color:var(--muted);margin:0}
+.student-card .text-link{margin-top:10px;font-size:11.5px}
+.supervision-note{margin-top:22px;font-size:13.5px;line-height:1.8;color:var(--muted);max-width:720px}
 .teaching-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .teaching-grid article{padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow-sm)}
 .teaching-grid p+p{margin-top:14px}
@@ -303,7 +322,7 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
   .teaching-grid{gap:18px}
 }
 @media(max-width:900px){.research-grid{grid-template-columns:1fr;gap:18px}}
-@media(max-width:800px){#publication-list[data-layout="selected"]{grid-template-columns:1fr;gap:20px}}
+@media(max-width:800px){#publication-list[data-layout="selected"]{grid-template-columns:1fr;gap:20px}.student-grid{grid-template-columns:1fr}}
 @media(max-width:740px){
   html{scroll-padding-top:122px}
   .page-shell,.header-inner{width:calc(100% - 40px)}
@@ -416,7 +435,7 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
   .portrait-frame:hover::before{transform:translate(4px,4px)}
   .profile-links a,.view-switch button,.topic-filters button,.contact-email,.news-archive summary span{transition:background-color .2s var(--ease-out),color .2s var(--ease-out),border-color .2s var(--ease-out),transform .25s var(--ease-spring),box-shadow .25s var(--ease-out)}
   .profile-links a:hover,.contact-email:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
-  .research-grid article,.activity-card,#publication-list[data-layout="selected"] .publication,.teaching-grid article{transition:transform .4s var(--ease-out),box-shadow .4s var(--ease-out),border-color .3s var(--ease-out)}
+  .research-grid article,.activity-card,#publication-list[data-layout="selected"] .publication,.teaching-grid article,.student-card{transition:transform .4s var(--ease-out),box-shadow .4s var(--ease-out),border-color .3s var(--ease-out)}
   .research-grid article::before{transition:width .4s var(--ease-out)}
   .research-grid article:hover{transform:translateY(-4px);border-color:var(--research-color);box-shadow:var(--shadow-lg)}
   .research-grid article:hover::before{width:72px}
@@ -425,7 +444,7 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
   .research-carousel-controls .carousel-arrow:hover{transform:translateY(-1px)}
   .research-image-link img,.activity-image img,#publication-list[data-layout="selected"] .publication-media img{transition:transform .6s var(--ease-out)}
   .research-image-link:hover img{transform:scale(1.04)}
-  .activity-card:hover,#publication-list[data-layout="selected"] .publication:hover,.teaching-grid article:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
+  .activity-card:hover,#publication-list[data-layout="selected"] .publication:hover,.teaching-grid article:hover,.student-card:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
   .activity-card:hover .activity-image img{transform:scale(1.05)}
   #publication-list[data-layout="selected"] .publication:hover .publication-media img{transform:scale(1.03)}
   .publication h3 a,.activity-card h3 a,.bio a,.news-list a{transition:color .2s,border-color .2s}
@@ -444,7 +463,9 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
   html{scroll-padding-top:0}
   body{background:#fff;color:#000;font-size:12px}
   body::before,.intro::before,.intro::after,.skip-link,.site-header,.publication-controls,.publication-count,.empty-state,.latest-note a,.footer-meta a[href="#top"],.lightbox{display:none!important}
-  .intro,.research-grid article,.activity-card,.latest-note,.teaching-grid article{background:#fff;box-shadow:none;border-color:#ccc}
+  .intro,.research-grid article,.activity-card,.latest-note,.teaching-grid article,.student-card{background:#fff;box-shadow:none;border-color:#ccc}
+  .venue-badge{background:none;color:#000;border:1px solid #999;box-shadow:none}
+  .student-initials{background:#666}
   .portrait{box-shadow:none}
   .portrait-frame::before{display:none}
   .page-shell{width:100%}

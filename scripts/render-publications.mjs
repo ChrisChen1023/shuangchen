@@ -35,6 +35,8 @@ for (const paper of papers) {
   for (const link of paper.links) if (!['http:', 'https:'].includes(new URL(link.url).protocol)) throw new Error(`Unsupported resource URL: ${paper.id}`);
 }
 
+// Short venue names for the solid badge above each thumbnail; venues already short enough are used as they are.
+const venueBadges = { 'IEEE Transactions on Multimedia': 'IEEE TMM', 'IEEE Transactions on Instrumentation and Measurement': 'IEEE TIM', 'Expert Systems with Applications': 'ESWA', 'Findings of EMNLP': 'EMNLP Findings', 'Engineering Interactive Computer Systems: EICS 2024 International Workshops': 'EICS Workshops', 'Artificial Intelligence Review': 'AI Review', 'Pattern Recognition Letters': 'PRL', 'IEEE-EMBS BHI': 'IEEE BHI' };
 const identity = { 'vlif': 'Visual LIF', 'uiesnn': 'UIESNN', 'deep-sea': 'DEEP-SEA', 'micro-robots': 'Micro-robots', 'sem-net': 'SEM-Net', 'hint': 'HINT', 'cpvb-rg': 'CPVB-RG', 'sandbar': 'SandBAR', 'bumblebee-olfaction': 'Insect brains', 'bcqlm': 'BcQLM', 'boost': 'BOOST', 'caflow': 'CaFlow' };
 const html = papers.map(paper => {
   const authors = escape(paper.authors).replaceAll('Shuang Chen', '<strong>Shuang Chen</strong>');
@@ -43,15 +45,17 @@ const html = papers.map(paper => {
   const media = paper.image
     ? `<img src="${escape(paper.image)}" alt="${escape(paper.imageAlt)}" width="400" height="240" loading="lazy" decoding="async">`
     : `<div class="publication-identity" aria-hidden="true"><strong>${escape(identity[paper.id] || paper.venue)}</strong><span>${escape(paper.venue)} · ${paper.year}</span></div>`;
+  const badge = venueBadges[paper.venue] ?? paper.venue;
+  if (badge.length > 16) throw new Error(`Add a short venue badge for: ${paper.venue}`);
   const links = paper.links.map(link => `<a class="resource-link" href="${escape(link.url)}">${icon(link.label)}<span>${escape(link.label)}</span></a>`).join('');
   // Venue standing (CORE rank, impact factor, acceptance) and a dated Google Scholar citation count.
   const chips = (paper.metrics ?? []).map(label => `<span class="metric-chip${/^(CORE|Impact Factor|JCR)/.test(label) ? '' : ' metric-chip-highlight'}">${escape(label)}</span>`);
   if (paper.citations != null) chips.push(`<span class="metric-chip metric-chip-citations" title="Google Scholar, ${escape(paper.citationsAsOf)}">${paper.citations} citation${paper.citations === 1 ? '' : 's'}</span>`);
   const metrics = chips.length ? `<p class="publication-metrics" aria-label="Venue standing and citations">${chips.join('')}</p>` : '';
   return `<article class="publication" id="paper-${escape(paper.id)}" data-selected="${paper.selected}" data-topics="${escape(paper.topics.join(' '))}">
-  <figure class="publication-media">${media}</figure>
+  <div class="publication-visual"><span class="venue-badge">${escape(badge)}</span><figure class="publication-media">${media}</figure></div>
   <div class="publication-copy">
-    <p class="publication-meta"><span>${escape(paper.venue)} · ${paper.year}</span>${paper.status === 'accepted' ? '<span class="accepted-label">Accepted</span>' : ''}${paper.id === 'sem-net' ? '<span class="accepted-label">Oral</span>' : ''}</p>
+    <p class="publication-meta"><span><span class="venue-name">${escape(paper.venue)}</span><span class="venue-short">${escape(badge)}</span> · ${paper.year}</span>${paper.status === 'accepted' ? '<span class="accepted-label">Accepted</span>' : ''}${paper.id === 'sem-net' ? '<span class="accepted-label">Oral</span>' : ''}</p>
     <h3>${primary ? `<a href="${escape(primary.url)}">${title}</a>` : title}</h3>
     <p class="publication-authors">${authors}</p>
     ${metrics}

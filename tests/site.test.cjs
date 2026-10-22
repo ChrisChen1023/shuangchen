@@ -154,6 +154,23 @@ test('imported LinkedIn updates have readable summaries and original source link
   } finally { await context.close(); }
 });
 
+test('supervised students are listed with Durham profile links without JavaScript', async () => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  try {
+    const page = await context.newPage();
+    await page.goto(origin + '/shuangchen/');
+    const cards = page.locator('#supervision .student-card');
+    assert.ok(await cards.count() >= 2);
+    for (const card of await cards.all()) {
+      assert.ok((await card.locator('h3').innerText()).length > 0);
+      const profile = new URL(await card.locator('h3 a').getAttribute('href'));
+      assert.ok(profile.protocol === 'https:' && profile.hostname.endsWith('durham.ac.uk'));
+    }
+    assert.ok(await page.locator('#supervision a[href="#paper-uiesnn"]').count() >= 1);
+    assert.equal(await page.locator('#paper-uiesnn').count(), 1, 'Student note links to an existing publication');
+  } finally { await context.close(); }
+});
+
 test('each research area contains multiple distinct, sourced papers without JavaScript', async () => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   try {
@@ -204,6 +221,8 @@ test('publications carry sourced venue-standing chips and dated citation counts'
     const page = await context.newPage();
     await page.goto(origin + '/shuangchen/');
     assert.ok(await page.locator('.publication .publication-metrics').count() >= 15, 'Most papers should show venue standing');
+    assert.equal(await page.locator('.publication .venue-badge').count(), 20, 'Every paper carries a solid venue badge');
+    for (const badge of await page.locator('.venue-badge').all()) assert.match(await badge.innerText(), /^[A-Za-z][A-Za-z *-]{1,15}$/);
     assert.ok(await page.locator('.metric-chip-citations').count() >= 10, 'Papers with Google Scholar citations show a dated count');
     assert.equal(await page.locator('#paper-hint .metric-chip-citations').innerText(), '107 citations');
     for (const chip of await page.locator('.metric-chip').all()) assert.match(await chip.innerText(), /^(CORE [ABC]\*?|Impact Factor \d+(\.\d+)?|JCR Q[1-4]|[\d.]+% acceptance|Oral.*|\d+ citations?)$/);
