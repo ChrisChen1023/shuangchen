@@ -1,5 +1,38 @@
 [
   {
+    "id": "no-more-sleeping-newcastle-2026",
+    "title": "Robots on stage at O2 City Hall Newcastle",
+    "date": "2026-10-02",
+    "dateLabel": "2 October 2026",
+    "category": "Public engagement",
+    "summary": "Brought the robots Alan and Pixel on stage for the No More Sleeping project at O2 City Hall Newcastle, where technology, storytelling and young creativity came together.",
+    "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_nomoresleeping-activity-7511717878555885568-5R_7",
+    "image": "imgs/activity/no-more-sleeping-newcastle-2026.jpg",
+    "imageAlt": "The humanoid robot Alan standing among schoolchildren on stage at O2 City Hall Newcastle during the No More Sleeping performance"
+  },
+  {
+    "id": "ijcnn-2026-maastricht",
+    "title": "Four Durham papers at IJCNN 2026",
+    "date": "2026-06-28",
+    "dateLabel": "28 June 2026",
+    "category": "Conference",
+    "summary": "The Durham team presented four papers at IJCNN 2026 in Maastricht, including UIESNN, which takes spiking neural networks underwater as part of the BioDiMoBot project. Shared by Amir Atapour-Abarghouei.",
+    "url": "https://www.linkedin.com/posts/atapour_the-team-from-durham-university-computer-activity-7477015676604428288-AnX4",
+    "image": "imgs/activity/ijcnn-2026-maastricht.jpg",
+    "imageAlt": "A conference talk at IJCNN 2026 in Maastricht with a slide asking why spiking networks suit the deep sea"
+  },
+  {
+    "id": "durham-high-school-careers-day-2026",
+    "title": "Careers Day at Durham High School",
+    "date": "2026-03-03",
+    "dateLabel": "3 March 2026",
+    "category": "Outreach",
+    "summary": "Joined the Durham team at Durham High School's Careers Day, bringing humanoid and quadruped robots to pupils curious about AI from an early age.",
+    "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_enjoyable-experience-at-durham-high-school-activity-7434713417824833536-EmZF",
+    "image": "imgs/activity/durham-high-school-careers-day-2026.jpg",
+    "imageAlt": "The Durham team standing with humanoid NAO robots and a quadruped robot in the school hall at Durham High School"
+  },
+  {
     "id": "computer-vision-teaching-2026",
     "title": "Teaching Computer Vision at Durham",
     "date": "2026-03-03",
