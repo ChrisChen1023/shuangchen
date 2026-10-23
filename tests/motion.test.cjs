@@ -207,7 +207,7 @@ for (const missing of ['IntersectionObserver', 'animate']) {
       }, missing);
       await page.goto(origin + '/shuangchen/');
       await page.getByRole('button', { name: 'All publications', exact: true }).click();
-      assert.equal(await page.locator('.publication:visible').count(), 20);
+      assert.equal(await page.locator('.publication:visible').count(), 21);
       await page.getByRole('button', { name: 'Spiking neural networks', exact: true }).click();
       assert.equal(await page.locator('.publication:visible').count(), 2);
       await settleMotion(page);

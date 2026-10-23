@@ -54,6 +54,33 @@
     "citationsAsOf": null
   },
   {
+    "id": "expert-agent-routing",
+    "title": "Sparse Multi-Stage Expert-Agent Routing for Complex Clinical Reasoning",
+    "authors": "Sike Xiang, Shuang Chen, Qian Sun, Jia Cheng, Yusi Wei, Amir Atapour-Abarghouei",
+    "venue": "MFM4Health Workshop, BMVC",
+    "year": 2026,
+    "status": "accepted",
+    "topics": [
+      "applications",
+      "medical",
+      "vl"
+    ],
+    "selected": false,
+    "image": null,
+    "imageAlt": "",
+    "summary": "Sparse multi-stage routing activates a few medical expert agents as evidence arrives, with ClinFEScore for fact-aware evaluation of diagnostic conclusions.",
+    "summaryZh": "随着证据逐步到来，稀疏的多阶段路由只激活少数医学专家智能体，并用 ClinFEScore 对诊断结论进行事实层面的评估。",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2608.21948"
+      }
+    ],
+    "metrics": [],
+    "citations": null,
+    "citationsAsOf": null
+  },
+  {
     "id": "vlif",
     "title": "Exploring the Potentials of Spiking Neural Networks for Image Deraining",
     "authors": "Shuang Chen, Tomas Krajnik, Farshad Arvin, Amir Atapour-Abarghouei",

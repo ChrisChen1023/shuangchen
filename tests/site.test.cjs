@@ -37,7 +37,7 @@ test('topic filters and publication views compose and recover from an empty sele
     assert.match(await page.locator('#publication-list').innerText(), /Spiking Neural Networks for Image Deraining/);
     await page.getByRole('button', { name: 'All publications', exact: true }).click();
     await page.getByRole('button', { name: 'All topics', exact: true }).click();
-    assert.equal(await page.locator('.publication:visible').count(), 20);
+    assert.equal(await page.locator('.publication:visible').count(), 21);
     await page.getByRole('button', { name: 'Medical imaging', exact: true }).click();
     assert.ok(await page.locator('.publication:visible').count() > 0);
     // "Selected" with a topic that has no selected papers clears the topic rather than showing nothing.
@@ -52,7 +52,7 @@ test('topic filters and publication views compose and recover from an empty sele
     assert.match(await page.locator('#publication-count').innerText(), /4 papers in this topic · no selected papers here/);
     assert.ok(await page.locator('#publication-empty').isHidden());
     await page.getByRole('button', { name: 'All topics', exact: true }).click();
-    assert.equal(await page.locator('.publication:visible').count(), 20);
+    assert.equal(await page.locator('.publication:visible').count(), 21);
   } finally { await page.close(); }
 });
 
@@ -88,7 +88,7 @@ test('research and contact remain fully readable without JavaScript', async () =
   try {
     const page = await context.newPage();
     await page.goto(origin + '/shuangchen/');
-    assert.equal(await page.locator('.publication:visible').count(), 20);
+    assert.equal(await page.locator('.publication:visible').count(), 21);
     assert.ok(await page.getByRole('link', { name: 'shuang.chen@durham.ac.uk', exact: true }).isVisible());
     assert.equal(await page.locator('.publication-controls:visible').count(), 0);
     assert.ok(await page.getByRole('heading', { name: /Shuang/ }).isVisible());
@@ -102,7 +102,7 @@ test('publication controls are reachable and usable from the keyboard', async ()
     const all = page.getByRole('button', { name: 'All publications', exact: true });
     await all.focus();
     await page.keyboard.press('Enter');
-    assert.equal(await page.locator('.publication:visible').count(), 20);
+    assert.equal(await page.locator('.publication:visible').count(), 21);
     const brain = page.getByRole('button', { name: 'Spiking neural networks', exact: true });
     await brain.focus();
     await page.keyboard.press('Space');
@@ -221,7 +221,7 @@ test('publications carry sourced venue-standing chips and dated citation counts'
     const page = await context.newPage();
     await page.goto(origin + '/shuangchen/');
     assert.ok(await page.locator('.publication .publication-metrics').count() >= 15, 'Most papers should show venue standing');
-    assert.equal(await page.locator('.publication .venue-badge').count(), 20, 'Every paper carries a solid venue badge');
+    assert.equal(await page.locator('.publication .venue-badge').count(), 21, 'Every paper carries a solid venue badge');
     for (const badge of await page.locator('.venue-badge').all()) assert.match(await badge.innerText(), /^[A-Za-z][A-Za-z *-]{1,15}$/);
     assert.ok(await page.locator('.metric-chip-citations').count() >= 10, 'Papers with Google Scholar citations show a dated count');
     const hint = require('../data/publications.json').find(paper => paper.id === 'hint');
