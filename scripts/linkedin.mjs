@@ -59,7 +59,9 @@ const firstSentences = (text, limit) => {
   const sentences = clean.match(/[^.!?。！？]+[.!?。！？]?/g) || [clean];
   let out = '';
   for (const sentence of sentences) { if ((out + sentence).length > limit) break; out += sentence; }
-  return (out || clean.slice(0, limit)).trim();
+  if (out) return out.trim();
+  // No whole sentence fits: cut at a word boundary and mark the cut.
+  return clean.slice(0, limit).replace(/\s+\S*$/, '') + '…';
 };
 
 // A complete English record from the post itself; the daily session refines the copy and adds the Chinese fields.

@@ -27,4 +27,5 @@ Links pasted into `data/linkedin-queue.txt` are imported by `node scripts/import
 
 | Record | Author | Publication timestamp (UTC) | Original post |
 |---|---|---|---|
+| biodimobot-workshop-2026 | Shuang Chen | 2026-10-23T14:42:53.986Z | https://www.linkedin.com/posts/shuang-chen-a50163211_it-was-a-pleasure-to-organise-host-and-lead-activity-7519408012340613121-d7OP |
 <!-- QUEUE:END -->

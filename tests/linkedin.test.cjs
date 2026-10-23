@@ -45,5 +45,7 @@ test('drafts a complete English record with a category, date label and unique id
   assert.equal(record.summary, 'Great to see our robots at the Durham science fair! Pupils asked sharp questions about AI & robotics.');
   assert.equal(record.titleZh, '');
   assert.deepEqual(categorise('Presenting at IROS next week'), { en: 'Conference', zh: '会议' });
+  const long = draftRecord(parsePost(page({ ...own, articleBody: 'word '.repeat(80).trim() + ' end.' })), new Set(), null);
+  assert.ok(long.summary.length <= 221 && long.summary.endsWith('word…'), 'An over-long first sentence is cut at a word boundary');
   assert.deepEqual(parseQueue('# comment\n\nhttps://lnkd.in/p/abc \nhttps://www.linkedin.com/posts/x\n'), [{ line: 3, url: 'https://lnkd.in/p/abc' }, { line: 4, url: 'https://www.linkedin.com/posts/x' }]);
 });
