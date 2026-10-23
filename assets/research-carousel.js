@@ -17,6 +17,8 @@
     const status = carousel.querySelector('[data-carousel-status]');
     const stage = carousel.querySelector('.research-stage') || carousel;
     const preview = carousel.querySelector('[data-carousel-preview]');
+    const language = window.siteLanguage;
+    const t = (en, zh) => language && language.current === 'zh' ? zh : en;
     const requestedInterval = Number(carousel.dataset.carouselInterval);
     const interval = (requestedInterval > 0 ? requestedInterval : 5200) + carouselIndex * 700;
     let index = 0;
@@ -36,8 +38,15 @@
       slide.querySelectorAll('img').forEach(image => { image.loading = 'eager'; });
       slide.setAttribute('role', 'group');
       slide.setAttribute('aria-roledescription', 'slide');
-      slide.setAttribute('aria-label', `${slideIndex + 1} of ${slides.length}`);
     });
+
+    function labelSlides() {
+      slides.forEach((slide, slideIndex) => slide.setAttribute('aria-label', t(`${slideIndex + 1} of ${slides.length}`, `第 ${slideIndex + 1} 项，共 ${slides.length} 项`)));
+      previous?.setAttribute('aria-label', t('Previous paper', '上一篇论文'));
+      next?.setAttribute('aria-label', t('Next paper', '下一篇论文'));
+    }
+    labelSlides();
+    language?.onChange(() => { labelSlides(); updateToggle(); });
 
     function cancelMotion() {
       motionVersion += 1;
@@ -74,10 +83,10 @@
     function updateToggle() {
       if (!toggle) return;
       toggle.disabled = reducedMotion();
-      toggle.textContent = reducedMotion() ? 'Paused' : userPaused ? 'Play' : 'Pause';
+      toggle.textContent = reducedMotion() ? t('Paused', '已暂停') : userPaused ? t('Play', '播放') : t('Pause', '暂停');
       toggle.setAttribute('aria-label', reducedMotion()
-        ? 'Automatic rotation paused for reduced motion'
-        : userPaused ? 'Resume automatic rotation' : 'Pause automatic rotation');
+        ? t('Automatic rotation paused for reduced motion', '已按减少动态效果的设置暂停自动轮播')
+        : userPaused ? t('Resume automatic rotation', '恢复自动轮播') : t('Pause automatic rotation', '暂停自动轮播'));
       toggle.setAttribute('aria-pressed', String(userPaused || reducedMotion()));
     }
 
@@ -150,7 +159,7 @@
       if (count) count.textContent = `${index + 1} / ${slides.length}`;
       if (manual && status) {
         const caption = slides[index].querySelector('figcaption')?.textContent || '';
-        status.textContent = `${caption.replace(/\s+/g, ' ').trim()} — ${index + 1} of ${slides.length}`;
+        status.textContent = `${caption.replace(/\s+/g, ' ').trim()} — ${t(`${index + 1} of ${slides.length}`, `第 ${index + 1} 项，共 ${slides.length} 项`)}`;
       }
 
       if (changed) animateChange(departing, slides[index], direction);

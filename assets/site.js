@@ -1,11 +1,51 @@
 (() => {
   // Everything here is progressive enhancement: the plain HTML/CSS page is complete without it.
   const motion = setupMotion();
+  const language = setupLanguage();
   setupHeader();
-  setupLightbox(motion);
-  setupPublications(motion);
+  setupLightbox(motion, language);
+  setupPublications(motion, language);
 
-  function setupPublications(motion) {
+  // English/Chinese switch. The HTML carries both languages; the stylesheet shows the one named on <html lang>.
+  // The choice is remembered per browser; first-time visitors with a Chinese browser language start in Chinese.
+  function setupLanguage() {
+    const root = document.documentElement;
+    const toggle = document.querySelector('[data-lang-toggle]');
+    const englishTitle = document.title;
+    const listeners = new Set();
+    let stored = null;
+    try { stored = localStorage.getItem('lang'); } catch {}
+    const browserChinese = (navigator.languages || [navigator.language || '']).some(code => /^zh/i.test(code));
+    let current = stored === 'zh' || stored === 'en' ? stored : browserChinese ? 'zh' : 'en';
+    const api = {
+      get current() { return current; },
+      t(en, zh) { return current === 'zh' && zh != null ? zh : en; },
+      onChange(listener) { listeners.add(listener); }
+    };
+    function apply() {
+      root.lang = current === 'zh' ? 'zh-Hans' : 'en';
+      root.dataset.lang = current;
+      document.title = current === 'zh' ? 'Shuang (Chris) Chen — 个人主页' : englishTitle;
+      if (toggle) {
+        toggle.hidden = false;
+        toggle.textContent = current === 'zh' ? 'EN' : '中文';
+        toggle.lang = current === 'zh' ? 'en' : 'zh-Hans';
+        toggle.setAttribute('aria-pressed', String(current === 'zh'));
+        toggle.setAttribute('aria-label', current === 'zh' ? 'Switch to English' : '切换到中文');
+      }
+      for (const listener of listeners) listener(current);
+    }
+    toggle?.addEventListener('click', () => {
+      current = current === 'zh' ? 'en' : 'zh';
+      try { localStorage.setItem('lang', current); } catch {}
+      apply();
+    });
+    apply();
+    window.siteLanguage = api;
+    return api;
+  }
+
+  function setupPublications(motion, language) {
     const controls = document.querySelector('.publication-controls');
     const papers = [...document.querySelectorAll('.publication')];
     const count = document.getElementById('publication-count');
@@ -34,7 +74,9 @@
       }
       for (const button of controls.querySelectorAll('[data-view]')) button.setAttribute('aria-pressed', String(button.dataset.view === view));
       for (const button of controls.querySelectorAll('[data-topic]')) button.setAttribute('aria-pressed', String(button.dataset.topic === topic));
-      count.textContent = `${visible} ${view === 'selected' ? 'selected ' : ''}${visible === 1 ? 'paper' : 'papers'}${topic === 'all' ? '' : ' in this topic'}${widened ? ' · no selected papers here, so all publications are shown' : ''}`;
+      count.textContent = language.current === 'zh'
+        ? `共 ${visible} 篇${view === 'selected' ? '精选' : ''}论文${topic === 'all' ? '' : '（当前主题）'}${widened ? ' · 该主题下没有精选论文，已显示全部' : ''}`
+        : `${visible} ${view === 'selected' ? 'selected ' : ''}${visible === 1 ? 'paper' : 'papers'}${topic === 'all' ? '' : ' in this topic'}${widened ? ' · no selected papers here, so all publications are shown' : ''}`;
       empty.hidden = visible !== 0;
     }
 
@@ -49,6 +91,7 @@
 
     update();
     controls.hidden = false;
+    language.onChange(() => update());
   }
 
   function setupHeader() {
@@ -78,15 +121,14 @@
     for (const section of sections) observer.observe(section);
   }
 
-  function setupLightbox(motion) {
+  function setupLightbox(motion, language) {
     const links = [...document.querySelectorAll('.research-image-link')];
     if (!links.length || typeof HTMLDialogElement !== 'function' || !HTMLDialogElement.prototype.showModal) return;
     let dialog;
     function build() {
       dialog = document.createElement('dialog');
       dialog.className = 'lightbox';
-      dialog.setAttribute('aria-label', 'Enlarged research figure');
-      dialog.innerHTML = '<figure><button type="button" class="lightbox-close" aria-label="Close">×</button><img alt=""><figcaption><span></span><a href="#" rel="noopener">Open image file ↗</a></figcaption></figure>';
+      dialog.innerHTML = '<figure><button type="button" class="lightbox-close">×</button><img alt=""><figcaption><span></span><a href="#" rel="noopener"></a></figcaption></figure>';
       dialog.addEventListener('click', event => { if (event.target === dialog) close(); });
       dialog.querySelector('.lightbox-close').addEventListener('click', close);
       dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
@@ -99,6 +141,9 @@
       const label = figcaption?.querySelector('.research-paper-heading a')?.textContent.trim();
       const venue = figcaption?.querySelector('.research-paper-heading span')?.textContent;
       const summary = figcaption?.querySelector('.research-paper-caption')?.textContent;
+      dialog.setAttribute('aria-label', language.t('Enlarged research figure', '放大的研究图'));
+      dialog.querySelector('.lightbox-close').setAttribute('aria-label', language.t('Close', '关闭'));
+      dialog.querySelector('figcaption a').textContent = language.t('Open image file ↗', '打开图片文件 ↗');
       const image = dialog.querySelector('img');
       image.src = link.href;
       image.alt = source?.alt || '';

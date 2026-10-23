@@ -2,6 +2,7 @@ import { readFile, writeFile, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { icon } from './icons.mjs';
+import { text } from './l10n.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const areas = JSON.parse(await readFile(path.join(root, 'data/research-areas.json'), 'utf8'));
@@ -28,13 +29,13 @@ for (const area of areas) {
     const venue = `${venueNames[paper.venue] || paper.venue} ${paper.year}${item.id === 'sem-net' ? ' · Oral' : ''}`;
     slides.push(`            <figure class="research-slide research-figure" data-paper-id="${escape(item.id)}">
               <a class="research-image-link" href="${escape(paper.image)}" aria-label="View the ${escape(item.label)} figure at full size"><img src="${escape(paper.image)}" alt="${escape(paper.imageAlt)}" width="400" height="240" loading="lazy" decoding="async"></a>
-              <figcaption><div class="research-paper-heading"><span class="research-paper-links"><a href="${escape(primary.url)}" title="${escape(paper.title)}">${icon('paper')}${escape(item.label)}</a>${code ? `<a class="research-paper-code" href="${escape(code.url)}" aria-label="${escape(item.label)} code on GitHub" title="Code">${icon('code')}</a>` : ''}</span><span>${escape(venue)}</span></div><span class="research-paper-caption">${escape(item.caption)}</span></figcaption>
+              <figcaption><div class="research-paper-heading"><span class="research-paper-links"><a href="${escape(primary.url)}" title="${escape(paper.title)}">${icon('paper')}${escape(item.label)}</a>${code ? `<a class="research-paper-code" href="${escape(code.url)}" aria-label="${escape(item.label)} code on GitHub" title="Code">${icon('code')}</a>` : ''}</span><span>${escape(venue)}</span></div><span class="research-paper-caption">${text(item.caption, item.captionZh)}</span></figcaption>
             </figure>`);
   }
   const dots = area.papers.map((item, index) => `<button type="button" data-carousel-go="${index}" aria-label="Show ${escape(item.label)}" aria-current="${index === 0}"><span aria-hidden="true"></span></button>`).join('');
   cards.push(`        <article>
-          <span class="research-index">${escape(area.index)}</span>
-          <h3>${escape(area.title)}</h3>
+          <span class="research-index">${text(area.index, area.indexZh)}</span>
+          <h3>${text(area.title, area.titleZh)}</h3>
           <div class="research-carousel" data-research-carousel data-carousel-interval="5200" role="group" aria-label="${escape(area.title)} papers">
             <div class="research-stage">
 ${slides.join('\n')}
@@ -49,8 +50,8 @@ ${slides.join('\n')}
             </div>
             <p class="sr-only" data-carousel-status role="status" aria-live="polite"></p>
           </div>
-          <p><strong>${escape(area.lead)}</strong>${escape(area.description)}</p>
-          <a class="text-link" href="${escape(area.link.url)}">${escape(area.link.label)} <span aria-hidden="true">↗</span></a>
+          <p><strong>${text(area.lead, area.leadZh)}</strong>${text(area.description, area.descriptionZh)}</p>
+          <a class="text-link" href="${escape(area.link.url)}">${text(area.link.label, area.link.labelZh)} <span aria-hidden="true">↗</span></a>
         </article>`);
 }
 

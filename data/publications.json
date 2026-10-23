@@ -16,6 +16,7 @@
     "image": null,
     "imageAlt": "",
     "summary": "Cross-prior visual bridging for chest X-ray report generation informed by prior examinations.",
+    "summaryZh": "利用既往检查的先验信息，通过跨先验视觉桥接生成胸部 X 光报告。",
     "links": [
       {
         "label": "Paper",
@@ -44,6 +45,7 @@
     "image": null,
     "imageAlt": "",
     "summary": "A band-asymmetric approach to underwater image restoration using removable frequency scaffolding.",
+    "summaryZh": "采用可移除的频率支架，以频带非对称方式复原水下图像。",
     "links": [],
     "metrics": [
       "CORE A"
@@ -68,6 +70,7 @@
     "image": "imgs/research/vlif-spiking-neuron.jpg",
     "imageAlt": "Comparison of traditional LIF and Visual LIF neurons and their spatial and temporal processing.",
     "summary": "Visual LIF neurons bring spatial contextual processing to spiking networks for image deraining.",
+    "summaryZh": "Visual LIF 神经元为脉冲网络带来空间上下文处理能力，用于图像去雨。",
     "links": [
       {
         "label": "Paper",
@@ -104,6 +107,7 @@
     "image": "imgs/research/uiesnn-overview.jpg",
     "imageAlt": "UIESNN architecture with multi-scale spiking residual blocks and frequency decomposition for underwater image enhancement.",
     "summary": "A scale-aware spiking neural network for enhancing underwater imagery.",
+    "summaryZh": "面向水下图像增强的尺度感知脉冲神经网络。",
     "links": [
       {
         "label": "Paper",
@@ -135,6 +139,7 @@
     "image": null,
     "imageAlt": "",
     "summary": "An interdisciplinary study of sex differences in olfactory anatomy across bumblebee species.",
+    "summaryZh": "跨熊蜂物种嗅觉解剖结构性别差异的交叉学科研究。",
     "links": [
       {
         "label": "Lab listing",
@@ -164,6 +169,7 @@
     "image": null,
     "imageAlt": "",
     "summary": "Out-of-distribution-informed adaptive sampling addresses bias in stylistic convolutional neural networks.",
+    "summaryZh": "基于分布外信息的自适应采样，缓解风格化卷积神经网络中的偏差。",
     "links": [
       {
         "label": "Paper",
@@ -196,6 +202,7 @@
     "image": null,
     "imageAlt": "",
     "summary": "Causal counterfactual flow supports long-term assessment of action quality in video.",
+    "summaryZh": "因果反事实流支持视频中长时程动作质量评估。",
     "links": [
       {
         "label": "Paper",
@@ -229,6 +236,7 @@
     "image": "imgs/research/deep-sea-overview.png",
     "imageAlt": "DEEP-SEA underwater image restoration architecture with dual-frequency self-attention and spatial-frequency modulation.",
     "summary": "Deep-learning image enhancement supports environmental perception in underwater environments.",
+    "summaryZh": "深度学习图像增强支撑水下环境感知。",
     "links": [
       {
         "label": "Paper",
@@ -261,6 +269,7 @@
     "image": "imgs/research/micro-robot-swarm-pipeline.png",
     "imageAlt": "Micro-robot monitoring pipeline from simulated snapshots to coordinate prediction and image assembly.",
     "summary": "Collaborative visual monitoring combines micro-robot imagery through coordinate prediction, alignment and reconstruction.",
+    "summaryZh": "通过坐标预测、对齐与重建，融合微型机器人影像实现协作视觉监测。",
     "links": [
       {
         "label": "Paper",
@@ -292,6 +301,7 @@
     "image": "imgs/research/sem-net-overview.png",
     "imageAlt": "SEM-Net image inpainting architecture and spatially enhanced state-space modelling block.",
     "summary": "Spatially enhanced state-space modelling for efficient image inpainting.",
+    "summaryZh": "空间增强的状态空间建模，实现高效图像修复。",
     "links": [
       {
         "label": "Paper",
@@ -324,6 +334,7 @@
     "image": null,
     "imageAlt": "",
     "summary": "Distilled Q-gated cross-modal fusion connects visual and language representations for efficient multimodal understanding.",
+    "summaryZh": "蒸馏的 Q 门控跨模态融合连接视觉与语言表示，实现高效多模态理解。",
     "links": [
       {
         "label": "Paper",
@@ -351,6 +362,7 @@
     "image": "imgs/papers/chatbot.png",
     "imageAlt": "Music chatbot research figure",
     "summary": "Human-centred design and evaluation of inclusive conversational music agents for older adults.",
+    "summaryZh": "面向老年人的包容性音乐对话智能体的以人为本设计与评估。",
     "links": [
       {
         "label": "Paper",
@@ -380,6 +392,7 @@
     "image": "imgs/papers/hint.png",
     "imageAlt": "HINT image inpainting research figure",
     "summary": "Mask-aware encoding and enhanced attention reconstruct missing image regions with a transformer.",
+    "summaryZh": "掩码感知编码与增强注意力，用 Transformer 重建图像缺失区域。",
     "links": [
       {
         "label": "Paper",
@@ -416,6 +429,7 @@
     "image": "imgs/papers/MxT.png",
     "imageAlt": "MxT image inpainting research figure",
     "summary": "Mamba and transformer components are combined for image inpainting.",
+    "summaryZh": "结合 Mamba 与 Transformer 组件进行图像修复。",
     "links": [
       {
         "label": "Paper",
@@ -450,6 +464,7 @@
     "image": "imgs/papers/DAEVI.png",
     "imageAlt": "Depth-aware endoscopic video inpainting research figure",
     "summary": "Depth information guides the reconstruction of missing regions in endoscopic video.",
+    "summaryZh": "以深度信息引导内窥镜视频缺失区域的重建。",
     "links": [
       {
         "label": "Paper",
@@ -481,6 +496,7 @@
     "image": "imgs/papers/icon.png",
     "imageAlt": "Geometric human-object interaction detection research figure",
     "summary": "Geometric features support the detection of interactions between people and objects.",
+    "summaryZh": "几何特征辅助人与物体交互检测。",
     "links": [
       {
         "label": "Paper",
@@ -514,6 +530,7 @@
     "image": null,
     "imageAlt": "",
     "summary": "A survey of AI methods for extracting, analysing and synthesising geometric features in artistic images.",
+    "summaryZh": "艺术图像中几何特征提取、分析与合成的 AI 方法综述。",
     "links": [
       {
         "label": "Paper",
@@ -542,6 +559,7 @@
     "image": "imgs/papers/one_index.png",
     "imageAlt": "One-index vector quantization adversarial attack research figure",
     "summary": "One-index vector quantization is used to construct adversarial attacks on image classification.",
+    "summaryZh": "利用单索引向量量化构造针对图像分类的对抗攻击。",
     "links": [
       {
         "label": "Paper",
@@ -572,6 +590,7 @@
     "image": "imgs/papers/INCLG.png",
     "imageAlt": "INCLG multi-task image inpainting research figure",
     "summary": "A multi-task image processing network explores non-cleft lip generation through inpainting.",
+    "summaryZh": "多任务图像处理网络通过图像修复探索非唇裂唇部生成。",
     "links": [
       {
         "label": "Paper",
@@ -607,6 +626,7 @@
     "image": "imgs/papers/NCLG-MT.png",
     "imageAlt": "Non-cleft lip generation feasibility study research figure",
     "summary": "A feasibility study of image inpainting for generating non-cleft lip appearances from patient images.",
+    "summaryZh": "从患者图像生成非唇裂唇部外观的图像修复可行性研究。",
     "links": [
       {
         "label": "Paper",

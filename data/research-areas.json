@@ -5,12 +5,35 @@
     "title": "Computer vision",
     "lead": "Recovering visual information",
     "description": " from incomplete or degraded observations. My work spans image inpainting, restoration, visual representation learning and biomedical imaging.",
-    "link": { "label": "Explore the papers", "url": "#publications" },
+    "link": {
+      "label": "Explore the papers",
+      "url": "#publications",
+      "labelZh": "查看论文"
+    },
     "papers": [
-      { "id": "hint", "label": "HINT", "caption": "Mask-aware transformers for image inpainting." },
-      { "id": "sem-net", "label": "SEM-Net", "caption": "Efficient image inpainting with state-space models." },
-      { "id": "daevi", "label": "DAEVI", "caption": "Depth-aware reconstruction of endoscopic video." }
-    ]
+      {
+        "id": "hint",
+        "label": "HINT",
+        "caption": "Mask-aware transformers for image inpainting.",
+        "captionZh": "面向图像修复的掩码感知 Transformer。"
+      },
+      {
+        "id": "sem-net",
+        "label": "SEM-Net",
+        "caption": "Efficient image inpainting with state-space models.",
+        "captionZh": "基于状态空间模型的高效图像修复。"
+      },
+      {
+        "id": "daevi",
+        "label": "DAEVI",
+        "caption": "Depth-aware reconstruction of endoscopic video.",
+        "captionZh": "深度感知的内窥镜视频重建。"
+      }
+    ],
+    "indexZh": "01 / 复原与理解",
+    "titleZh": "计算机视觉",
+    "leadZh": "恢复视觉信息",
+    "descriptionZh": "：从不完整或退化的观测中重建画面。我的工作涵盖图像修复、图像复原、视觉表示学习与生物医学影像。"
   },
   {
     "id": "brain",
@@ -18,11 +41,29 @@
     "title": "Brain-inspired AI",
     "lead": "Artificial neurons and spiking networks",
     "description": " for visual processing. I explore how biological structure and behaviour can inspire efficient temporal computation and adaptive perception.",
-    "link": { "label": "Explore spiking vision", "url": "https://github.com/ChrisChen1023/VLIF" },
+    "link": {
+      "label": "Explore spiking vision",
+      "url": "https://github.com/ChrisChen1023/VLIF",
+      "labelZh": "探索脉冲视觉"
+    },
     "papers": [
-      { "id": "vlif", "label": "Visual LIF", "caption": "Spatial context in spiking neurons for image deraining." },
-      { "id": "uiesnn", "label": "UIESNN", "caption": "Scale-aware spiking networks for underwater enhancement." }
-    ]
+      {
+        "id": "vlif",
+        "label": "Visual LIF",
+        "caption": "Spatial context in spiking neurons for image deraining.",
+        "captionZh": "为脉冲神经元引入空间上下文，用于图像去雨。"
+      },
+      {
+        "id": "uiesnn",
+        "label": "UIESNN",
+        "caption": "Scale-aware spiking networks for underwater enhancement.",
+        "captionZh": "面向水下增强的尺度感知脉冲网络。"
+      }
+    ],
+    "indexZh": "02 / 高效学习",
+    "titleZh": "类脑智能",
+    "leadZh": "人工神经元与脉冲网络",
+    "descriptionZh": "，用于视觉处理。我探索生物的结构与行为如何启发高效的时序计算与自适应感知。"
   },
   {
     "id": "robotics",
@@ -30,11 +71,34 @@
     "title": "Robotic perception",
     "lead": "Reliable vision in challenging environments:",
     "description": " underwater image enhancement, camera-based monitoring and collaborative micro-robot sensing. Active and event-based perception are developing research directions.",
-    "link": { "label": "Underwater perception", "url": "https://github.com/ChrisChen1023/DEEP-SEA" },
+    "link": {
+      "label": "Underwater perception",
+      "url": "https://github.com/ChrisChen1023/DEEP-SEA",
+      "labelZh": "水下感知"
+    },
     "papers": [
-      { "id": "micro-robots", "label": "Micro-robot swarm", "caption": "Reconstructing a shared view from micro-robot snapshots." },
-      { "id": "deep-sea", "label": "DEEP-SEA", "caption": "Restoring visual information in submerged environments." },
-      { "id": "uiesnn", "label": "UIESNN", "caption": "Spiking vision for underwater environmental perception." }
-    ]
+      {
+        "id": "micro-robots",
+        "label": "Micro-robot swarm",
+        "caption": "Reconstructing a shared view from micro-robot snapshots.",
+        "captionZh": "从微型机器人快照重建共享视图。"
+      },
+      {
+        "id": "deep-sea",
+        "label": "DEEP-SEA",
+        "caption": "Restoring visual information in submerged environments.",
+        "captionZh": "恢复水下环境中的视觉信息。"
+      },
+      {
+        "id": "uiesnn",
+        "label": "UIESNN",
+        "caption": "Spiking vision for underwater environmental perception.",
+        "captionZh": "面向水下环境感知的脉冲视觉。"
+      }
+    ],
+    "indexZh": "03 / 感知与行动",
+    "titleZh": "机器人感知",
+    "leadZh": "复杂环境中的可靠视觉：",
+    "descriptionZh": "水下图像增强、基于相机的监测与协作微型机器人感知。主动感知与事件相机感知是正在拓展的方向。"
   }
 ]

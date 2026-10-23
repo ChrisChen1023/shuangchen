@@ -8,7 +8,10 @@
     "summary": "Brought the robots Alan and Pixel on stage for the No More Sleeping project at O2 City Hall Newcastle, where technology, storytelling and young creativity came together.",
     "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_nomoresleeping-activity-7511717878555885568-5R_7",
     "image": "imgs/activity/no-more-sleeping-newcastle-2026.jpg",
-    "imageAlt": "The humanoid robot Alan standing among schoolchildren on stage at O2 City Hall Newcastle during the No More Sleeping performance"
+    "imageAlt": "The humanoid robot Alan standing among schoolchildren on stage at O2 City Hall Newcastle during the No More Sleeping performance",
+    "titleZh": "机器人登上纽卡斯尔 O2 City Hall 舞台",
+    "summaryZh": "带着机器人 Alan 和 Pixel 登上纽卡斯尔 O2 City Hall 的舞台，参与 No More Sleeping 项目，科技、故事与青少年的创造力在此交汇。",
+    "categoryZh": "公众参与"
   },
   {
     "id": "ijcnn-2026-maastricht",
@@ -19,7 +22,10 @@
     "summary": "The Durham team presented four papers at IJCNN 2026 in Maastricht, including UIESNN, which takes spiking neural networks underwater as part of the BioDiMoBot project. Shared by Amir Atapour-Abarghouei.",
     "url": "https://www.linkedin.com/posts/atapour_the-team-from-durham-university-computer-activity-7477015676604428288-AnX4",
     "image": "imgs/activity/ijcnn-2026-maastricht.jpg",
-    "imageAlt": "A conference talk at IJCNN 2026 in Maastricht with a slide asking why spiking networks suit the deep sea"
+    "imageAlt": "A conference talk at IJCNN 2026 in Maastricht with a slide asking why spiking networks suit the deep sea",
+    "titleZh": "杜伦团队四篇论文亮相 IJCNN 2026",
+    "summaryZh": "杜伦团队在马斯特里赫特举行的 IJCNN 2026 上报告了四篇论文，其中包括 BioDiMoBot 项目的 UIESNN，把脉冲神经网络带到水下。由 Amir Atapour-Abarghouei 分享。",
+    "categoryZh": "会议"
   },
   {
     "id": "durham-high-school-careers-day-2026",
@@ -30,7 +36,10 @@
     "summary": "Joined the Durham team at Durham High School's Careers Day, bringing humanoid and quadruped robots to pupils curious about AI from an early age.",
     "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_enjoyable-experience-at-durham-high-school-activity-7434713417824833536-EmZF",
     "image": "imgs/activity/durham-high-school-careers-day-2026.jpg",
-    "imageAlt": "The Durham team standing with humanoid NAO robots and a quadruped robot in the school hall at Durham High School"
+    "imageAlt": "The Durham team standing with humanoid NAO robots and a quadruped robot in the school hall at Durham High School",
+    "titleZh": "杜伦高中职业日",
+    "summaryZh": "与杜伦团队一起参加杜伦高中的职业日，把人形机器人和四足机器人带到对 AI 充满好奇的学生面前。",
+    "categoryZh": "科普"
   },
   {
     "id": "computer-vision-teaching-2026",
@@ -41,7 +50,10 @@
     "summary": "Delivered Computer Vision lectures at Durham, helping students connect foundational image representations and feature extraction with practical applications.",
     "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_i-had-the-pleasure-of-delivering-computer-activity-7434390972735688705-jTg_",
     "image": "imgs/activity/computer-vision-teaching-2026.jpg",
-    "imageAlt": "A Computer Vision lecture in a Durham University classroom"
+    "imageAlt": "A Computer Vision lecture in a Durham University classroom",
+    "titleZh": "在杜伦讲授计算机视觉",
+    "summaryZh": "在杜伦讲授计算机视觉课程，帮助学生把图像表示与特征提取的基础知识和实际应用联系起来。",
+    "categoryZh": "教学"
   },
   {
     "id": "aaai-2026-vlif",
@@ -52,7 +64,10 @@
     "summary": "Presented research on spiking neural networks for image deraining at AAAI 2026, exchanging ideas with researchers and collaborators.",
     "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_slay-another-dragon-happy-to-attend-activity-7421213756128411649-TS0a",
     "image": "imgs/activity/aaai-2026-vlif.jpg",
-    "imageAlt": "Shuang Chen beside the spiking neural network image deraining research poster at AAAI 2026"
+    "imageAlt": "Shuang Chen beside the spiking neural network image deraining research poster at AAAI 2026",
+    "titleZh": "在 AAAI 2026 报告图像去雨研究",
+    "summaryZh": "在 AAAI 2026 上报告脉冲神经网络图像去雨研究，与研究者和合作者交流想法。",
+    "categoryZh": "会议"
   },
   {
     "id": "diamond-insect-imaging-2025",
@@ -63,7 +78,10 @@
     "summary": "Shared a collaborative insect imaging visit to Diamond Light Source, connecting computer vision and biology.",
     "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_diamond-trip-finished-diamond-light-source-activity-7406365127437987840-BUrH",
     "image": "imgs/activity/diamond-insect-imaging-2025.jpg",
-    "imageAlt": "Preparing a specimen in a laboratory at Diamond Light Source"
+    "imageAlt": "Preparing a specimen in a laboratory at Diamond Light Source",
+    "titleZh": "在 Diamond 光源开展昆虫成像合作",
+    "summaryZh": "分享在 Diamond Light Source 的昆虫成像合作访问，连接计算机视觉与生物学。",
+    "categoryZh": "科研访问"
   },
   {
     "id": "deep-learning-guest-lecture-2025",
@@ -74,7 +92,10 @@
     "summary": "Delivered an invited Deep Learning session at Durham, sharing ideas with an engaged group of students.",
     "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_excited-to-share-that-this-friday-i-was-invited-activity-7390495583091867648-xfMt",
     "image": "imgs/activity/deep-learning-guest-lecture-2025.jpg",
-    "imageAlt": "A guest lecture on neural network architecture in a Durham University classroom"
+    "imageAlt": "A guest lecture on neural network architecture in a Durham University classroom",
+    "titleZh": "深度学习客座讲座",
+    "summaryZh": "受邀在杜伦讲授深度学习课程，与投入的学生们分享想法。",
+    "categoryZh": "教学"
   },
   {
     "id": "iros-2025-deep-sea",
@@ -85,6 +106,9 @@
     "summary": "Presented DEEP-SEA underwater perception research at IROS 2025 and discussed embodied intelligence with the robotics community.",
     "url": "https://www.linkedin.com/posts/shuang-chen-a50163211_iros2025-activity-7388327458221113344-LMhl",
     "image": "imgs/activity/iros-2025-deep-sea.jpg",
-    "imageAlt": "An IROS 2025 presentation on underwater image enhancement with an audience in the conference room"
+    "imageAlt": "An IROS 2025 presentation on underwater image enhancement with an audience in the conference room",
+    "titleZh": "DEEP-SEA 亮相 IROS 2025",
+    "summaryZh": "在 IROS 2025 上报告 DEEP-SEA 水下感知研究，并与机器人社区探讨具身智能。",
+    "categoryZh": "会议"
   }
 ]

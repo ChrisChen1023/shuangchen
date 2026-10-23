@@ -4,6 +4,10 @@ Live site: https://chrischen1023.github.io/shuangchen/
 
 A light, responsive academic website for computer vision, brain-inspired AI and robotic perception. Hosted on the existing GitHub Pages site with no frontend framework or production dependencies.
 
+## Languages
+
+The page is bilingual. English is the baseline and the HTML carries a Chinese copy of every piece of text beside it as `.l10n` pairs (`<span class="l10n" lang="en">…</span><span class="l10n" lang="zh-Hans">…</span>`); the stylesheet shows only the language named on `<html lang>`, so without JavaScript the page reads in English. The header switch (`[data-lang-toggle]`, handled in `assets/site.js`) flips the language, remembers the choice in the browser and translates the runtime strings (publication counts, carousel and lightbox labels); a first-time visitor whose browser language is Chinese starts in Chinese. Generated content takes its Chinese text from the data files (`summaryZh` in `data/publications.json`; `indexZh`, `titleZh`, `leadZh`, `descriptionZh`, `link.labelZh` and `captionZh` in `data/research-areas.json`; `titleZh`, `summaryZh` and `categoryZh` in `data/linkedin-posts.json`), with topic, link, chip and label translations in the render scripts; hand-written sections keep their pairs in `index.html`. Names, paper titles and venues stay in English in both languages. Chinese text uses system CJK fonts, so no extra font files or third-party requests are needed.
+
 ## Update content
 
 - Biography, news, experience, education and teaching: edit `index.html` outside the generated content markers.
@@ -45,7 +49,7 @@ The published site lives at `/shuangchen/`. All asset paths are relative, and `_
 
 ## Browser checks
 
-With Node.js and Playwright available, run `node --test tests/site.test.cjs tests/motion.test.cjs tests/enhancements.test.cjs tests/research-carousel.test.cjs tests/scholar.test.cjs` (each suite can also be run on its own; `tests/scholar.test.cjs` needs no browser). On a new machine, install the development browser with `npm install --no-save playwright` and `npx playwright install chromium` first. Checks cover selected/all publication views, combined topic filters and empty states, keyboard controls, mobile overflow, local assets and anchors, no-JavaScript reading including static multi-paper research areas, carousel rotation and pause behaviour, the production URL subpath, motion preferences and animation API fallbacks, self-hosted fonts with no external requests, the lightbox, the condensing header and section tracking, metric count-up and print/focus reveal shortcuts.
+With Node.js and Playwright available, run `node --test tests/site.test.cjs tests/motion.test.cjs tests/enhancements.test.cjs tests/research-carousel.test.cjs tests/i18n.test.cjs tests/scholar.test.cjs` (each suite can also be run on its own; `tests/scholar.test.cjs` needs no browser). On a new machine, install the development browser with `npm install --no-save playwright` and `npx playwright install chromium` first. Checks cover selected/all publication views, combined topic filters and empty states, keyboard controls, mobile overflow, local assets and anchors, no-JavaScript reading including static multi-paper research areas, carousel rotation and pause behaviour, the production URL subpath, motion preferences and animation API fallbacks, self-hosted fonts with no external requests, the lightbox, the condensing header and section tracking, metric count-up and print/focus reveal shortcuts, plus the language switch (remembered choice, browser-language default, English without JavaScript, complete pairs) and the phone layout in Chinese.
 
 ## Design references
 

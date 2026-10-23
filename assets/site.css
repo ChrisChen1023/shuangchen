@@ -6,6 +6,19 @@
 @font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url("fonts/inter-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url("fonts/inter-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
 
+/* ---------- Language ----------
+   The HTML carries English and Chinese copies side by side (.l10n[lang]); only the language on <html lang> is shown.
+   Without JavaScript the page stays English. Chinese text falls back to system CJK fonts (no third-party requests). */
+.l10n[lang="zh-Hans"]{display:none}
+html[lang="zh-Hans"] .l10n[lang="zh-Hans"]{display:revert}
+html[lang="zh-Hans"] .l10n[lang="en"]{display:none}
+html[lang="zh-Hans"]{--serif:"Newsreader","Noto Serif CJK SC","Source Han Serif SC","Songti SC","SimSun",serif;--sans:"Inter","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+html[lang="zh-Hans"] h1,html[lang="zh-Hans"] h2,html[lang="zh-Hans"] h3,html[lang="zh-Hans"] .publication-identity strong{letter-spacing:0}
+html[lang="zh-Hans"] .eyebrow,html[lang="zh-Hans"] .section-number,html[lang="zh-Hans"] .small-label,html[lang="zh-Hans"] .research-index,html[lang="zh-Hans"] .timeline-date{letter-spacing:.08em}
+html[lang="zh-Hans"] body{line-height:1.75}
+.lang-toggle{flex:none;font:inherit;font-size:12px;font-weight:600;line-height:1;padding:7px 11px;border:1px solid var(--line-strong);border-radius:999px;background:rgba(255,255,255,.6);color:var(--ink);letter-spacing:.02em;cursor:pointer}
+.lang-toggle:hover{border-color:var(--accent);color:var(--accent);background:#fff}
+
 /* ---------- Tokens ---------- */
 :root{
   --paper:#f8f6f1;--paper-deep:#f1ede6;--card:#fffdfa;
@@ -330,9 +343,17 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
   .site-header.is-scrolled .header-inner{min-height:92px}
   .wordmark{font-size:12.5px;gap:12px}
   .monogram{font-size:28px}
-  nav{gap:0;width:100%;margin-left:-10px}
+  nav{order:3;gap:0;width:100%;margin-left:-10px}
   nav a{font-size:12.5px;padding:6px 10px}
   nav a::after{left:10px;right:10px}
+  .lang-toggle{order:2;margin-left:auto;font-size:11.5px;padding:6px 10px}
+  .section-block{padding-top:60px}
+  /* Topic filters become one swipeable row on phones instead of a tall wrapped block. */
+  .topic-filters{flex-wrap:nowrap;overflow-x:auto;gap:6px;margin:0 -20px;padding:2px 20px 10px;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch;-webkit-mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 30px),transparent);mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 30px),transparent)}
+  .topic-filters::-webkit-scrollbar{display:none}
+  .topic-filters button{flex:none;white-space:nowrap;scroll-snap-align:start;border-color:var(--line);background:var(--card)}
+  .topic-filters button[aria-pressed=true]{border-color:rgba(31,90,138,.3);background:rgba(31,90,138,.07)}
+  .view-switch{margin-bottom:12px}
   .intro{margin-top:24px;padding:32px 24px;grid-template-columns:minmax(0,1fr) 150px;gap:26px;border-radius:20px}
   .intro::after{background-size:360px 360px;background-position:right -60px top -20px}
   .eyebrow{font-size:10px;grid-column:1/-1;margin-bottom:12px}
@@ -368,7 +389,21 @@ h1{font-family:var(--serif);font-size:clamp(44px,5.4vw,72px);font-weight:500;let
   .site-footer{margin-top:60px;padding:36px 0 40px}
   .footer-invitation{font-size:32px}
 }
-@media(max-width:600px){.activity-grid{grid-template-columns:1fr;gap:20px}}
+@media(max-width:600px){
+  /* Field notes become compact rows on phones: photo on the left, copy on the right. */
+  .activity-grid{grid-template-columns:1fr;gap:12px}
+  .activity-card{display:grid;grid-template-columns:116px minmax(0,1fr)}
+  .activity-image-link{display:block;height:100%}
+  .activity-image{position:relative;height:100%;min-height:150px;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--line)}
+  .activity-image img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
+  .activity-visual{aspect-ratio:auto;height:100%;padding:16px 12px;gap:8px;border-bottom:0;border-right:1px solid var(--line)}
+  .activity-visual strong{font-size:17px}
+  .activity-copy{padding:14px 16px 14px}
+  .activity-meta{margin-bottom:6px;font-size:10px}
+  .activity-card h3{font-size:15px;line-height:1.35;margin-bottom:6px}
+  .activity-summary{font-size:12.5px;line-height:1.6;margin-bottom:10px}
+  .activity-link{font-size:11.5px}
+}
 @media(max-width:520px){
   .intro{grid-template-columns:1fr;gap:28px;margin:20px -6px 0;padding:28px 20px 26px}
   .intro-copy{display:contents}

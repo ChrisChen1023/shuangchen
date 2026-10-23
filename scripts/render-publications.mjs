@@ -2,6 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { icon } from './icons.mjs';
+import { pair, text, zhMonth } from './l10n.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const papers = JSON.parse(await readFile(path.join(root, 'data/publications.json'), 'utf8'));
@@ -11,6 +12,7 @@ if (!/^\d{4}-\d{2}-\d{2}$/.test(scholar.asOf)) throw new Error('data/scholar.jso
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 // Broad areas (vision, brain, robotics, applications) group the research cards; the finer themes drive the topic filters.
 const areaTopics = new Set(['vision', 'brain', 'robotics', 'applications']);
+const filterTopicsZh = { inpainting: '图像修复', restoration: '复原与增强', snn: '脉冲神经网络', underwater: '水下感知', robotics: '机器人', medical: '医学影像', vl: '视觉与语言', video: '视频与人体理解', robust: '鲁棒性与公平', art: '艺术与创意', interdisciplinary: '交叉学科' };
 const filterTopics = new Map([
   ['inpainting', 'Image inpainting'],
   ['restoration', 'Restoration & enhancement'],
@@ -40,6 +42,9 @@ for (const paper of papers) {
 
 // Short venue names for the solid badge above each thumbnail; venues already short enough are used as they are.
 const venueBadges = { 'IEEE Transactions on Multimedia': 'IEEE TMM', 'IEEE Transactions on Instrumentation and Measurement': 'IEEE TIM', 'Expert Systems with Applications': 'ESWA', 'Findings of EMNLP': 'EMNLP Findings', 'Engineering Interactive Computer Systems: EICS 2024 International Workshops': 'EICS Workshops', 'Artificial Intelligence Review': 'AI Review', 'Pattern Recognition Letters': 'PRL', 'IEEE-EMBS BHI': 'IEEE BHI' };
+const linkLabelsZh = { paper: '论文', code: '代码', video: '视频', poster: '海报', project: '项目', slides: '幻灯片', dataset: '数据集' };
+// Venue-standing chips that read differently in Chinese; ranks and quartiles stay as they are.
+const chipZh = label => label.replace(/^([\d.]+)% acceptance$/, '录用率 $1%').replace(/^Oral · top ([\d.]+)% of ([\d,]+)$/, '口头报告 · $2 篇中前 $1%').replace(/^Impact Factor /, '影响因子 ');
 const identity = { 'vlif': 'Visual LIF', 'uiesnn': 'UIESNN', 'deep-sea': 'DEEP-SEA', 'micro-robots': 'Micro-robots', 'sem-net': 'SEM-Net', 'hint': 'HINT', 'cpvb-rg': 'CPVB-RG', 'sandbar': 'SandBAR', 'bumblebee-olfaction': 'Insect brains', 'bcqlm': 'BcQLM', 'boost': 'BOOST', 'caflow': 'CaFlow' };
 const html = papers.map(paper => {
   const authors = escape(paper.authors).replaceAll('Shuang Chen', '<strong>Shuang Chen</strong>');
@@ -50,37 +55,37 @@ const html = papers.map(paper => {
     : `<div class="publication-identity" aria-hidden="true"><strong>${escape(identity[paper.id] || paper.venue)}</strong><span>${escape(paper.venue)} · ${paper.year}</span></div>`;
   const badge = venueBadges[paper.venue] ?? paper.venue;
   if (badge.length > 16) throw new Error(`Add a short venue badge for: ${paper.venue}`);
-  const links = paper.links.map(link => `<a class="resource-link" href="${escape(link.url)}">${icon(link.label)}<span>${escape(link.label)}</span></a>`).join('');
+  const links = paper.links.map(link => `<a class="resource-link" href="${escape(link.url)}">${icon(link.label)}<span>${text(link.label, linkLabelsZh[link.label.toLowerCase()])}</span></a>`).join('');
   // Venue standing (CORE rank, impact factor, acceptance) and a dated Google Scholar citation count.
-  const chips = (paper.metrics ?? []).map(label => `<span class="metric-chip${/^(CORE|Impact Factor|JCR)/.test(label) ? '' : ' metric-chip-highlight'}">${escape(label)}</span>`);
-  if (paper.citations != null) chips.push(`<span class="metric-chip metric-chip-citations" title="Google Scholar, ${escape(paper.citationsAsOf)}">${paper.citations} citation${paper.citations === 1 ? '' : 's'}</span>`);
+  const chips = (paper.metrics ?? []).map(label => `<span class="metric-chip${/^(CORE|Impact Factor|JCR)/.test(label) ? '' : ' metric-chip-highlight'}">${text(label, chipZh(label) === label ? '' : chipZh(label))}</span>`);
+  if (paper.citations != null) chips.push(`<span class="metric-chip metric-chip-citations" title="Google Scholar, ${escape(paper.citationsAsOf)}">${pair(`${paper.citations} citation${paper.citations === 1 ? '' : 's'}`, `引用 ${paper.citations} 次`)}</span>`);
   const metrics = chips.length ? `<p class="publication-metrics" aria-label="Venue standing and citations">${chips.join('')}</p>` : '';
   return `<article class="publication" id="paper-${escape(paper.id)}" data-selected="${paper.selected}" data-topics="${escape(paper.topics.join(' '))}">
   <div class="publication-visual"><span class="venue-badge">${escape(badge)}</span><figure class="publication-media">${media}</figure></div>
   <div class="publication-copy">
-    <p class="publication-meta"><span><span class="venue-name">${escape(paper.venue)}</span><span class="venue-short">${escape(badge)}</span> · ${paper.year}</span>${paper.status === 'accepted' ? '<span class="accepted-label">Accepted</span>' : ''}${paper.id === 'sem-net' ? '<span class="accepted-label">Oral</span>' : ''}</p>
+    <p class="publication-meta"><span><span class="venue-name">${escape(paper.venue)}</span><span class="venue-short">${escape(badge)}</span> · ${paper.year}</span>${paper.status === 'accepted' ? `<span class="accepted-label">${pair('Accepted', '已录用')}</span>` : ''}${paper.id === 'sem-net' ? `<span class="accepted-label">${pair('Oral', '口头报告')}</span>` : ''}</p>
     <h3>${primary ? `<a href="${escape(primary.url)}">${title}</a>` : title}</h3>
     <p class="publication-authors">${authors}</p>
     ${metrics}
-    <p class="publication-summary">${escape(paper.summary)}</p>
+    <p class="publication-summary">${text(paper.summary, paper.summaryZh)}</p>
     ${links ? `<div class="publication-links">${links}</div>` : ''}
   </div>
 </article>`;
 }).join('\n').replace(/[ \t]+$/gm, '');
 
-const topicButtons = ['<button type="button" data-topic="all" aria-pressed="true">All topics</button>', ...[...filterTopics]
+const topicButtons = [`<button type="button" data-topic="all" aria-pressed="true">${pair('All topics', '全部主题')}</button>`, ...[...filterTopics]
   .map(([key, label]) => [key, label, papers.filter(paper => paper.topics.includes(key)).length])
   .filter(([, , count]) => count > 0)
-  .map(([key, label, count]) => `<button type="button" data-topic="${key}" aria-pressed="false">${escape(label)}<span class="topic-count" aria-hidden="true">${count}</span></button>`)].join('');
+  .map(([key, label, count]) => `<button type="button" data-topic="${key}" aria-pressed="false">${text(label, filterTopicsZh[key])}<span class="topic-count" aria-hidden="true">${count}</span></button>`)].join('');
 
 // Hero metrics: profile totals and the snapshot month from data/scholar.json.
 const snapshotMonth = new Date(`${scholar.asOf}T00:00:00Z`).toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 const metrics = `<dl class="metrics">
-          <div><dt>Citations</dt><dd>${scholar.citations}</dd></div>
+          <div><dt>${pair('Citations', '引用')}</dt><dd>${scholar.citations}</dd></div>
           <div><dt>h-index</dt><dd>${scholar.hIndex}</dd></div>
           <div><dt>i10-index</dt><dd>${scholar.i10Index}</dd></div>
         </dl>
-        <p class="metrics-source">Google Scholar · ${snapshotMonth}</p>`;
+        <p class="metrics-source">${pair(`Google Scholar · ${snapshotMonth}`, `Google Scholar · ${zhMonth(scholar.asOf)}`)}</p>`;
 
 const indexPath = path.join(root, 'index.html');
 const original = await readFile(indexPath, 'utf8');
