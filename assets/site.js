@@ -25,7 +25,7 @@
     function apply() {
       root.lang = current === 'zh' ? 'zh-Hans' : 'en';
       root.dataset.lang = current;
-      document.title = current === 'zh' ? 'Shuang (Chris) Chen — 个人主页' : englishTitle;
+      document.title = current === 'zh' ? '陈爽 (Chris Chen) — 个人主页' : englishTitle;
       if (toggle) {
         toggle.hidden = false;
         toggle.textContent = current === 'zh' ? 'EN' : '中文';
