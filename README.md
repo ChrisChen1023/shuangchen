@@ -7,7 +7,7 @@ A light, responsive academic website for computer vision, brain-inspired AI and 
 ## Update content
 
 - Biography, news, experience, education and teaching: edit `index.html` outside the generated content markers.
-- Publications: edit `data/publications.json` (`topics` mixes the broad areas `vision`/`brain`/`robotics`/`applications`, used by the research cards, with the finer themes that drive the topic filters and are defined in `scripts/render-publications.mjs`; each record can carry `metrics`, a list of short venue-standing labels such as `CORE A*` or `Impact Factor 9.7`, plus `citations` with a `citationsAsOf` year from Google Scholar; a venue longer than 16 characters needs a short form in `venueBadges` for the solid badge above its thumbnail), then run `node scripts/render-publications.mjs` and `node scripts/render-research.mjs`; commit the JSON and generated `index.html`.
+- Publications: edit `data/publications.json` (`topics` mixes the broad areas `vision`/`brain`/`robotics`/`applications`, used by the research cards, with the finer themes that drive the topic filters and are defined in `scripts/render-publications.mjs`; each record can carry `metrics`, a list of short venue-standing labels such as `CORE A*` or `Impact Factor 9.7`, plus `citations` with a `citationsAsOf` year from Google Scholar, which `node scripts/update-citations.mjs` refreshes automatically; a venue longer than 16 characters needs a short form in `venueBadges` for the solid badge above its thumbnail), then run `node scripts/render-publications.mjs` and `node scripts/render-research.mjs`; commit the JSON and generated `index.html`.
 - Research areas: edit `data/research-areas.json` and run `node scripts/render-research.mjs`. Each area references multiple existing publication IDs; images, alternative text, venues and paper links come from `data/publications.json`.
 - LinkedIn field notes: edit `data/linkedin-posts.json`, add genuine post photos under `imgs/activity/`, then run `node scripts/render-activity.mjs` and commit the JSON, photos and generated `index.html`. Posts are verified and published as static summaries with original source links.
 - Styles: `assets/site.css`; publication filtering, scroll reveals, header behaviour and the figure lightbox: `assets/site.js`; research-paper slideshows: `assets/research-carousel.js`.
@@ -15,10 +15,15 @@ A light, responsive academic website for computer vision, brain-inspired AI and 
 - Portrait: `imgs/SC.jpg`; paper images: `imgs/papers/` and `imgs/research/`. Keep figures at or below roughly 2400 px wide and a few hundred KB; `docs/research-image-sources.md` records any resizing.
 - Supervision: edit the `#supervision` section in `index.html`. Student names and Durham profile links are taken from the owner's Durham staff profile (https://www.durham.ac.uk/staff/shuang-chen/, checked 22 October 2026); add a topic or paper note only when it is verifiable.
 - Research image provenance: `docs/research-image-sources.md`.
+- Hero citation totals: `data/scholar.json` (citations, h-index, i10-index and the snapshot date), rendered between the metrics markers in `index.html` by `node scripts/render-publications.mjs`.
 - Citation snapshot provenance: `docs/citation-sources.md`.
 - LinkedIn source records and verified posting dates: `docs/activity-sources.md`.
 
-All 20 published/accepted papers are embedded in the HTML. JavaScript initially highlights six selected papers and enables topic filters; visitors without JavaScript can still read the entire list. Accepted papers are explicitly labelled. Citation metrics are a dated snapshot, not an automatic live count.
+All 20 published/accepted papers are embedded in the HTML. JavaScript initially highlights six selected papers and enables topic filters; visitors without JavaScript can still read the entire list. Accepted papers are explicitly labelled. Citation metrics are a dated snapshot, refreshed by the daily citation task rather than read live.
+
+## Citation refresh
+
+`node scripts/update-citations.mjs` fetches the owner's public Google Scholar profile (through `curl`, which honours the environment's proxy), matches entries to `data/publications.json` by title, and updates the per-paper counts, the hero totals in `data/scholar.json`, the table in `docs/citation-sources.md` and the generated `index.html`. It writes nothing when no figure, snapshot year or displayed month changed, and refuses blocked or partial pages. A daily scheduled task in the owner's Claude cloud environment runs it at 06:55 Europe/London, runs the browser checks and pushes to `main` only when something changed; Google Scholar blocks GitHub-hosted runners, so this is not a GitHub Action. `--dry-run` reports the differences without writing.
 
 ## Weekly maintenance
 
@@ -40,7 +45,7 @@ The published site lives at `/shuangchen/`. All asset paths are relative, and `_
 
 ## Browser checks
 
-With Node.js and Playwright available, run `node --test tests/site.test.cjs tests/motion.test.cjs tests/enhancements.test.cjs tests/research-carousel.test.cjs` (each suite can also be run on its own). On a new machine, install the development browser with `npm install --no-save playwright` and `npx playwright install chromium` first. Checks cover selected/all publication views, combined topic filters and empty states, keyboard controls, mobile overflow, local assets and anchors, no-JavaScript reading including static multi-paper research areas, carousel rotation and pause behaviour, the production URL subpath, motion preferences and animation API fallbacks, self-hosted fonts with no external requests, the lightbox, the condensing header and section tracking, metric count-up and print/focus reveal shortcuts.
+With Node.js and Playwright available, run `node --test tests/site.test.cjs tests/motion.test.cjs tests/enhancements.test.cjs tests/research-carousel.test.cjs tests/scholar.test.cjs` (each suite can also be run on its own; `tests/scholar.test.cjs` needs no browser). On a new machine, install the development browser with `npm install --no-save playwright` and `npx playwright install chromium` first. Checks cover selected/all publication views, combined topic filters and empty states, keyboard controls, mobile overflow, local assets and anchors, no-JavaScript reading including static multi-paper research areas, carousel rotation and pause behaviour, the production URL subpath, motion preferences and animation API fallbacks, self-hosted fonts with no external requests, the lightbox, the condensing header and section tracking, metric count-up and print/focus reveal shortcuts.
 
 ## Design references
 

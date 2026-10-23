@@ -1,13 +1,18 @@
 # Citation sources
 
-Citation counts on the site are a dated snapshot of the owner's public Google Scholar profile, https://scholar.google.com/citations?user=tRLJ2X4AAAAJ , not a live feed. The profile totals in the hero (298 citations, h-index 8, i10-index 8) and the per-paper counts below were read from the public profile page on 23 October 2026 and are labelled "2026" in `data/publications.json` (`citationsAsOf`).
+Citation counts on the site are a dated snapshot of the owner's public Google Scholar profile, https://scholar.google.com/citations?user=tRLJ2X4AAAAJ , not a live feed. `data/scholar.json` holds the profile totals shown in the hero (citations, h-index, i10-index) and the snapshot date; each record in `data/publications.json` carries its own `citations` with a `citationsAsOf` year. Papers that Scholar lists without a count, or has not indexed, carry no count.
+
+`node scripts/update-citations.mjs` reads the public profile page, updates both data files and the block below, and re-renders `index.html`; it writes nothing when no figure, snapshot year or displayed month changed, and refuses to update from a blocked or partial page. A scheduled task runs it daily (see the README). `--dry-run` only reports the differences.
+
+<!-- SCHOLAR:START -->
+Snapshot taken on 23 October 2026 by `scripts/update-citations.mjs`: 298 citations, h-index 8, i10-index 8.
 
 | Record | Google Scholar entry | Citations |
 |---|---|---|
 | hint | Hint: High-quality inpainting transformer with mask-aware encoding and enhanced attention | 110 |
 | sem-net | SEM-Net: efficient pixel modelling for image inpainting with spatially enhanced SSM | 48 |
 | mxt | Mxt: Mamba x transformer for image inpainting | 39 |
-| artistic-images-survey | Artificial intelligence for geometry-based feature extraction, analysis and synthesis in artistic images: a survey | 25 |
+| artistic-images-survey | Artificial intelligence for geometry-based feature extraction, analysis and synthesis in artistic images: a survey: M. Vijendran et al. | 25 |
 | geohoi | Geometric features enhanced human–object interaction detection | 18 |
 | daevi | Depth-aware endoscopic video inpainting | 10 |
 | inclg | INCLG: Inpainting for non-cleft lip generation with a multi-task image processing network | 10 |
@@ -19,6 +24,5 @@ Citation counts on the site are a dated snapshot of the owner's public Google Sc
 | deep-sea | Deep-sea: Deep-learning enhancement for environmental perception in submerged aquatics | 2 |
 | micro-robots | Deep Learning-Enhanced Visual Monitoring in Hazardous Underwater Environments with a Swarm of Micro-Robots | 2 |
 
-Entries that Google Scholar lists without a citation count (UIESNN, BOOST, BcQLM) and papers not yet indexed (CPVB-RG, SandBAR, the bumblebee olfaction paper) carry no count. The Scholar entry for the SEM-Net supplementary material and an arXiv preprint not in the publication list are ignored.
-
-To refresh: open the profile page, update `citations` and `citationsAsOf` in `data/publications.json` and the three hero figures in `index.html`, run `node scripts/render-publications.mjs`, and extend this table.
+Listed on Scholar without a citation count: uiesnn, boost, bcqlm. Not yet indexed by Scholar: cpvb-rg, sandbar, bumblebee-olfaction. Scholar entries outside the publication list are ignored: "Motion-Adaptive Multi-Scale Temporal Modelling with Skeleton-Constrained Spatial Graphs for Efficient 3D Human Pose Estimation", "Supplementary material-SEM-Net: Efficient Pixel Modelling for image inpainting with Spatially Enhanced SSM".
+<!-- SCHOLAR:END -->

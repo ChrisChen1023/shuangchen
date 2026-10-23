@@ -224,7 +224,9 @@ test('publications carry sourced venue-standing chips and dated citation counts'
     assert.equal(await page.locator('.publication .venue-badge').count(), 20, 'Every paper carries a solid venue badge');
     for (const badge of await page.locator('.venue-badge').all()) assert.match(await badge.innerText(), /^[A-Za-z][A-Za-z *-]{1,15}$/);
     assert.ok(await page.locator('.metric-chip-citations').count() >= 10, 'Papers with Google Scholar citations show a dated count');
-    assert.equal(await page.locator('#paper-hint .metric-chip-citations').innerText(), '110 citations');
+    const hint = require('../data/publications.json').find(paper => paper.id === 'hint');
+    assert.equal(await page.locator('#paper-hint .metric-chip-citations').innerText(), `${hint.citations} citations`);
+    assert.match(await page.locator('.metrics-source').innerText(), /^Google Scholar · [A-Z][a-z]+ \d{4}$/);
     for (const chip of await page.locator('.metric-chip').all()) assert.match(await chip.innerText(), /^(CORE [ABC]\*?|Impact Factor \d+(\.\d+)?|JCR Q[1-4]|[\d.]+% acceptance|Oral.*|\d+ citations?)$/);
     for (const chip of await page.locator('.metric-chip-citations').all()) assert.match(await chip.getAttribute('title'), /^Google Scholar, \d{4}$/);
     assert.ok(await page.locator('.metrics-note').isVisible());

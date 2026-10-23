@@ -5,6 +5,9 @@ import { icon } from './icons.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const papers = JSON.parse(await readFile(path.join(root, 'data/publications.json'), 'utf8'));
+const scholar = JSON.parse(await readFile(path.join(root, 'data/scholar.json'), 'utf8'));
+for (const key of ['citations', 'hIndex', 'i10Index']) if (!Number.isInteger(scholar[key]) || scholar[key] < 0) throw new Error(`data/scholar.json needs a non-negative integer ${key}`);
+if (!/^\d{4}-\d{2}-\d{2}$/.test(scholar.asOf)) throw new Error('data/scholar.json needs an asOf date (YYYY-MM-DD)');
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 // Broad areas (vision, brain, robotics, applications) group the research cards; the finer themes drive the topic filters.
 const areaTopics = new Set(['vision', 'brain', 'robotics', 'applications']);
@@ -70,12 +73,23 @@ const topicButtons = ['<button type="button" data-topic="all" aria-pressed="true
   .filter(([, , count]) => count > 0)
   .map(([key, label, count]) => `<button type="button" data-topic="${key}" aria-pressed="false">${escape(label)}<span class="topic-count" aria-hidden="true">${count}</span></button>`)].join('');
 
+// Hero metrics: profile totals and the snapshot month from data/scholar.json.
+const snapshotMonth = new Date(`${scholar.asOf}T00:00:00Z`).toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const metrics = `<dl class="metrics">
+          <div><dt>Citations</dt><dd>${scholar.citations}</dd></div>
+          <div><dt>h-index</dt><dd>${scholar.hIndex}</dd></div>
+          <div><dt>i10-index</dt><dd>${scholar.i10Index}</dd></div>
+        </dl>
+        <p class="metrics-source">Google Scholar · ${snapshotMonth}</p>`;
+
 const indexPath = path.join(root, 'index.html');
 const original = await readFile(indexPath, 'utf8');
 const markers = /<!-- PUBLICATIONS:START -->[\s\S]*?<!-- PUBLICATIONS:END -->/;
 const topicMarkers = /<!-- TOPICS:START -->[\s\S]*?<!-- TOPICS:END -->/;
-if (!markers.test(original) || !topicMarkers.test(original)) throw new Error('Publication or topic markers are missing from index.html');
+const metricMarkers = /<!-- METRICS:START -->[\s\S]*?<!-- METRICS:END -->/;
+if (!markers.test(original) || !topicMarkers.test(original) || !metricMarkers.test(original)) throw new Error('Publication, topic or metrics markers are missing from index.html');
 await writeFile(indexPath, original
   .replace(markers, `<!-- PUBLICATIONS:START -->\n${html}\n<!-- PUBLICATIONS:END -->`)
-  .replace(topicMarkers, `<!-- TOPICS:START -->${topicButtons}<!-- TOPICS:END -->`));
+  .replace(topicMarkers, `<!-- TOPICS:START -->${topicButtons}<!-- TOPICS:END -->`)
+  .replace(metricMarkers, `<!-- METRICS:START -->\n        ${metrics}\n        <!-- METRICS:END -->`));
 console.log(`Rendered ${papers.length} publications (${papers.filter(paper => paper.selected).length} selected).`);
