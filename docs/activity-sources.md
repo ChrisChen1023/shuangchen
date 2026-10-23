@@ -20,3 +20,11 @@ Other activities appeared in public search excerpts, but their original URLs and
 The user supplied the Diamond feed URL and two short links. Opening those short links in a normal public browser resolved `https://lnkd.in/p/eXDYCUgj` to the already-imported Computer Vision post (deduplicated), and `https://lnkd.in/p/eCXCRDTe` to the Deep Learning post. Only clean canonical post URLs are stored; share-tracking parameters are omitted. The dates above are posting dates, not independently inferred dates of the pictured events.
 
 On 22 October 2026 the owner supplied three further short links (`https://lnkd.in/p/ewSWC5dX`, `https://lnkd.in/p/efjTqSeK`, `https://lnkd.in/p/eb-MzDpz`). They resolved to the Durham High School Careers Day post, the No More Sleeping post and a post by Amir Atapour-Abarghouei about four Durham papers at IJCNN 2026, which names the owner and covers the owner's UIESNN paper; that colleague's post is included at the owner's request and its summary credits the author. Authorship and `datePublished` were read from each post's public JSON-LD; the three photos under `imgs/activity/` were taken from those public post pages, re-encoded as progressive JPEGs without metadata and otherwise unaltered. The five earlier posts were re-checked on the same day and remain live with unchanged dates. The profile's own activity listing is not available to signed-out visitors, so additions continue to rely on owner-supplied links; items that appeared only in search-engine excerpts were checked and found to be likes or reposts of other people's posts, and were not imported.
+
+## Link queue
+
+Links pasted into `data/linkedin-queue.txt` are imported by `node scripts/import-linkedin.mjs`, which the daily scheduled task runs: it resolves each link, reads the public post page, accepts the owner's own posts and colleagues' posts that name the owner, rejects duplicates, downloads the post photos, drafts an English record (refined, with Chinese copy and alternative text, in the same run) and re-renders the page. Imports are recorded here.
+
+| Record | Author | Publication timestamp (UTC) | Original post |
+|---|---|---|---|
+<!-- QUEUE:END -->

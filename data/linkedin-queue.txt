@@ -1,0 +1,10 @@
+# LinkedIn 链接队列 / LinkedIn link queue
+#
+# 把想放到主页"动态"板块的帖子链接粘贴在下面，一行一个。每天早上的定时任务会运行
+# scripts/import-linkedin.mjs：核实作者和发布日期、下载原帖照片、起草中英文摘要，
+# 重新生成页面并发布；处理过的链接会从这里移除。以 # 开头的行是注释。
+#
+# Paste one post link per line. The daily task verifies the author and date, downloads the
+# post photo, drafts bilingual copy, re-renders the page and publishes; processed links are
+# removed. Full https://www.linkedin.com/posts/... links are safest; https://lnkd.in/... short
+# links only work when lnkd.in is allowed in the environment's network settings.
