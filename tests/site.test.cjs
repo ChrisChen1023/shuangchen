@@ -47,9 +47,9 @@ test('topic filters and publication views compose and recover from an empty sele
     assert.equal(await page.getByRole('button', { name: 'Selected', exact: true }).getAttribute('aria-pressed'), 'true');
     // A topic without selected papers widens the view to all publications.
     await page.getByRole('button', { name: 'Medical imaging', exact: true }).click();
-    assert.equal(await page.locator('.publication:visible').count(), 4);
+    assert.equal(await page.locator('.publication:visible').count(), 5);
     assert.equal(await page.getByRole('button', { name: 'All publications', exact: true }).getAttribute('aria-pressed'), 'true');
-    assert.match(await page.locator('#publication-count').innerText(), /4 papers in this topic · no selected papers here/);
+    assert.match(await page.locator('#publication-count').innerText(), /5 papers in this topic · no selected papers here/);
     assert.ok(await page.locator('#publication-empty').isHidden());
     await page.getByRole('button', { name: 'All topics', exact: true }).click();
     assert.equal(await page.locator('.publication:visible').count(), 21);
