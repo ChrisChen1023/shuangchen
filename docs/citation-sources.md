@@ -1,11 +1,11 @@
 # Citation sources
 
-Citation counts on the site are a dated snapshot of the owner's public Google Scholar profile, https://scholar.google.com/citations?user=tRLJ2X4AAAAJ , not a live feed. The profile totals in the hero (293 citations, h-index 8, i10-index 8) and the per-paper counts below were read from the public profile page on 21 October 2026 and are labelled "2026" in `data/publications.json` (`citationsAsOf`).
+Citation counts on the site are a dated snapshot of the owner's public Google Scholar profile, https://scholar.google.com/citations?user=tRLJ2X4AAAAJ , not a live feed. The profile totals in the hero (298 citations, h-index 8, i10-index 8) and the per-paper counts below were read from the public profile page on 23 October 2026 and are labelled "2026" in `data/publications.json` (`citationsAsOf`).
 
 | Record | Google Scholar entry | Citations |
 |---|---|---|
-| hint | Hint: High-quality inpainting transformer with mask-aware encoding and enhanced attention | 107 |
-| sem-net | SEM-Net: efficient pixel modelling for image inpainting with spatially enhanced SSM | 46 |
+| hint | Hint: High-quality inpainting transformer with mask-aware encoding and enhanced attention | 110 |
+| sem-net | SEM-Net: efficient pixel modelling for image inpainting with spatially enhanced SSM | 48 |
 | mxt | Mxt: Mamba x transformer for image inpainting | 39 |
 | artistic-images-survey | Artificial intelligence for geometry-based feature extraction, analysis and synthesis in artistic images: a survey | 25 |
 | geohoi | Geometric features enhanced human–object interaction detection | 18 |

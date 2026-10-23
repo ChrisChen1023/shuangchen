@@ -104,11 +104,11 @@ test('the header condenses on scroll and the navigation tracks the visible secti
 });
 
 test('citation metrics count up to their exact values and stay exact under reduced motion', async () => {
-  const expected = ['293', '8', '8'];
+  const expected = ['298', '8', '8'];
   const animated = await browser.newPage({ reducedMotion: 'no-preference' });
   try {
     await animated.goto(origin + '/shuangchen/');
-    await animated.waitForFunction(() => [...document.querySelectorAll('.metrics dd')].some(dd => dd.textContent !== '293' && dd.textContent !== '8'), null, { timeout: 3000 });
+    await animated.waitForFunction(() => [...document.querySelectorAll('.metrics dd')].some(dd => dd.textContent !== '298' && dd.textContent !== '8'), null, { timeout: 3000 });
     await animated.waitForFunction(expected => [...document.querySelectorAll('.metrics dd')].map(dd => dd.textContent).join() === expected.join(), expected, { timeout: 4000 });
   } finally { await animated.close(); }
   const still = await browser.newPage({ reducedMotion: 'reduce' });
