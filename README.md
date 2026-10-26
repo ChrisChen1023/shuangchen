@@ -23,7 +23,7 @@ The page is bilingual. English is the baseline and the HTML carries a Chinese co
 - Citation snapshot provenance: `docs/citation-sources.md`.
 - LinkedIn source records and verified posting dates: `docs/activity-sources.md`.
 
-All 21 published/accepted papers are embedded in the HTML. JavaScript initially highlights six selected papers and enables topic filters; visitors without JavaScript can still read the entire list. Accepted papers are explicitly labelled. Citation metrics are a dated snapshot, refreshed by the daily citation task rather than read live.
+All 23 published/accepted papers are embedded in the HTML. JavaScript initially highlights six selected papers and enables topic filters; visitors without JavaScript can still read the entire list. Accepted papers are explicitly labelled. Citation metrics are a dated snapshot, refreshed by the daily citation task rather than read live.
 
 ## Citation refresh
 
@@ -43,7 +43,7 @@ Each research area shows several genuine paper figures in a slideshow with a per
 
 ## Print and sharing
 
-A print stylesheet (`@media print` in `assets/site.css`) hides the navigation and filter controls, shows all 21 publications in a compact list and prints link targets, so the page doubles as a simple CV-style PDF. Open Graph, Twitter card and JSON-LD `Person` metadata in `index.html` describe the page for search engines and link previews.
+A print stylesheet (`@media print` in `assets/site.css`) hides the navigation and filter controls, shows all 23 publications in a compact list and prints link targets, so the page doubles as a simple CV-style PDF. Open Graph, Twitter card and JSON-LD `Person` metadata in `index.html` describe the page for search engines and link previews.
 
 ## Preview
 

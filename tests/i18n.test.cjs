@@ -46,7 +46,7 @@ test('the language switch shows the Chinese copy, is remembered, and keeps Engli
     assert.equal(await toggle.innerText(), 'EN');
     assert.ok((await page.title()).includes('个人主页'));
     await page.getByRole('button', { name: '全部论文', exact: true }).click();
-    assert.match(await page.locator('#publication-count').innerText(), /^共 21 篇论文$/);
+    assert.match(await page.locator('#publication-count').innerText(), /^共 23 篇论文$/);
     await page.reload();
     await page.waitForSelector('.publication-controls:not([hidden])');
     assert.equal(await page.evaluate(() => document.documentElement.lang), 'zh-Hans', 'The choice is remembered');
