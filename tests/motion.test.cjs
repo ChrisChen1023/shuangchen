@@ -66,7 +66,7 @@ for (const [kind, selector] of [
   ['activity card', '.activity-card'],
   ['news row', '#news > .news-list > li']
 ]) test(`a ${kind} reveals once on entry and remains readable when revisited`, async () => {
-  const page = await browser.newPage({ viewport: { width: 390, height: 700 }, reducedMotion: 'no-preference' });
+  const page = await browser.newPage({ locale: 'en-GB', viewport: { width: 390, height: 700 }, reducedMotion: 'no-preference' });
   try {
     await page.goto(origin + '/shuangchen/');
     const card = page.locator(selector).first();
@@ -87,7 +87,7 @@ for (const [kind, selector] of [
 
 // Removing the independent motion initializer would fail even without publications.
 test('research motion also works on a page without publication controls', async () => {
-  const page = await browser.newPage({ viewport: { width: 600, height: 700 }, reducedMotion: 'no-preference' });
+  const page = await browser.newPage({ locale: 'en-GB', viewport: { width: 600, height: 700 }, reducedMotion: 'no-preference' });
   try {
     await page.route('**/motion-fixture', route => route.fulfill({
       contentType: 'text/html',
@@ -103,7 +103,7 @@ test('research motion also works on a page without publication controls', async 
 
 // Dropping either preference check would permit unwanted movement.
 test('reduced motion prevents initial animation and stops motion immediately at runtime', async () => {
-  const page = await browser.newPage({ viewport: { width: 390, height: 700 }, reducedMotion: 'reduce' });
+  const page = await browser.newPage({ locale: 'en-GB', viewport: { width: 390, height: 700 }, reducedMotion: 'reduce' });
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   try {
@@ -128,7 +128,7 @@ test('reduced motion prevents initial animation and stops motion immediately at 
 
 // Losing focus cancellation could leave an interactive target moving under the keyboard.
 test('keyboard focus cancels the containing reveal and keeps the target usable', async () => {
-  const page = await browser.newPage({ viewport: { width: 390, height: 700 }, reducedMotion: 'no-preference' });
+  const page = await browser.newPage({ locale: 'en-GB', viewport: { width: 390, height: 700 }, reducedMotion: 'no-preference' });
   try {
     await page.goto(origin + '/shuangchen/');
     const card = page.locator('.activity-card').first();
@@ -143,7 +143,7 @@ test('keyboard focus cancels the containing reveal and keeps the target usable',
 
 // Removing cancellation or delaying hidden updates breaks final state during rapid input.
 test('rapid filtering keeps focus and updates results immediately with one bounded animation', async () => {
-  const page = await browser.newPage({ reducedMotion: 'no-preference' });
+  const page = await browser.newPage({ locale: 'en-GB', reducedMotion: 'no-preference' });
   try {
     await page.goto(origin + '/shuangchen/');
     await page.waitForSelector('.publication-controls:not([hidden])');
@@ -180,7 +180,7 @@ test('rapid filtering keeps focus and updates results immediately with one bound
 
 // The native details interaction must survive while its newly opened content fades.
 test('earlier news opens natively with a short cancellable content fade', async () => {
-  const page = await browser.newPage({ viewport: { width: 390, height: 700 }, reducedMotion: 'no-preference' });
+  const page = await browser.newPage({ locale: 'en-GB', viewport: { width: 390, height: 700 }, reducedMotion: 'no-preference' });
   try {
     await page.goto(origin + '/shuangchen/');
     const details = page.locator('.news-archive');
@@ -197,7 +197,7 @@ test('earlier news opens natively with a short cancellable content fade', async 
 
 for (const missing of ['IntersectionObserver', 'animate']) {
   test(`missing ${missing} preserves readable content and working controls`, async () => {
-    const page = await browser.newPage({ reducedMotion: 'no-preference' });
+    const page = await browser.newPage({ locale: 'en-GB', reducedMotion: 'no-preference' });
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
     try {
@@ -207,7 +207,7 @@ for (const missing of ['IntersectionObserver', 'animate']) {
       }, missing);
       await page.goto(origin + '/shuangchen/');
       await page.getByRole('button', { name: 'All publications', exact: true }).click();
-      assert.equal(await page.locator('.publication:visible').count(), 21);
+      assert.equal(await page.locator('.publication:visible').count(), 23);
       await page.getByRole('button', { name: 'Spiking neural networks', exact: true }).click();
       assert.equal(await page.locator('.publication:visible').count(), 2);
       await settleMotion(page);

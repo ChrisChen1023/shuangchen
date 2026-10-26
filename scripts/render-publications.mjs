@@ -45,7 +45,7 @@ const venueBadges = { 'IEEE Transactions on Multimedia': 'IEEE TMM', 'IEEE Trans
 const linkLabelsZh = { paper: '论文', code: '代码', video: '视频', poster: '海报', project: '项目', slides: '幻灯片', dataset: '数据集' };
 // Venue-standing chips that read differently in Chinese; ranks and quartiles stay as they are.
 const chipZh = label => label.replace(/^([\d.]+)% acceptance$/, '录用率 $1%').replace(/^Oral · top ([\d.]+)% of ([\d,]+)$/, '口头报告 · $2 篇中前 $1%').replace(/^Impact Factor /, '影响因子 ');
-const identity = { 'vlif': 'Visual LIF', 'uiesnn': 'UIESNN', 'deep-sea': 'DEEP-SEA', 'micro-robots': 'Micro-robots', 'sem-net': 'SEM-Net', 'hint': 'HINT', 'cpvb-rg': 'CPVB-RG', 'sandbar': 'SandBAR', 'bumblebee-olfaction': 'Insect brains', 'bcqlm': 'BcQLM', 'boost': 'BOOST', 'caflow': 'CaFlow', 'expert-agent-routing': 'Expert routing' };
+const identity = { 'vlif': 'Visual LIF', 'uiesnn': 'UIESNN', 'deep-sea': 'DEEP-SEA', 'micro-robots': 'Micro-robots', 'sem-net': 'SEM-Net', 'hint': 'HINT', 'cpvb-rg': 'CPVB-RG', 'sandbar': 'SandBAR', 'bumblebee-olfaction': 'Insect brains', 'bcqlm': 'BcQLM', 'boost': 'BOOST', 'caflow': 'CaFlow', 'expert-agent-routing': 'Expert routing', 'hstgformer': 'HSTGFormer', 'masc-pose': 'MASC-Pose' };
 const html = papers.map(paper => {
   const authors = escape(paper.authors).replaceAll('Shuang Chen', '<strong>Shuang Chen</strong>');
   const title = escape(paper.title);
