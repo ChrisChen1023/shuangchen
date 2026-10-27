@@ -22,6 +22,22 @@ export function parseProfile(html) {
   return { totals, entries };
 }
 
+// Checks a profile report supplied as JSON (a fallback when the profile page cannot be fetched directly):
+// { totals: { citations, hIndex, i10Index }, entries: [{ title, citations, year }] }.
+export function validateReport(report) {
+  const totals = report?.totals ?? {};
+  for (const key of ['citations', 'hIndex', 'i10Index']) if (!Number.isInteger(totals[key]) || totals[key] < 0) throw new Error(`Report totals need a non-negative integer ${key}`);
+  if (!Array.isArray(report.entries) || report.entries.length < 10) throw new Error('Report needs at least 10 entries');
+  const entries = report.entries.map(entry => {
+    if (typeof entry?.title !== 'string' || !entry.title.trim()) throw new Error('Every report entry needs a title');
+    const citations = entry.citations == null || entry.citations === '' ? 0 : Number(entry.citations);
+    if (!Number.isInteger(citations) || citations < 0) throw new Error(`Report entry has an invalid count: ${entry.title}`);
+    return { title: entry.title.trim(), citations, year: String(entry.year ?? '') };
+  });
+  if (totals.citations < Math.max(...entries.map(entry => entry.citations))) throw new Error('Report total is below a single entry count');
+  return { totals: { citations: totals.citations, hIndex: totals.hIndex, i10Index: totals.i10Index }, entries };
+}
+
 // Pairs site publications with Scholar entries by normalised title, falling back to a long shared prefix for re-cased or truncated titles.
 export function matchEntries(papers, entries) {
   const byTitle = new Map(entries.map(entry => [normalise(entry.title), entry]));

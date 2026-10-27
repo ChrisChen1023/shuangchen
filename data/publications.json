@@ -87,13 +87,21 @@
     "venue": "BMVC",
     "year": 2026,
     "status": "accepted",
-    "topics": ["vision", "video"],
+    "topics": [
+      "vision",
+      "video"
+    ],
     "selected": false,
     "image": null,
     "imageAlt": "",
     "summary": "Graph-enhanced transformers jointly model local spatial and temporal relationships for efficient monocular 3D human pose estimation.",
     "summaryZh": "通过图增强 Transformer 联合建模局部时空关系，实现高效的单目三维人体姿态估计。",
-    "links": [{ "label": "Paper", "url": "https://arxiv.org/abs/2608.12187" }]
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2608.12187"
+      }
+    ]
   },
   {
     "id": "masc-pose",
@@ -102,13 +110,23 @@
     "venue": "IJCNN",
     "year": 2026,
     "status": "accepted",
-    "topics": ["vision", "video"],
+    "topics": [
+      "vision",
+      "video"
+    ],
     "selected": false,
     "image": null,
     "imageAlt": "",
     "summary": "Motion-adaptive temporal modelling and skeleton-constrained graphs support efficient 3D human pose estimation from monocular video.",
     "summaryZh": "结合运动自适应时序建模与骨架约束图，从单目视频中高效估计三维人体姿态。",
-    "links": [{ "label": "Paper", "url": "https://arxiv.org/abs/2604.03652" }]
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2604.03652"
+      }
+    ],
+    "citations": 2,
+    "citationsAsOf": "2026"
   },
   {
     "id": "vlif",

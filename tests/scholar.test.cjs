@@ -35,6 +35,17 @@ test('matches site publications to Scholar entries by title, with a prefix fallb
   assert.deepEqual(unmatched, ['sandbar']);
 });
 
+test('validates a profile report supplied as JSON', async () => {
+  const { validateReport } = await import('../scripts/scholar.mjs');
+  const entries = Array.from({ length: 10 }, (_, index) => ({ title: `Paper ${index}`, citations: index === 0 ? '' : index, year: 2020 + index }));
+  const report = validateReport({ totals: { citations: 300, hIndex: 8, i10Index: 8 }, entries });
+  assert.equal(report.entries[0].citations, 0, 'An empty count means no citations yet');
+  assert.equal(report.entries[9].citations, 9);
+  assert.throws(() => validateReport({ totals: { citations: 5, hIndex: 8, i10Index: 8 }, entries }), /below a single entry count/);
+  assert.throws(() => validateReport({ totals: { citations: 300, hIndex: 8, i10Index: 8 }, entries: entries.slice(0, 3) }), /at least 10 entries/);
+  assert.throws(() => validateReport({ totals: { citations: 300, hIndex: 8, i10Index: 8 }, entries: [...entries.slice(1), { title: 'x', citations: -1 }] }), /invalid count/);
+});
+
 test('refuses a blocked or partial profile page', async () => {
   const { parseProfile } = await import('../scripts/scholar.mjs');
   assert.throws(() => parseProfile('<html><body>Please show you are not a robot</body></html>'), /statistics table not found/);
