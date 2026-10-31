@@ -5,12 +5,12 @@ Citation counts on the site are a dated snapshot of the owner's public Google Sc
 `node scripts/update-citations.mjs` reads the public profile page, updates both data files and the block below, and re-renders `index.html`; it writes nothing when no figure, snapshot year or displayed month changed, and refuses to update from a blocked or partial page. A scheduled task runs it daily (see the README). `--dry-run` only reports the differences.
 
 <!-- SCHOLAR:START -->
-Snapshot taken on 29 October 2026 by `scripts/update-citations.mjs`: 301 citations, h-index 8, i10-index 8.
+Snapshot taken on 31 October 2026 by `scripts/update-citations.mjs`: 302 citations, h-index 8, i10-index 8.
 
 | Record | Google Scholar entry | Citations |
 |---|---|---|
 | hint | Hint: High-quality inpainting transformer with mask-aware encoding and enhanced attention | 110 |
-| sem-net | SEM-Net: efficient pixel modelling for image inpainting with spatially enhanced SSM | 47 |
+| sem-net | SEM-Net: efficient pixel modelling for image inpainting with spatially enhanced SSM | 48 |
 | mxt | Mxt: Mamba x transformer for image inpainting | 39 |
 | artistic-images-survey | Artificial intelligence for geometry-based feature extraction, analysis and synthesis in artistic images: a survey: M. Vijendran et al. | 28 |
 | geohoi | Geometric features enhanced human–object interaction detection | 18 |
