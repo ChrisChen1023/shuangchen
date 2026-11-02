@@ -109,7 +109,7 @@
     "authors": "Ruochen Li, Shuang Chen, Wenke E, Farshad Arvin, Amir Atapour-Abarghouei",
     "venue": "IJCNN",
     "year": 2026,
-    "status": "accepted",
+    "status": "published",
     "topics": [
       "vision",
       "video"
@@ -123,6 +123,10 @@
       {
         "label": "Paper",
         "url": "https://arxiv.org/abs/2604.03652"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/IJCNN69854.2026.11728688"
       }
     ],
     "citations": 2,
@@ -191,6 +195,10 @@
       {
         "label": "Code",
         "url": "https://github.com/ChrisChen1023/UIESNN"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/IJCNN69854.2026.11728918"
       }
     ],
     "metrics": [
@@ -216,6 +224,10 @@
     "summary": "An interdisciplinary study of sex differences in olfactory anatomy across bumblebee species.",
     "summaryZh": "跨熊蜂物种嗅觉解剖结构性别差异的交叉学科研究。",
     "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1016/j.isci.2026.118037"
+      },
       {
         "label": "Lab listing",
         "url": "https://insectneurolab.com/publications/"
@@ -320,6 +332,10 @@
       {
         "label": "Code",
         "url": "https://github.com/ChrisChen1023/DEEP-SEA"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/IROS60139.2025.11246856"
       }
     ],
     "metrics": [
