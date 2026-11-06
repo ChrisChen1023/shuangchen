@@ -271,8 +271,8 @@
       "Impact Factor 7.5",
       "JCR Q1"
     ],
-    "citations": null,
-    "citationsAsOf": null
+    "citations": 1,
+    "citationsAsOf": "2026"
   },
   {
     "id": "caflow",
@@ -534,7 +534,7 @@
     "metrics": [
       "CORE A"
     ],
-    "citations": 39,
+    "citations": 40,
     "citationsAsOf": "2026"
   },
   {
