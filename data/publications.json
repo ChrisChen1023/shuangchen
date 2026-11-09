@@ -46,7 +46,20 @@
     "imageAlt": "",
     "summary": "A band-asymmetric approach to underwater image restoration using removable frequency scaffolding.",
     "summaryZh": "采用可移除的频率支架，以频带非对称方式复原水下图像。",
-    "links": [],
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://github.com/YanziLiu/SandBAR/blob/main/papers/2026411507.pdf"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/YanziLiu/SandBAR"
+      },
+      {
+        "label": "Models",
+        "url": "https://github.com/YanziLiu/SandBAR/releases/tag/v1.0.1"
+      }
+    ],
     "metrics": [
       "CORE A"
     ],
