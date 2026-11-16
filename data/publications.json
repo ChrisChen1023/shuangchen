@@ -226,7 +226,7 @@
     "authors": "J. Oppersma, W. E, W. C. Gomez-Ramirez, I. Muktar, T. Wise, M. Bolton, Shuang Chen, A. Atapour-Abarghouei, C. Polidori, O. Riabinina",
     "venue": "iScience",
     "year": 2026,
-    "status": "accepted",
+    "status": "published",
     "topics": [
       "applications",
       "interdisciplinary"
@@ -244,6 +244,10 @@
       {
         "label": "Lab listing",
         "url": "https://insectneurolab.com/publications/"
+      },
+      {
+        "label": "Full text",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13738290/"
       }
     ],
     "metrics": [
