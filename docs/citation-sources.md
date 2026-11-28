@@ -5,7 +5,7 @@ Citation counts on the site are a dated snapshot of the owner's public Google Sc
 `node scripts/update-citations.mjs` reads the public profile page, updates both data files and the block below, and re-renders `index.html`; it writes nothing when no figure, snapshot year or displayed month changed, and refuses to update from a blocked or partial page. A scheduled task runs it daily (see the README). `--dry-run` only reports the differences.
 
 <!-- SCHOLAR:START -->
-Snapshot taken on 27 November 2026 by `scripts/update-citations.mjs`: 320 citations, h-index 8, i10-index 8.
+Snapshot taken on 28 November 2026 by `scripts/update-citations.mjs`: 321 citations, h-index 8, i10-index 8.
 
 | Record | Google Scholar entry | Citations |
 |---|---|---|
@@ -20,7 +20,7 @@ Snapshot taken on 27 November 2026 by `scripts/update-citations.mjs`: 320 citati
 | vlif | Exploring the Potentials of Spiking Neural Networks for Image Deraining | 8 |
 | caflow | Caflow: Enhancing long-term action quality assessment with causal counterfactual flow | 8 |
 | one-index | One-index vector quantization based adversarial attack on image classification | 5 |
-| deep-sea | Deep-sea: Deep-learning enhancement for environmental perception in submerged aquatics | 3 |
+| deep-sea | Deep-sea: Deep-learning enhancement for environmental perception in submerged aquatics | 4 |
 | music-chatbots | Inclusive AI-driven music Chatbots for older adults | 3 |
 | masc-pose | Motion-Adaptive Multi-Scale Temporal Modelling with Skeleton-Constrained Spatial Graphs for Efficient 3D Human Pose Estimation | 2 |
 | micro-robots | Deep Learning-Enhanced Visual Monitoring in Hazardous Underwater Environments with a Swarm of Micro-Robots | 2 |
